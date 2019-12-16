@@ -11,13 +11,13 @@ import javax.swing.JOptionPane;
  *
  * @author sharma1
  */
-public class menu extends javax.swing.JInternalFrame {
+public class Menu extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form menu
      */
     
-    public menu() {
+    public Menu() {
         initComponents();
     }
 
@@ -122,12 +122,12 @@ public class menu extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(box1);
-        box1.setBounds(250, 240, 110, 23);
+        box1.setBounds(250, 240, 110, 28);
 
         buttonGroup1.add(box2);
         box2.setText("Female");
         getContentPane().add(box2);
-        box2.setBounds(360, 240, 90, 23);
+        box2.setBounds(360, 240, 90, 28);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -151,7 +151,7 @@ public class menu extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(290, 460, 110, 27);
+        jButton1.setBounds(290, 460, 110, 33);
 
         jLabel8.setText("Gender");
         getContentPane().add(jLabel8);

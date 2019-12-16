@@ -21,7 +21,7 @@ public class Main {
                 }
             }
         } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(frame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Marco1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
@@ -34,10 +34,10 @@ public class Main {
                 ResultSet myresult = mystatement.executeQuery();
 
                 if (myresult.next()) {
-                    login obj1 = new login();
+                    Ingreso obj1 = new Ingreso();
                     obj1.setVisible(true);
                 } else {
-                    createuser ob1j = new createuser();
+                    CrearUsuario ob1j = new CrearUsuario();
                     ob1j.setVisible(true);
                 }
                 mystatement.close();
