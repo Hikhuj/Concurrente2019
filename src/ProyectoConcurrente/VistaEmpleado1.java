@@ -99,37 +99,30 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
-String path="jdbc:mysql://localhost/";
-       String place="factorydb";
-       try
-       {
-           Class.forName("com.mysql.jdbc.Driver");
-           Connection myconnection= DriverManager.getConnection(path+place,"root","");
-           
-           try
-           {
-               String q="select usertype from member";
-               PreparedStatement mystatement =myconnection.prepareStatement(q);
-               ResultSet myresult=mystatement.executeQuery();
-               if(myresult.next())
-               {
-                   jComboBox1.removeItem("SuperVisor");
-                 jComboBox1.addItem(myresult.getString("usertype"));
-               }
+        String path = "jdbc:mysql://localhost/";
+        String place = "factorydb";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection myconnection = DriverManager.getConnection(path + place, "root", "");
+
+            try {
+                String q = "select usertype from member";
+                PreparedStatement mystatement = myconnection.prepareStatement(q);
+                ResultSet myresult = mystatement.executeQuery();
+                if (myresult.next()) {
+                    jComboBox1.removeItem("SuperVisor");
+                    jComboBox1.addItem(myresult.getString("usertype"));
+                }
                 mystatement.close();
-               myconnection.close();
-               
-           }
-           catch(Exception ae)
-           {
-             JOptionPane.showMessageDialog(rootPane,"Result not Found");
-           }
-       }
-       catch(Exception ae)
-               {
-                 JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());  
-               }          // TODO add your handling code here:
-  
+                myconnection.close();
+
+            } catch (Exception ae) {
+                JOptionPane.showMessageDialog(rootPane, "Result not Found");
+            }
+        } catch (Exception ae) {
+            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+        }          // TODO add your handling code here:
+
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
