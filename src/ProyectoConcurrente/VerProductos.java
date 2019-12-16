@@ -15,12 +15,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author sharma1
  */
-public class viewbill extends javax.swing.JInternalFrame {
+public class VerProductos extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form viewemployee
      */
-    public viewbill() {
+    public VerProductos() {
         initComponents();
     }
 
@@ -40,7 +40,7 @@ public class viewbill extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("View Bill");
+        setTitle("Products");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -67,18 +67,18 @@ public class viewbill extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Bill no.", "Dealer Name", "Contact No.", "Product", "Quantity", "Total amount", "Date"
+                "Items", "Company", "Size", "Rate/Piece in Rupees", "Quantity"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 120, 970, 500);
+        jScrollPane1.setBounds(40, 100, 970, 500);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Bill Details");
+        jLabel1.setText("Products Details");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(440, 40, 170, 30);
+        jLabel1.setBounds(440, 30, 170, 30);
 
         setBounds(0, 0, 1065, 667);
     }// </editor-fold>//GEN-END:initComponents
@@ -86,61 +86,42 @@ public class viewbill extends javax.swing.JInternalFrame {
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
     }//GEN-LAST:event_formInternalFrameActivated
 
-    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
-String path="jdbc:mysql://localhost/";
-       String place="factorydb";
-       try
-       {
-           Class.forName("com.mysql.jdbc.Driver");
-           Connection myconnection= DriverManager.getConnection(path+place,"root","");
-           String billno,dealer,contact,product,qty,totamt,date;
-           try
-           {
-               String q="select * from bill";
-               PreparedStatement mystatement =myconnection.prepareStatement(q);
-               DefaultTableModel mymodel=(DefaultTableModel) jTable1.getModel();
-               ResultSet myresult=mystatement.executeQuery();
-               if(myresult.next())
-               {
-                do
-                {
-                    billno=myresult.getString("billid");
-                    dealer=myresult.getString("dealer");
-                    contact=myresult.getString("phone");
-                    product=myresult.getString("products");
-               //     String p[]=product.split(",");
-                 //   for(int i=0;i<10;i++)
-                    {
-                 //       product=myresult.getString("products");
-                //    String p[]=product.split(",");
-                //    product=(p[i]+"\n");
-                    }
-                    product=myresult.getString("products");
-                    qty=myresult.getString("qty");
-                    totamt=myresult.getString("total");
-                    date=myresult.getString("date");
-                    String a[]=date.split("-");
-                    date=(a[2]+"-"+a[1]+"-"+a[0]);
-                    mymodel.addRow(new Object[]{billno,dealer,contact,product,qty,totamt,date});
-                }
-                while(myresult.next());
-               }
-                mystatement.close();
-               myconnection.close();
-               
-           }
-           catch(Exception ae)
-           {
-             JOptionPane.showMessageDialog(rootPane,"No records exist");
-           }
-       }
-       catch(Exception ae)
-               {
-                 JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());  
-               }        
-          // TODO add your handling code here:
-    }//GEN-LAST:event_formInternalFrameOpened
+private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+    String path = "jdbc:mysql://localhost/";
+    String place = "factorydb";
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection myconnection = DriverManager.getConnection(path + place, "root", "");
+        String item, category, subcategory, rates, quantity;
+        try {
+            String q = "select * from products";
+            PreparedStatement mystatement = myconnection.prepareStatement(q);
+            DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
+            ResultSet myresult = mystatement.executeQuery();
+            if (myresult.next()) {
+                do {
+                    item = myresult.getString("items");
+                    category = myresult.getString("category");
+                    subcategory = myresult.getString("subcategory");
+                    rates = myresult.getString("rates");
+                    quantity = myresult.getString("quantity");
+                    mymodel.addRow(new Object[]{item, category, subcategory, rates, quantity});
+                } while (myresult.next());
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "No records exist");
 
+            }
+
+            mystatement.close();
+            myconnection.close();
+
+        } catch (Exception ae) {
+            JOptionPane.showMessageDialog(rootPane, "Error " + ae.getMessage());
+        }
+    } catch (Exception ae) {
+        JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+    }
+}//GEN-LAST:event_formInternalFrameOpened
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

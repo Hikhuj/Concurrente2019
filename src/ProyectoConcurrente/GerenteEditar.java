@@ -9,12 +9,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class editmanager extends javax.swing.JInternalFrame {
+public class GerenteEditar extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form manager
      */
-    public editmanager() {
+    public GerenteEditar() {
         initComponents();
     }
 
@@ -173,7 +173,7 @@ public class editmanager extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(290, 80, 110, 27);
+        jButton2.setBounds(290, 80, 110, 33);
 
         jInternalFrame1.setClosable(true);
         jInternalFrame1.setMaximizable(true);
@@ -253,10 +253,10 @@ public class editmanager extends javax.swing.JInternalFrame {
             }
         });
         jInternalFrame1.getContentPane().add(jButton4);
-        jButton4.setBounds(550, 80, 110, 27);
+        jButton4.setBounds(550, 80, 110, 33);
 
         getContentPane().add(jInternalFrame1);
-        jInternalFrame1.setBounds(0, 0, 98, 32);
+        jInternalFrame1.setBounds(0, 0, 87, 22);
 
         jInternalFrame2.setClosable(true);
         jInternalFrame2.setMaximizable(true);
@@ -336,7 +336,7 @@ public class editmanager extends javax.swing.JInternalFrame {
             }
         });
         jInternalFrame2.getContentPane().add(jButton6);
-        jButton6.setBounds(550, 80, 110, 27);
+        jButton6.setBounds(550, 80, 110, 33);
 
         jInternalFrame3.setClosable(true);
         jInternalFrame3.setMaximizable(true);
@@ -416,13 +416,13 @@ public class editmanager extends javax.swing.JInternalFrame {
             }
         });
         jInternalFrame3.getContentPane().add(jButton8);
-        jButton8.setBounds(550, 80, 110, 27);
+        jButton8.setBounds(550, 80, 110, 33);
 
         jInternalFrame2.getContentPane().add(jInternalFrame3);
-        jInternalFrame3.setBounds(0, 0, 98, 32);
+        jInternalFrame3.setBounds(0, 0, 87, 22);
 
         getContentPane().add(jInternalFrame2);
-        jInternalFrame2.setBounds(0, 0, 98, 32);
+        jInternalFrame2.setBounds(0, 0, 87, 22);
 
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

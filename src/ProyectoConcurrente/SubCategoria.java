@@ -15,12 +15,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author sharma1
  */
-public class viewproducts1 extends javax.swing.JInternalFrame {
+public class SubCategoria extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form viewemployee
+     * Creates new form subcategory
      */
-    public viewproducts1() {
+    public SubCategoria() {
         initComponents();
     }
 
@@ -33,16 +33,19 @@ public class viewproducts1 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
+        category = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        subcategory = new javax.swing.JTextField();
+
+        jTextField1.setText("jTextField1");
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Products");
+        setTitle("SubCategory Update");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -62,41 +65,73 @@ public class viewproducts1 extends javax.swing.JInternalFrame {
         });
         getContentPane().setLayout(null);
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        category.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Category" }));
+        getContentPane().add(category);
+        category.setBounds(170, 30, 160, 30);
 
-            },
-            new String [] {
-                "Items", "Company", "Sub Category", "Rate/Piece in Rupees", "Quantity"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(20, 140, 970, 470);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Products Details");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(440, 30, 170, 30);
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("By Company");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 80, 90, 30);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Company" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setText("Update");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(170, 80, 140, 30);
+        getContentPane().add(jButton1);
+        jButton1.setBounds(200, 130, 110, 30);
 
-        setBounds(0, 0, 1025, 656);
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Type");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(50, 80, 90, 30);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("Company");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(50, 30, 90, 30);
+
+        subcategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subcategoryActionPerformed(evt);
+            }
+        });
+        getContentPane().add(subcategory);
+        subcategory.setBounds(170, 80, 160, 30);
+
+        setBounds(0, 0, 365, 208);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void subcategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subcategoryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subcategoryActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String path = "jdbc:mysql://localhost/";
+        String place = "factorydb";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection myconnection = DriverManager.getConnection(path + place, "root", "");
+            try {
+                String q = "insert into category values(?,?)";
+                PreparedStatement mystatement = myconnection.prepareStatement(q);
+
+                mystatement.setString(1, category.getSelectedItem().toString());
+                mystatement.setString(2, subcategory.getText());
+                mystatement.execute();
+                //    label.setText("Saved Succesfully");
+                JOptionPane.showMessageDialog(rootPane, "Saved Successfully");
+                subcategory.setText(null);
+
+                mystatement.close();
+                myconnection.close();
+
+            } catch (Exception ae) {
+                JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
+            }
+        } catch (Exception ae) {
+            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         String path = "jdbc:mysql://localhost/";
@@ -105,48 +140,12 @@ public class viewproducts1 extends javax.swing.JInternalFrame {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "select distinct(category) from products";
+                String q = "select * from Company";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
                     do {
-                        jComboBox1.addItem(myresult.getString(1));
-                    } while (myresult.next());
-                }
-                mystatement.close();
-                myconnection.close();
-
-            } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in query " + ae.getMessage());
-            }
-        } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection " + ae.getMessage());
-        }
-
-    }//GEN-LAST:event_formInternalFrameActivated
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection myconnection = DriverManager.getConnection(path + place, "root", "");
-            String item, category, subcategory, rates, quantity;
-            try {
-                String q = "select * from products where category=?";
-                PreparedStatement mystatement = myconnection.prepareStatement(q);
-                mystatement.setString(1, jComboBox1.getSelectedItem().toString());
-                DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
-                ResultSet myresult = mystatement.executeQuery();
-                mymodel.setRowCount(0);
-                if (myresult.next()) {
-                    do {
-                        item = myresult.getString("items");
-                        category = myresult.getString("category");
-                        subcategory = myresult.getString("subcategory");
-                        rates = myresult.getString("rates");
-                        quantity = myresult.getString("quantity");
-                        mymodel.addRow(new Object[]{item, category, subcategory, rates, quantity});
+                        category.addItem(myresult.getString("company"));
                     } while (myresult.next());
                 }
                 mystatement.close();
@@ -158,13 +157,14 @@ public class viewproducts1 extends javax.swing.JInternalFrame {
         } catch (Exception ae) {
             JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
         }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    }//GEN-LAST:event_formInternalFrameActivated
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox category;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField subcategory;
     // End of variables declaration//GEN-END:variables
 }

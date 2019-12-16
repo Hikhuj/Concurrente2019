@@ -9,12 +9,12 @@ import java.text.SimpleDateFormat;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-public class billing extends javax.swing.JInternalFrame {
+public class Factura extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form billing
      */
-    public billing() {
+    public Factura() {
         initComponents();
     }
 
@@ -436,9 +436,9 @@ public class billing extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(rootPane, "Bill Saved");
 
                 this.dispose();
-                billing obj2 = new billing();
+                Factura obj2 = new Factura();
                 obj2.setVisible(true);
-                frame1.jDesktopPane1.add(obj2);
+                Marco1.jDesktopPane1.add(obj2);
 
 
 

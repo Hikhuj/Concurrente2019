@@ -8,12 +8,12 @@ package ProyectoConcurrente;
  *
  * @author sharma1
  */
-public class items extends javax.swing.JInternalFrame {
+public class Items extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form items
      */
-    public items() {
+    public Items() {
         initComponents();
     }
 

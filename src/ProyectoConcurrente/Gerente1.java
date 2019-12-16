@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author sharma1
  */
-public class manager1 extends javax.swing.JInternalFrame {
+public class Gerente1 extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form manager
      */
-    public manager1() {
+    public Gerente1() {
         initComponents();
     }
 

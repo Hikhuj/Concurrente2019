@@ -15,12 +15,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author sharma1
  */
-public class viewbill1 extends javax.swing.JInternalFrame {
+public class VistaFactura1 extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form viewemployee
      */
-    public viewbill1() {
+    public VistaFactura1() {
         initComponents();
     }
 
@@ -118,7 +118,7 @@ public class viewbill1 extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(380, 90, 100, 27);
+        jButton1.setBounds(380, 90, 100, 33);
 
         setBounds(0, 0, 1065, 667);
     }// </editor-fold>//GEN-END:initComponents

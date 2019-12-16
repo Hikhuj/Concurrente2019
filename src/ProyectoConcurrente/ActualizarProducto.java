@@ -15,12 +15,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author sharma1
  */
-public class updateproducts extends javax.swing.JInternalFrame {
+public class ActualizarProducto extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form productsrate
      */
-    public updateproducts() {
+    public ActualizarProducto() {
         initComponents();
     }
 

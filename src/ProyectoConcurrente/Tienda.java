@@ -3,12 +3,12 @@ package ProyectoConcurrente;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
-public class Company extends javax.swing.JInternalFrame {
+public class Tienda extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Company
      */
-    public Company() {
+    public Tienda() {
         initComponents();
     }
 

@@ -1,12 +1,19 @@
-
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ProyectoConcurrente;
 
-public class frame1 extends javax.swing.JFrame {
+/**
+ *
+ * @author sharma1
+ */
+public class Marco11 extends javax.swing.JFrame {
 
     /**
      * Creates new form frame1
      */
-    public frame1() {
+    public Marco11() {
         initComponents();
     }
 
@@ -29,14 +36,9 @@ public class frame1 extends javax.swing.JFrame {
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
@@ -48,7 +50,7 @@ public class frame1 extends javax.swing.JFrame {
 
         labelly.setFont(new java.awt.Font("Times New Roman", 1, 68)); // NOI18N
         jDesktopPane1.add(labelly);
-        labelly.setBounds(290, 170, 910, 140);
+        labelly.setBounds(350, 340, 910, 140);
 
         jButton1.setText("Signout");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +59,7 @@ public class frame1 extends javax.swing.JFrame {
             }
         });
         jDesktopPane1.add(jButton1);
-        jButton1.setBounds(10, 10, 80, 25);
+        jButton1.setBounds(10, 10, 80, 32);
 
         getContentPane().add(jDesktopPane1);
         jDesktopPane1.setBounds(0, 0, 1570, 830);
@@ -105,16 +107,6 @@ public class frame1 extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem10);
 
-        jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/veiw.png"))); // NOI18N
-        jMenuItem12.setText("View by Category");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem12);
-
-        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/edit.png"))); // NOI18N
         jMenuItem9.setText("Update Products");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,49 +115,23 @@ public class frame1 extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem9);
 
+        jMenuItem8.setText("View All Products");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem8);
+
+        jMenuItem12.setText("View by Category");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem12);
+
         jMenuBar1.add(jMenu2);
-
-        jMenu5.setText("Misc");
-
-        jMenuItem14.setText("Add Company");
-        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem14ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem14);
-
-        jMenuItem11.setText("Add Product Type");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem11);
-
-        jMenuBar1.add(jMenu5);
-
-        jMenu3.setText("Manager");
-
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/new.png"))); // NOI18N
-        jMenuItem4.setText("Add Manager");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem4);
-
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/edit.png"))); // NOI18N
-        jMenuItem5.setText("Edit/Delete Manager");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem5);
-
-        jMenuBar1.add(jMenu3);
 
         jMenu6.setText("Bill");
 
@@ -179,7 +145,6 @@ public class frame1 extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem15);
 
-        jMenuItem16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/veiw.png"))); // NOI18N
         jMenuItem16.setText("View Bill");
         jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,7 +153,6 @@ public class frame1 extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem16);
 
-        jMenuItem18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/veiw.png"))); // NOI18N
         jMenuItem18.setText("View Bill by Date");
         jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,114 +165,87 @@ public class frame1 extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setBounds(0, 0, 1585, 888);
+        setBounds(0, 0, 1579, 884);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        menu obj1 = new menu();
-        jDesktopPane1.add(obj1);
-        obj1.setVisible(true);
-        labelly.setVisible(false);// TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        editpage obj1 = new editpage();
-        jDesktopPane1.add(obj1);
-        obj1.setVisible(true);
-
-        labelly.setVisible(false);
-// TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        manager1 obj1 = new manager1();
-        jDesktopPane1.add(obj1);
-        obj1.setVisible(true);
-        labelly.setVisible(false);
-// TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        editmanager obj1 = new editmanager();
-        jDesktopPane1.add(obj1);
-        obj1.setVisible(true);
-        labelly.setVisible(false); // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
-
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        updateproducts obj = new updateproducts();
+        ActualizarProducto obj = new ActualizarProducto();
         jDesktopPane1.add(obj);
         obj.setVisible(true);
-
         labelly.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        productsrate obj = new productsrate();
+        CalificacionProducto obj = new CalificacionProducto();
         jDesktopPane1.add(obj);
         obj.setVisible(true);
-
         labelly.setVisible(false);
 // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        subcategory obj = new subcategory();
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        VerProductos obj = new VerProductos();
         jDesktopPane1.add(obj);
         obj.setVisible(true);
-
         labelly.setVisible(false);
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        viewproducts1 obj = new viewproducts1();
+        VistaProductos1 obj = new VistaProductos1();
         jDesktopPane1.add(obj);
         obj.setVisible(true);
-
         labelly.setVisible(false);          // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        viewemployee1 obj = new viewemployee1();
-        jDesktopPane1.add(obj);
-        obj.setVisible(true);
-        labelly.setVisible(false);         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
-
-    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-        Company obj = new Company();
-        jDesktopPane1.add(obj);
-        obj.setVisible(true);
-        labelly.setVisible(false);    // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem14ActionPerformed
-
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        billing obj = new billing();
+        Factura obj = new Factura();
         jDesktopPane1.add(obj);
         obj.setVisible(true);
         labelly.setVisible(false);
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        login obj = new login();
+        Ingreso obj = new Ingreso();
         obj.setVisible(true);
         this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-        viewbill obj = new viewbill();
+        VistaFactura obj = new VistaFactura();
         jDesktopPane1.add(obj);
         obj.setVisible(true);
         labelly.setVisible(false);   // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
-        viewbill1 obj = new viewbill1();
+        VistaFactura1 obj = new VistaFactura1();
         jDesktopPane1.add(obj);
         obj.setVisible(true);
         labelly.setVisible(false); // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    Menu obj = new Menu();
+    jDesktopPane1.add(obj);
+    obj.setVisible(true);
+    labelly.setVisible(false);// TODO add your handling code here:
+}//GEN-LAST:event_jMenuItem1ActionPerformed
+
+private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    EditarPagina obj = new EditarPagina();
+    jDesktopPane1.add(obj);
+    obj.setVisible(true);
+    labelly.setVisible(false);
+// TODO add your handling code here:
+}//GEN-LAST:event_jMenuItem2ActionPerformed
+
+private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+    VistaEmpleado1 obj = new VistaEmpleado1();
+    jDesktopPane1.add(obj);
+    obj.setVisible(true);
+    labelly.setVisible(false);         // TODO add your handling code here:
+}//GEN-LAST:event_jMenuItem13ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,45 +264,41 @@ public class frame1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Marco11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Marco11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Marco11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Marco11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new frame1().setVisible(true);
+                new Marco11().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    public static javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JLabel labelly;
     // End of variables declaration//GEN-END:variables

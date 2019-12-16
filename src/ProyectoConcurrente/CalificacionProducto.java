@@ -14,12 +14,12 @@ import javax.swing.JOptionPane;
  *
  * @author sharma1
  */
-public class productsrate extends javax.swing.JInternalFrame {
+public class CalificacionProducto extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form productsrate
      */
-    public productsrate() {
+    public CalificacionProducto() {
         initComponents();
     }
 

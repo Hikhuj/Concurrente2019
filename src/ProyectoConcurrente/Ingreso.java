@@ -16,12 +16,12 @@ import javax.swing.JOptionPane;
  *
  * @author sharma1
  */
-public class login extends javax.swing.JFrame {
+public class Ingreso extends javax.swing.JFrame {
 
     /**
      * Creates new form login
      */
-    public login() {
+    public Ingreso() {
         initComponents();
     }
 
@@ -104,11 +104,11 @@ public class login extends javax.swing.JFrame {
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
                     if (myresult.getString("usertype").equals("Admin")) {
-                        frame1 obj = new frame1();
+                        Marco1 obj = new Marco1();
                         obj.setVisible(true);
                         this.setVisible(false);
                     } else if (myresult.getString("usertype").equals("Manager")) {
-                        frame11 obj = new frame11();
+                        Marco11 obj = new Marco11();
                         obj.setVisible(true);
                         this.setVisible(false);
                     }
@@ -143,20 +143,21 @@ public class login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ingreso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ingreso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ingreso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ingreso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login().setVisible(true);
+                new Ingreso().setVisible(true);
             }
         });
     }

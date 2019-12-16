@@ -13,12 +13,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author sharma1
  */
-public class editpage extends javax.swing.JInternalFrame {
+public class EditarPagina extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form menu
      */
-    public editpage() {
+    public EditarPagina() {
         initComponents();
     }
 
@@ -128,12 +128,12 @@ public class editpage extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(box1);
-        box1.setBounds(350, 230, 80, 23);
+        box1.setBounds(350, 230, 80, 28);
 
         buttonGroup1.add(box2);
         box2.setText("Female");
         getContentPane().add(box2);
-        box2.setBounds(440, 230, 110, 23);
+        box2.setBounds(440, 230, 110, 28);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -192,7 +192,7 @@ public class editpage extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(580, 380, 110, 32);
+        jButton3.setBounds(580, 380, 110, 38);
 
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -239,7 +239,7 @@ public class editpage extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(720, 380, 110, 32);
+        jButton5.setBounds(720, 380, 110, 38);
         getContentPane().add(idbox);
         idbox.setBounds(350, 30, 200, 30);
 
