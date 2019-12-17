@@ -28,70 +28,70 @@ public class CrearUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabelContrasenia = new javax.swing.JLabel();
+        jLabelUsuario = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        usernamebox = new javax.swing.JTextField();
-        namebox = new javax.swing.JTextField();
-        passwordbox = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        jTxtUsuario = new javax.swing.JTextField();
+        jTxtNombre = new javax.swing.JTextField();
+        jTxtContrasenia = new javax.swing.JPasswordField();
+        btnCrearCuenta = new javax.swing.JButton();
         label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Create Admin");
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Password");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 180, 80, 30);
+        jLabelContrasenia.setText("Contraseña");
+        getContentPane().add(jLabelContrasenia);
+        jLabelContrasenia.setBounds(40, 180, 80, 30);
 
-        jLabel3.setText("Username");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(40, 130, 80, 30);
+        jLabelUsuario.setText("Usuario");
+        getContentPane().add(jLabelUsuario);
+        jLabelUsuario.setBounds(40, 130, 80, 30);
 
-        jLabel4.setText("Name");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(40, 80, 80, 30);
+        jLabelNombre.setText("Nombre");
+        getContentPane().add(jLabelNombre);
+        jLabelNombre.setBounds(40, 80, 80, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Create Admin Account");
+        jLabel6.setText("Crear Cuenta de Administrador");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(60, 20, 230, 30);
+        jLabel6.setBounds(20, 20, 280, 30);
 
-        usernamebox.addActionListener(new java.awt.event.ActionListener() {
+        jTxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameboxActionPerformed(evt);
+                jTxtUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(usernamebox);
-        usernamebox.setBounds(150, 130, 150, 30);
+        getContentPane().add(jTxtUsuario);
+        jTxtUsuario.setBounds(150, 130, 150, 30);
 
-        namebox.addActionListener(new java.awt.event.ActionListener() {
+        jTxtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameboxActionPerformed(evt);
+                jTxtNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(namebox);
-        namebox.setBounds(150, 80, 150, 30);
+        getContentPane().add(jTxtNombre);
+        jTxtNombre.setBounds(150, 80, 150, 30);
 
-        passwordbox.addActionListener(new java.awt.event.ActionListener() {
+        jTxtContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordboxActionPerformed(evt);
+                jTxtContraseniaActionPerformed(evt);
             }
         });
-        getContentPane().add(passwordbox);
-        passwordbox.setBounds(150, 180, 150, 30);
+        getContentPane().add(jTxtContrasenia);
+        jTxtContrasenia.setBounds(150, 180, 150, 30);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setText("Create Account");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCrearCuenta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCrearCuenta.setText("Crear Cuenta");
+        btnCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCrearCuentaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(70, 240, 180, 30);
+        getContentPane().add(btnCrearCuenta);
+        btnCrearCuenta.setBounds(70, 240, 180, 30);
         getContentPane().add(label);
         label.setBounds(490, 450, 0, 0);
 
@@ -99,11 +99,11 @@ public class CrearUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nameboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameboxActionPerformed
+    private void jTxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameboxActionPerformed
+    }//GEN-LAST:event_jTxtNombreActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCuentaActionPerformed
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
         try {
@@ -113,10 +113,10 @@ public class CrearUsuario extends javax.swing.JFrame {
                 String q = "insert into createuser values(?,?,?,?)";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
 
-                mystatement.setString(1, usernamebox.getText());
+                mystatement.setString(1, jTxtUsuario.getText());
                 mystatement.setString(2, "Admin");
-                mystatement.setString(3, namebox.getText());
-                mystatement.setString(4, passwordbox.getText());
+                mystatement.setString(3, jTxtNombre.getText());
+                mystatement.setString(4, jTxtContrasenia.getText());
 
                 mystatement.execute();
                 //    label.setText("Saved Succesfully");
@@ -133,15 +133,15 @@ public class CrearUsuario extends javax.swing.JFrame {
         } catch (Exception ae) {
             label.setText("Error in connection" + ae.getMessage());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCrearCuentaActionPerformed
 
-    private void passwordboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordboxActionPerformed
+    private void jTxtContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtContraseniaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordboxActionPerformed
+    }//GEN-LAST:event_jTxtContraseniaActionPerformed
 
-    private void usernameboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameboxActionPerformed
+    private void jTxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameboxActionPerformed
+    }//GEN-LAST:event_jTxtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,14 +180,14 @@ public class CrearUsuario extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnCrearCuenta;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabelContrasenia;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelUsuario;
+    private javax.swing.JPasswordField jTxtContrasenia;
+    private javax.swing.JTextField jTxtNombre;
+    private javax.swing.JTextField jTxtUsuario;
     private javax.swing.JLabel label;
-    private javax.swing.JTextField namebox;
-    private javax.swing.JPasswordField passwordbox;
-    private javax.swing.JTextField usernamebox;
     // End of variables declaration//GEN-END:variables
 }

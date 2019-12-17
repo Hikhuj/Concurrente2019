@@ -31,31 +31,31 @@ public class Menu extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        namebox = new javax.swing.JTextField();
+        jLabelDireccion = new javax.swing.JLabel();
+        jLabelNumeroTelefono = new javax.swing.JLabel();
+        jLabelPuesto = new javax.swing.JLabel();
+        jLabelNumId = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
+        jTxtNombre = new javax.swing.JTextField();
         postbox = new javax.swing.JComboBox();
-        phonebox = new javax.swing.JFormattedTextField();
+        jTxtNumTelefono = new javax.swing.JFormattedTextField();
         box1 = new javax.swing.JRadioButton();
         box2 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        addressbox = new javax.swing.JTextArea();
-        jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
-        idbox = new javax.swing.JTextField();
+        jTxtAreaDireccion = new javax.swing.JTextArea();
+        jLabelTituloIngreseInfo = new javax.swing.JLabel();
+        btnGuardar = new javax.swing.JButton();
+        jLabelGenero = new javax.swing.JLabel();
+        jLabelFecNacimiento = new javax.swing.JLabel();
+        jComboBoxDia = new javax.swing.JComboBox();
+        jComboBoxMes = new javax.swing.JComboBox();
+        jComboBoxAnio = new javax.swing.JComboBox();
+        jTxtNumeroId = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Add Employee");
+        setTitle("Agregar Empleado");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -75,29 +75,29 @@ public class Menu extends javax.swing.JInternalFrame {
         });
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Address");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(90, 330, 80, 30);
+        jLabelDireccion.setText("Dirección");
+        getContentPane().add(jLabelDireccion);
+        jLabelDireccion.setBounds(90, 330, 80, 30);
 
-        jLabel3.setText("Phone no.");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(90, 200, 80, 30);
+        jLabelNumeroTelefono.setText("Número Teléfono");
+        getContentPane().add(jLabelNumeroTelefono);
+        jLabelNumeroTelefono.setBounds(90, 200, 110, 30);
 
-        jLabel4.setText("Post");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(90, 150, 80, 30);
+        jLabelPuesto.setText("Puesto");
+        getContentPane().add(jLabelPuesto);
+        jLabelPuesto.setBounds(90, 150, 80, 30);
 
-        jLabel5.setText("ID No.");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(90, 70, 80, 30);
+        jLabelNumId.setText("Número de Id");
+        getContentPane().add(jLabelNumId);
+        jLabelNumId.setBounds(90, 70, 80, 30);
 
-        jLabel6.setText("Name");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(90, 110, 80, 30);
-        getContentPane().add(namebox);
-        namebox.setBounds(250, 110, 200, 30);
+        jLabelNombre.setText("Nombre");
+        getContentPane().add(jLabelNombre);
+        jLabelNombre.setBounds(90, 110, 80, 30);
+        getContentPane().add(jTxtNombre);
+        jTxtNombre.setBounds(250, 110, 200, 30);
 
-        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Post", "Manager", "SuperVisor", "Foreman", "Workers", "Helper", "Security Guard" }));
+        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Gerente", "Supervisor", "Encargado", "Empleados", "Guardia Seguridad" }));
         postbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postboxActionPerformed(evt);
@@ -107,15 +107,15 @@ public class Menu extends javax.swing.JInternalFrame {
         postbox.setBounds(250, 150, 200, 30);
 
         try {
-            phonebox.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
+            jTxtNumTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(phonebox);
-        phonebox.setBounds(250, 200, 200, 30);
+        getContentPane().add(jTxtNumTelefono);
+        jTxtNumTelefono.setBounds(250, 200, 200, 30);
 
         buttonGroup1.add(box1);
-        box1.setText("Male");
+        box1.setText("Masculino");
         box1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 box1ActionPerformed(evt);
@@ -125,62 +125,62 @@ public class Menu extends javax.swing.JInternalFrame {
         box1.setBounds(250, 240, 110, 28);
 
         buttonGroup1.add(box2);
-        box2.setText("Female");
+        box2.setText("Femenino");
         getContentPane().add(box2);
         box2.setBounds(360, 240, 90, 28);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        addressbox.setColumns(20);
-        addressbox.setRows(5);
-        jScrollPane1.setViewportView(addressbox);
+        jTxtAreaDireccion.setColumns(20);
+        jTxtAreaDireccion.setRows(5);
+        jScrollPane1.setViewportView(jTxtAreaDireccion);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(250, 330, 200, 110);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setText("Enter Your Details");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(200, 10, 210, 22);
+        jLabelTituloIngreseInfo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelTituloIngreseInfo.setText("Ingrese su Información");
+        getContentPane().add(jLabelTituloIngreseInfo);
+        jLabelTituloIngreseInfo.setBounds(180, 10, 230, 22);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Save");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(290, 460, 110, 33);
+        getContentPane().add(btnGuardar);
+        btnGuardar.setBounds(290, 460, 110, 31);
 
-        jLabel8.setText("Gender");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(90, 240, 80, 30);
+        jLabelGenero.setText("Género");
+        getContentPane().add(jLabelGenero);
+        jLabelGenero.setBounds(90, 240, 80, 30);
 
-        jLabel2.setText("D.O.B");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(90, 280, 80, 30);
+        jLabelFecNacimiento.setText("Fecha de Nacimiento");
+        getContentPane().add(jLabelFecNacimiento);
+        jLabelFecNacimiento.setBounds(90, 280, 130, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxDia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Día" }));
+        jComboBoxDia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboBoxDiaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(250, 280, 60, 30);
+        getContentPane().add(jComboBoxDia);
+        jComboBoxDia.setBounds(250, 280, 60, 30);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month" }));
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(310, 280, 70, 30);
+        jComboBoxMes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes" }));
+        getContentPane().add(jComboBoxMes);
+        jComboBoxMes.setBounds(310, 280, 70, 30);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year" }));
-        getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(380, 280, 70, 30);
+        jComboBoxAnio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Año" }));
+        getContentPane().add(jComboBoxAnio);
+        jComboBoxAnio.setBounds(380, 280, 70, 30);
 
-        idbox.setEditable(false);
-        getContentPane().add(idbox);
-        idbox.setBounds(250, 70, 200, 30);
+        jTxtNumeroId.setEditable(false);
+        getContentPane().add(jTxtNumeroId);
+        jTxtNumeroId.setBounds(250, 70, 200, 30);
 
         setBounds(0, 0, 571, 598);
     }// </editor-fold>//GEN-END:initComponents
@@ -206,7 +206,7 @@ void showid()
                {
                    int oldID=Integer.parseInt(myresult.getString(01));
                    int newID=oldID+1;
-                   idbox.setText(String.valueOf(newID));
+                   jTxtNumeroId.setText(String.valueOf(newID));
                }
            }
            catch(Exception ae)
@@ -224,7 +224,7 @@ void showid()
         JOptionPane.showMessageDialog(rootPane,"Error in Query" + ae.getMessage());
     }
 }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
        String path="jdbc:mysql://localhost/";
        String place="factorydb";
        try
@@ -236,10 +236,10 @@ void showid()
                String q="insert into member values(?,?,?,?,?,?,?)";
                PreparedStatement mystatement =myconnection.prepareStatement(q);
                
-               mystatement.setString(1, idbox.getText());
-               mystatement.setString(2, namebox.getText());
+               mystatement.setString(1, jTxtNumeroId.getText());
+               mystatement.setString(2, jTxtNombre.getText());
                mystatement.setString(3, postbox.getSelectedItem().toString());
-               mystatement.setString(4, phonebox.getText());
+               mystatement.setString(4, jTxtNumTelefono.getText());
                if(box1.isSelected())
                {
                mystatement.setString(5, "Male");
@@ -248,22 +248,22 @@ void showid()
                {
                mystatement.setString(5, "Female");
                }
-               mystatement.setString(6, addressbox.getText());
-               String dob=jComboBox3.getSelectedItem()+"-"+jComboBox2.getSelectedItem()+"-"+jComboBox1.getSelectedItem();
+               mystatement.setString(6, jTxtAreaDireccion.getText());
+               String dob=jComboBoxAnio.getSelectedItem()+"-"+jComboBoxMes.getSelectedItem()+"-"+jComboBoxDia.getSelectedItem();
                mystatement.setString(7, dob);
                
                mystatement.execute();
            //    label.setText("Saved Succesfully");
               JOptionPane.showMessageDialog(rootPane, "Saved Successfully");
-              idbox.setText(null);
-              namebox.setText(null);
-              phonebox.setText(null);
-              addressbox.setText(null);
+              jTxtNumeroId.setText(null);
+              jTxtNombre.setText(null);
+              jTxtNumTelefono.setText(null);
+              jTxtAreaDireccion.setText(null);
               buttonGroup1.clearSelection();
               postbox.setSelectedIndex(0);
-              jComboBox1.setSelectedIndex(0);
-              jComboBox2.setSelectedIndex(0);
-              jComboBox3.setSelectedIndex(0);
+              jComboBoxDia.setSelectedIndex(0);
+              jComboBoxMes.setSelectedIndex(0);
+              jComboBoxAnio.setSelectedIndex(0);
                mystatement.close();
                myconnection.close();
                
@@ -277,7 +277,7 @@ void showid()
                {
                  JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());  
                }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void postboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postboxActionPerformed
         // TODO add your handling code here:
@@ -290,56 +290,56 @@ showid();
 {
     if(a<10)
     {
-    jComboBox1.addItem("0"+a);
+    jComboBoxDia.addItem("0"+a);
     }
     else
     {
-        jComboBox1.addItem(String.valueOf(a));
+        jComboBoxDia.addItem(String.valueOf(a));
     }
         
 }
 for(int a=1;a<=12;a++)
 {if(a<10)
     {
-    jComboBox2.addItem("0"+a);
+    jComboBoxMes.addItem("0"+a);
     }
     else
     {
-        jComboBox2.addItem(String.valueOf(a));
+        jComboBoxMes.addItem(String.valueOf(a));
     }
     
 }
 for(int a=1975;a<=2013;a++)
 {
-    jComboBox3.addItem(String.valueOf(a));
+    jComboBoxAnio.addItem(String.valueOf(a));
 }
     }//GEN-LAST:event_formInternalFrameActivated
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboBoxDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jComboBoxDiaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea addressbox;
     private javax.swing.JRadioButton box1;
     private javax.swing.JRadioButton box2;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JTextField idbox;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JComboBox jComboBoxAnio;
+    private javax.swing.JComboBox jComboBoxDia;
+    private javax.swing.JComboBox jComboBoxMes;
+    private javax.swing.JLabel jLabelDireccion;
+    private javax.swing.JLabel jLabelFecNacimiento;
+    private javax.swing.JLabel jLabelGenero;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelNumId;
+    private javax.swing.JLabel jLabelNumeroTelefono;
+    private javax.swing.JLabel jLabelPuesto;
+    private javax.swing.JLabel jLabelTituloIngreseInfo;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField namebox;
-    private javax.swing.JFormattedTextField phonebox;
+    private javax.swing.JTextArea jTxtAreaDireccion;
+    private javax.swing.JTextField jTxtNombre;
+    private javax.swing.JFormattedTextField jTxtNumTelefono;
+    private javax.swing.JTextField jTxtNumeroId;
     private javax.swing.JComboBox postbox;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,14 +35,14 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTituloDetallesEmpleado = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("View Employee");
+        setTitle("Vista de Empleado");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -68,7 +68,7 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Name", "Phone", "Gender", "Address", "D.O.B", "ID", "Post"
+                "Nombre", "Teléfono", "Género", "Dirección", "Fecha de Nacimiento", "Id", "Puesto"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -76,17 +76,17 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(40, 140, 970, 480);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Employee Details");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(440, 30, 170, 30);
+        jLabelTituloDetallesEmpleado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelTituloDetallesEmpleado.setText("Detalles de Empleado");
+        getContentPane().add(jLabelTituloDetallesEmpleado);
+        jLabelTituloDetallesEmpleado.setBounds(440, 30, 200, 30);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("By Post");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("Por Puesto");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(40, 80, 90, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Post", "SuperVisor", "Foreman", "Workers", "Helper", "Security Guard" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Supervisor", "Encargado", "Empleados", "Asistente", "Guardia de Seguridad" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -174,8 +174,8 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelTituloDetallesEmpleado;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

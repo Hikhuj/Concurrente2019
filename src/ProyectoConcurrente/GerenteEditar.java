@@ -27,17 +27,17 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabelContrasenia = new javax.swing.JLabel();
+        jLabelUsuario = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        usernamebox = new javax.swing.JTextField();
-        namebox = new javax.swing.JTextField();
-        passwordbox = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        jLabelTituloEditarCuentaGerente = new javax.swing.JLabel();
+        jTxtUsuario = new javax.swing.JTextField();
+        jTxtNombre = new javax.swing.JTextField();
+        jTxtContrasenia = new javax.swing.JPasswordField();
+        btnActualizar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         postbox = new javax.swing.JComboBox();
-        jButton2 = new javax.swing.JButton();
+        btnBuscarNombre = new javax.swing.JButton();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -76,12 +76,12 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         jButton8 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton9 = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
 
         setClosable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Edit Manager");
+        setTitle("Editar Gerente");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -101,62 +101,62 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         });
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Password");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 220, 80, 30);
+        jLabelContrasenia.setText("Contraseña");
+        getContentPane().add(jLabelContrasenia);
+        jLabelContrasenia.setBounds(20, 220, 80, 30);
 
-        jLabel3.setText("Username");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 180, 80, 30);
+        jLabelUsuario.setText("Usuario");
+        getContentPane().add(jLabelUsuario);
+        jLabelUsuario.setBounds(20, 180, 80, 30);
 
-        jLabel4.setText("Name");
+        jLabel4.setText("Nombre");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(20, 80, 80, 30);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Edit Manager Account");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(40, 20, 240, 30);
+        jLabelTituloEditarCuentaGerente.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelTituloEditarCuentaGerente.setText("Editar Cuenta Gerente");
+        getContentPane().add(jLabelTituloEditarCuentaGerente);
+        jLabelTituloEditarCuentaGerente.setBounds(40, 20, 240, 30);
 
-        usernamebox.addActionListener(new java.awt.event.ActionListener() {
+        jTxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameboxActionPerformed(evt);
+                jTxtUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(usernamebox);
-        usernamebox.setBounds(110, 180, 150, 30);
+        getContentPane().add(jTxtUsuario);
+        jTxtUsuario.setBounds(110, 180, 150, 30);
 
-        namebox.addActionListener(new java.awt.event.ActionListener() {
+        jTxtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameboxActionPerformed(evt);
+                jTxtNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(namebox);
-        namebox.setBounds(110, 80, 150, 30);
+        getContentPane().add(jTxtNombre);
+        jTxtNombre.setBounds(110, 80, 150, 30);
 
-        passwordbox.addActionListener(new java.awt.event.ActionListener() {
+        jTxtContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordboxActionPerformed(evt);
+                jTxtContraseniaActionPerformed(evt);
             }
         });
-        getContentPane().add(passwordbox);
-        passwordbox.setBounds(110, 220, 150, 30);
+        getContentPane().add(jTxtContrasenia);
+        jTxtContrasenia.setBounds(110, 220, 150, 30);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Update");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(130, 270, 100, 30);
+        getContentPane().add(btnActualizar);
+        btnActualizar.setBounds(130, 270, 100, 30);
 
-        jLabel2.setText("User Type");
+        jLabel2.setText("Tipo Usuario");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 130, 60, 30);
+        jLabel2.setBounds(20, 130, 80, 30);
 
-        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Post", "Admin", "Manager" }));
+        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Administrador", "Gerente" }));
         postbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postboxActionPerformed(evt);
@@ -165,15 +165,15 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         getContentPane().add(postbox);
         postbox.setBounds(110, 130, 150, 30);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("Search");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarNombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBuscarNombre.setText("Buscar");
+        btnBuscarNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnBuscarNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(290, 80, 110, 33);
+        getContentPane().add(btnBuscarNombre);
+        btnBuscarNombre.setBounds(290, 80, 110, 31);
 
         jInternalFrame1.setClosable(true);
         jInternalFrame1.setMaximizable(true);
@@ -430,7 +430,7 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Name", "User Type", "Username"
+                "Nombre", "Tipo Usuario", "Usuario"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -451,32 +451,32 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(290, 130, 260, 230);
 
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton9.setText("Delete");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btnBorrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btnBorrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton9);
-        jButton9.setBounds(130, 310, 100, 30);
+        getContentPane().add(btnBorrar);
+        btnBorrar.setBounds(130, 310, 100, 30);
 
-        setBounds(0, 0, 598, 422);
+        setBounds(0, 0, 598, 418);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void usernameboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameboxActionPerformed
+    private void jTxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameboxActionPerformed
+    }//GEN-LAST:event_jTxtUsuarioActionPerformed
     
-    private void nameboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameboxActionPerformed
+    private void jTxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameboxActionPerformed
+    }//GEN-LAST:event_jTxtNombreActionPerformed
     
-    private void passwordboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordboxActionPerformed
+    private void jTxtContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtContraseniaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordboxActionPerformed
+    }//GEN-LAST:event_jTxtContraseniaActionPerformed
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
         int i = JOptionPane.showConfirmDialog(rootPane, "Are u sure want to update this employee");
@@ -487,10 +487,10 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
                 try {
                     String q = "update createuser set  password=?,username=?,usertype=?, name1=? where username=? ";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
-                    mystatement.setString(1, passwordbox.getText());
-                    mystatement.setString(2, usernamebox.getText());
+                    mystatement.setString(1, jTxtContrasenia.getText());
+                    mystatement.setString(2, jTxtUsuario.getText());
                     mystatement.setString(3, postbox.getSelectedItem().toString());
-                    mystatement.setString(4, namebox.getText());
+                    mystatement.setString(4, jTxtNombre.getText());
                     mystatement.setString(5, data);
                     
                     int x = mystatement.executeUpdate();
@@ -501,8 +501,8 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
                         
                     }
                     
-                    namebox.setText("");
-                    jButton2ActionPerformed(null);
+                    jTxtNombre.setText("");
+                    btnBuscarNombreActionPerformed(null);
                     mystatement.close();
                     myconnection.close();
                     
@@ -515,16 +515,16 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
             }
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnActualizarActionPerformed
     
     private void postboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_postboxActionPerformed
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnBuscarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarNombreActionPerformed
         
-        usernamebox.setText("");
-        passwordbox.setText("");
+        jTxtUsuario.setText("");
+        jTxtContrasenia.setText("");
         postbox.setSelectedIndex(0);
         
         String path = "jdbc:mysql://localhost/";
@@ -534,7 +534,7 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             String name, usertype, username;
             try {
-                String q = "select * from createuser where name1 like '%" + namebox.getText() + "%'";
+                String q = "select * from createuser where name1 like '%" + jTxtNombre.getText() + "%'";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
                 ResultSet myresult = mystatement.executeQuery();
@@ -564,7 +564,7 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         } catch (Exception ae) {
             JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnBuscarNombreActionPerformed
     
     private void usernamebox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernamebox1ActionPerformed
         // TODO add your handling code here:
@@ -658,11 +658,11 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
                 jScrollPane3.setVisible(true);
                 if (myresult.next()) {
                     
-                    namebox.setText(myresult.getString("name1"));
+                    jTxtNombre.setText(myresult.getString("name1"));
                     String p = myresult.getString("usertype");
                     postbox.setSelectedItem(p);
-                    usernamebox.setText(myresult.getString("username"));
-                    passwordbox.setText(myresult.getString("password"));
+                    jTxtUsuario.setText(myresult.getString("username"));
+                    jTxtContrasenia.setText(myresult.getString("password"));
                 }
                 mystatement.close();
                 myconnection.close();
@@ -679,7 +679,7 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         jScrollPane3.setVisible(false);    // TODO add your handling code here:
     }//GEN-LAST:event_formInternalFrameOpened
     
-private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
     
     String path = "jdbc:mysql://localhost/";
     String place = "factorydb";
@@ -692,7 +692,7 @@ private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             try {
                 String q = "delete from createuser where username=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
-                mystatement.setString(1, usernamebox.getText());
+                mystatement.setString(1, jTxtUsuario.getText());
                 int b = mystatement.executeUpdate();
                 if (b > 0) {
                     JOptionPane.showMessageDialog(rootPane, "Deleted Successfully");
@@ -710,21 +710,20 @@ private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
     }
     
-}//GEN-LAST:event_jButton9ActionPerformed
+}//GEN-LAST:event_btnBorrarActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnBuscarNombre;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JInternalFrame jInternalFrame3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -737,20 +736,22 @@ private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelContrasenia;
+    private javax.swing.JLabel jLabelTituloEditarCuentaGerente;
+    private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField namebox;
+    private javax.swing.JPasswordField jTxtContrasenia;
+    private javax.swing.JTextField jTxtNombre;
+    private javax.swing.JTextField jTxtUsuario;
     private javax.swing.JTextField namebox1;
     private javax.swing.JTextField namebox2;
     private javax.swing.JTextField namebox3;
-    private javax.swing.JPasswordField passwordbox;
     private javax.swing.JPasswordField passwordbox1;
     private javax.swing.JPasswordField passwordbox2;
     private javax.swing.JPasswordField passwordbox3;
@@ -758,7 +759,6 @@ private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JComboBox postbox1;
     private javax.swing.JComboBox postbox2;
     private javax.swing.JComboBox postbox3;
-    private javax.swing.JTextField usernamebox;
     private javax.swing.JTextField usernamebox1;
     private javax.swing.JTextField usernamebox2;
     private javax.swing.JTextField usernamebox3;

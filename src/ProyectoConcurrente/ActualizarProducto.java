@@ -11,15 +11,10 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author sharma1
- */
+
 public class ActualizarProducto extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form productsrate
-     */
+
     public ActualizarProducto() {
         initComponents();
     }
@@ -35,24 +30,24 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
 
         itembox = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        ratebox = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel39 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
-        jLabel40 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabel38 = new javax.swing.JLabel();
+        jLabelPrecioPieza = new javax.swing.JLabel();
+        btnBuscar = new javax.swing.JButton();
+        jPrecioPieza = new javax.swing.JTextField();
+        jComboCompania = new javax.swing.JComboBox();
+        jLabelTamanio = new javax.swing.JLabel();
+        jComboTamanio = new javax.swing.JComboBox();
+        jLabelItem = new javax.swing.JLabel();
+        btnActualizar = new javax.swing.JButton();
+        jLabelCompania = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel41 = new javax.swing.JLabel();
-        ratebox2 = new javax.swing.JTextField();
+        jLabelCantidad = new javax.swing.JLabel();
+        cantidadPiezasItem = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Products rates");
+        setTitle("Precios de Productos");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -82,75 +77,75 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         itembox.setBounds(30, 100, 140, 30);
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel36.setText("Update Products");
+        jLabel36.setText("Actualizar Productos");
         getContentPane().add(jLabel36);
-        jLabel36.setBounds(330, 10, 160, 30);
+        jLabel36.setBounds(30, 20, 190, 30);
 
-        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel37.setText("Rates/Piece");
-        getContentPane().add(jLabel37);
-        jLabel37.setBounds(550, 60, 120, 30);
+        jLabelPrecioPieza.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelPrecioPieza.setText("Precio/Pieza");
+        getContentPane().add(jLabelPrecioPieza);
+        jLabelPrecioPieza.setBounds(530, 60, 90, 30);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(50, 150, 90, 30);
+        getContentPane().add(btnBuscar);
+        btnBuscar.setBounds(50, 150, 90, 30);
 
-        ratebox.addActionListener(new java.awt.event.ActionListener() {
+        jPrecioPieza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rateboxActionPerformed(evt);
+                jPrecioPiezaActionPerformed(evt);
             }
         });
-        getContentPane().add(ratebox);
-        ratebox.setBounds(530, 100, 90, 30);
+        getContentPane().add(jPrecioPieza);
+        jPrecioPieza.setBounds(530, 100, 90, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Category" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboCompania.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Categoría" }));
+        jComboCompania.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboCompaniaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(180, 100, 150, 30);
+        getContentPane().add(jComboCompania);
+        jComboCompania.setBounds(180, 100, 150, 30);
 
-        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel39.setText("Size");
-        getContentPane().add(jLabel39);
-        jLabel39.setBounds(410, 60, 50, 30);
+        jLabelTamanio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelTamanio.setText("Tamaño");
+        getContentPane().add(jLabelTamanio);
+        jLabelTamanio.setBounds(390, 60, 70, 30);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose SubCategory", " " }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jComboTamanio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Subcategoria", " " }));
+        jComboTamanio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                jComboTamanioActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(340, 100, 160, 30);
+        getContentPane().add(jComboTamanio);
+        jComboTamanio.setBounds(340, 100, 160, 30);
 
-        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel40.setText("Item");
-        getContentPane().add(jLabel40);
-        jLabel40.setBounds(80, 60, 80, 30);
+        jLabelItem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelItem.setText("Item");
+        getContentPane().add(jLabelItem);
+        jLabelItem.setBounds(80, 60, 80, 30);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setText("Update");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(370, 150, 110, 30);
+        getContentPane().add(btnActualizar);
+        btnActualizar.setBounds(160, 150, 90, 30);
 
-        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel38.setText("Company");
-        getContentPane().add(jLabel38);
-        jLabel38.setBounds(200, 60, 120, 30);
+        jLabelCompania.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCompania.setText("Compañía");
+        getContentPane().add(jLabelCompania);
+        jLabelCompania.setBounds(200, 60, 120, 30);
 
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -158,7 +153,7 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Items", "Category", "Size", "Rates/Piece", "Quantity"
+                "Items", "Categoria", "Tamaño", "Precio/Pieza", "Cantidad"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -171,18 +166,18 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(20, 210, 750, 180);
 
-        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel41.setText("Quantity");
-        getContentPane().add(jLabel41);
-        jLabel41.setBounds(680, 60, 120, 30);
+        jLabelCantidad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCantidad.setText("Cantidad");
+        getContentPane().add(jLabelCantidad);
+        jLabelCantidad.setBounds(680, 60, 70, 30);
 
-        ratebox2.addActionListener(new java.awt.event.ActionListener() {
+        cantidadPiezasItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ratebox2ActionPerformed(evt);
+                cantidadPiezasItemActionPerformed(evt);
             }
         });
-        getContentPane().add(ratebox2);
-        ratebox2.setBounds(660, 100, 100, 30);
+        getContentPane().add(cantidadPiezasItem);
+        cantidadPiezasItem.setBounds(660, 100, 100, 30);
 
         setBounds(0, 0, 804, 454);
     }// </editor-fold>//GEN-END:initComponents
@@ -191,15 +186,15 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itemboxActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
 
 
 
 
-        ratebox.setText("");
-        jComboBox1.setSelectedIndex(0);
-        jComboBox2.setSelectedIndex(0);
-        ratebox2.setText("");
+        jPrecioPieza.setText("");
+        jComboCompania.setSelectedIndex(0);
+        jComboTamanio.setSelectedIndex(0);
+        cantidadPiezasItem.setText("");
 
 
         String path = "jdbc:mysql://localhost/";
@@ -238,16 +233,16 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         } catch (Exception ae) {
             JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
         }
-       }//GEN-LAST:event_jButton1ActionPerformed
+       }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void rateboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rateboxActionPerformed
+    private void jPrecioPiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPrecioPiezaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rateboxActionPerformed
+    }//GEN-LAST:event_jPrecioPiezaActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboCompaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboCompaniaActionPerformed
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
-        if (jComboBox1.getSelectedIndex() > 0) {
+        if (jComboCompania.getSelectedIndex() > 0) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection myconnection = DriverManager.getConnection(path + place, "root", "");
@@ -255,30 +250,30 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
                 try {
                     String q = "select subcategory from category where category1=?";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
-                    mystatement.setString(1, jComboBox1.getSelectedItem().toString());
+                    mystatement.setString(1, jComboCompania.getSelectedItem().toString());
                     ResultSet myresult = mystatement.executeQuery();
-                    jComboBox2.removeAllItems();
+                    jComboTamanio.removeAllItems();
                     if (myresult.next()) {
-                        jComboBox2.addItem("Choose Type");
+                        jComboTamanio.addItem("Elegir tipo");
                         do {
-                            jComboBox2.addItem(myresult.getString("subcategory"));
+                            jComboTamanio.addItem(myresult.getString("Subcategoria"));
                         } while (myresult.next());
                     }
                     mystatement.close();
                     myconnection.close();
 
                 } catch (Exception ae) {
-                    JOptionPane.showMessageDialog(rootPane, "Result not Found");
+                    JOptionPane.showMessageDialog(rootPane, "Resultado no encontrado");
                 }
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en conexion" + ae.getMessage());
             }
         }          // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jComboCompaniaActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void jComboTamanioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboTamanioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_jComboTamanioActionPerformed
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         String path = "jdbc:mysql://localhost/";
@@ -292,7 +287,7 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
                     do {
-                        jComboBox1.addItem(myresult.getString("company"));
+                        jComboCompania.addItem(myresult.getString("company"));
                     } while (myresult.next());
                 }
                 jScrollPane1.setVisible(false);
@@ -308,7 +303,7 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_formInternalFrameActivated
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
         int i = JOptionPane.showConfirmDialog(rootPane, "Are u sure want to update this item");
@@ -319,17 +314,17 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
                 try {
                     String q = "update products set rates=?,category=?,subcategory=?,quantity=? where items=?";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
-                    mystatement.setString(1, ratebox.getText());
-                    mystatement.setString(2, jComboBox1.getSelectedItem().toString());
-                    mystatement.setString(3, jComboBox2.getSelectedItem().toString());
-                    mystatement.setString(4, ratebox2.getText());
+                    mystatement.setString(1, jPrecioPieza.getText());
+                    mystatement.setString(2, jComboCompania.getSelectedItem().toString());
+                    mystatement.setString(3, jComboTamanio.getSelectedItem().toString());
+                    mystatement.setString(4, cantidadPiezasItem.getText());
                     mystatement.setString(5, itembox.getText());
                     mystatement.execute();
 
                     JOptionPane.showMessageDialog(rootPane, "Update Successfully");
 
                     itembox.setText("");
-                    jButton1ActionPerformed(null);
+                    btnBuscarActionPerformed(null);
                     mystatement.close();
 
                     myconnection.close();
@@ -372,7 +367,7 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         }
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int myrow = jTable1.getSelectedRow();
@@ -390,10 +385,10 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
                     itembox.setText(myresult.getString("items"));
-                    ratebox.setText(myresult.getString("rates"));
-                    jComboBox1.setSelectedItem(myresult.getString("category"));
-                    jComboBox2.setSelectedItem(myresult.getString("subcategory"));
-                    ratebox2.setText(myresult.getString("quantity"));
+                    jPrecioPieza.setText(myresult.getString("rates"));
+                    jComboCompania.setSelectedItem(myresult.getString("category"));
+                    jComboTamanio.setSelectedItem(myresult.getString("subcategory"));
+                    cantidadPiezasItem.setText(myresult.getString("quantity"));
                 }
                 mystatement.close();
                 myconnection.close();
@@ -408,28 +403,28 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void ratebox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ratebox2ActionPerformed
+    private void cantidadPiezasItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantidadPiezasItemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ratebox2ActionPerformed
+    }//GEN-LAST:event_cantidadPiezasItemActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         jScrollPane1.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_formInternalFrameOpened
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JTextField cantidadPiezasItem;
     private javax.swing.JTextField itembox;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboCompania;
+    private javax.swing.JComboBox jComboTamanio;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabelCantidad;
+    private javax.swing.JLabel jLabelCompania;
+    private javax.swing.JLabel jLabelItem;
+    private javax.swing.JLabel jLabelPrecioPieza;
+    private javax.swing.JLabel jLabelTamanio;
+    private javax.swing.JTextField jPrecioPieza;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField ratebox;
-    private javax.swing.JTextField ratebox2;
     // End of variables declaration//GEN-END:variables
 }

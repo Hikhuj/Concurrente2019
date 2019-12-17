@@ -21,7 +21,7 @@ public class Marco1 extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         labelly = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -50,23 +50,23 @@ public class Marco1 extends javax.swing.JFrame {
         jDesktopPane1.add(labelly);
         labelly.setBounds(290, 170, 910, 140);
 
-        jButton1.setText("Signout");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        jDesktopPane1.add(jButton1);
-        jButton1.setBounds(10, 10, 80, 32);
+        jDesktopPane1.add(btnSalir);
+        btnSalir.setBounds(10, 10, 80, 32);
 
         getContentPane().add(jDesktopPane1);
         jDesktopPane1.setBounds(0, 0, 1570, 830);
 
-        jMenu1.setText("Employee");
+        jMenu1.setText("Empleado");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/new.png"))); // NOI18N
-        jMenuItem1.setText("Add Employee");
+        jMenuItem1.setText("Agregar Empleado");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -75,7 +75,7 @@ public class Marco1 extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/edit.png"))); // NOI18N
-        jMenuItem2.setText("Update/Delete Employee");
+        jMenuItem2.setText("Actualizar/Borrar Empleado");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -84,7 +84,7 @@ public class Marco1 extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuItem13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/veiw.png"))); // NOI18N
-        jMenuItem13.setText("View By Category");
+        jMenuItem13.setText("Ver por Categoría");
         jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem13ActionPerformed(evt);
@@ -94,10 +94,10 @@ public class Marco1 extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Products");
+        jMenu2.setText("Productos");
 
         jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/new.png"))); // NOI18N
-        jMenuItem10.setText("Add Products");
+        jMenuItem10.setText("Agregar Productos");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);
@@ -106,7 +106,7 @@ public class Marco1 extends javax.swing.JFrame {
         jMenu2.add(jMenuItem10);
 
         jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/veiw.png"))); // NOI18N
-        jMenuItem12.setText("View by Category");
+        jMenuItem12.setText("Ver por Categoría");
         jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem12ActionPerformed(evt);
@@ -115,7 +115,7 @@ public class Marco1 extends javax.swing.JFrame {
         jMenu2.add(jMenuItem12);
 
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/edit.png"))); // NOI18N
-        jMenuItem9.setText("Update Products");
+        jMenuItem9.setText("Actualizar Productos");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem9ActionPerformed(evt);
@@ -125,9 +125,9 @@ public class Marco1 extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu5.setText("Misc");
+        jMenu5.setText("Rutinario");
 
-        jMenuItem14.setText("Add Company");
+        jMenuItem14.setText("Agregar Compañia");
         jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem14ActionPerformed(evt);
@@ -135,7 +135,7 @@ public class Marco1 extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem14);
 
-        jMenuItem11.setText("Add Product Type");
+        jMenuItem11.setText("Agregar Tipo de Producto");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem11ActionPerformed(evt);
@@ -145,10 +145,10 @@ public class Marco1 extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
-        jMenu3.setText("Manager");
+        jMenu3.setText("Gerente");
 
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/new.png"))); // NOI18N
-        jMenuItem4.setText("Add Manager");
+        jMenuItem4.setText("Agregar Gerente");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -157,7 +157,7 @@ public class Marco1 extends javax.swing.JFrame {
         jMenu3.add(jMenuItem4);
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/edit.png"))); // NOI18N
-        jMenuItem5.setText("Edit/Delete Manager");
+        jMenuItem5.setText("Editar/Borrar Gerente");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -167,11 +167,11 @@ public class Marco1 extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu6.setText("Bill");
+        jMenu6.setText("Factura");
 
         jMenuItem15.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/new.png"))); // NOI18N
-        jMenuItem15.setText("New Bill");
+        jMenuItem15.setText("Nueva Factura");
         jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem15ActionPerformed(evt);
@@ -180,7 +180,7 @@ public class Marco1 extends javax.swing.JFrame {
         jMenu6.add(jMenuItem15);
 
         jMenuItem16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/veiw.png"))); // NOI18N
-        jMenuItem16.setText("View Bill");
+        jMenuItem16.setText("Ver Factura");
         jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem16ActionPerformed(evt);
@@ -189,7 +189,7 @@ public class Marco1 extends javax.swing.JFrame {
         jMenu6.add(jMenuItem16);
 
         jMenuItem18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/veiw.png"))); // NOI18N
-        jMenuItem18.setText("View Bill by Date");
+        jMenuItem18.setText("Ver Factura por Fecha");
         jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem18ActionPerformed(evt);
@@ -290,11 +290,11 @@ public class Marco1 extends javax.swing.JFrame {
         labelly.setVisible(false);
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         Ingreso obj = new Ingreso();
         obj.setVisible(true);
         this.setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
         VistaFactura obj = new VistaFactura();
@@ -347,7 +347,7 @@ public class Marco1 extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSalir;
     public static javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

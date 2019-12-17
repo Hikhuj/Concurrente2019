@@ -35,12 +35,12 @@ public class VistaFactura extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTituloFacturaDetalles = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("View Bill");
+        setTitle("Ver Factura");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -67,20 +67,20 @@ public class VistaFactura extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Bill no.", "Dealer Name", "Contact No.", "Product", "Quantity", "Total amount", "Date"
+                "Factura No.", "Nombre Proveedor", "Número de Contacto", "Producto", "Cantidad", "Valor Total", "Fecha"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 120, 970, 500);
+        jScrollPane1.setBounds(50, 70, 970, 500);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Bill Details");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(440, 40, 170, 30);
+        jLabelTituloFacturaDetalles.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelTituloFacturaDetalles.setText("Factura de Detalles");
+        getContentPane().add(jLabelTituloFacturaDetalles);
+        jLabelTituloFacturaDetalles.setBounds(460, 20, 120, 30);
 
-        setBounds(0, 0, 1065, 667);
+        setBounds(0, 0, 1065, 639);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
@@ -142,7 +142,7 @@ String path="jdbc:mysql://localhost/";
     }//GEN-LAST:event_formInternalFrameOpened
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelTituloFacturaDetalles;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

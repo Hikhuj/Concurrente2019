@@ -32,35 +32,35 @@ public class EditarPagina extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabelDireccion = new javax.swing.JLabel();
+        jLabelTelefono = new javax.swing.JLabel();
+        jLabelPuesto = new javax.swing.JLabel();
+        jLabelNumeroID = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
         namebox = new javax.swing.JTextField();
-        postbox = new javax.swing.JComboBox();
-        phonebox = new javax.swing.JFormattedTextField();
-        box1 = new javax.swing.JRadioButton();
-        box2 = new javax.swing.JRadioButton();
+        jComboBoxPuesto = new javax.swing.JComboBox();
+        jTxtTelefono = new javax.swing.JFormattedTextField();
+        boxMasculino = new javax.swing.JRadioButton();
+        boxFemenino = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         addressbox = new javax.swing.JTextArea();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jLabelGenero = new javax.swing.JLabel();
+        jLabelFecNacimiento = new javax.swing.JLabel();
+        jComboBoxFechNacDia = new javax.swing.JComboBox();
+        jComboBoxFechNacMes = new javax.swing.JComboBox();
+        jComboBoxFechNacAnio = new javax.swing.JComboBox();
+        btnBuscarNombre = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnBuscarNumeroID = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
         idbox = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Edit Employee");
+        setTitle("Editar Empleado");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -81,59 +81,59 @@ public class EditarPagina extends javax.swing.JInternalFrame {
         });
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Address");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(220, 320, 80, 30);
+        jLabelDireccion.setText("Dirección");
+        getContentPane().add(jLabelDireccion);
+        jLabelDireccion.setBounds(60, 160, 80, 30);
 
-        jLabel3.setText("Phone no.");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(220, 180, 60, 30);
+        jLabelTelefono.setText("Número Teléfono");
+        getContentPane().add(jLabelTelefono);
+        jLabelTelefono.setBounds(520, 70, 110, 30);
 
-        jLabel4.setText("Post");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(220, 130, 60, 30);
+        jLabelPuesto.setText("Puesto");
+        getContentPane().add(jLabelPuesto);
+        jLabelPuesto.setBounds(520, 30, 60, 30);
 
-        jLabel5.setText("ID No.");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(220, 30, 70, 30);
+        jLabelNumeroID.setText("Número ID");
+        getContentPane().add(jLabelNumeroID);
+        jLabelNumeroID.setBounds(60, 30, 70, 30);
 
-        jLabel6.setText("Name");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(220, 80, 80, 30);
+        jLabelNombre.setText("Nombre");
+        getContentPane().add(jLabelNombre);
+        jLabelNombre.setBounds(60, 70, 60, 30);
         getContentPane().add(namebox);
-        namebox.setBounds(350, 80, 200, 30);
+        namebox.setBounds(150, 70, 200, 30);
 
-        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Post", "Manager", "SuperVisor", "Foreman", "Workers", "Helper", "Security Guard" }));
-        postbox.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxPuesto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Gerente", "Supervisor", "Encargado", "Empleado", "Asistente", "Guardia Seguridad" }));
+        jComboBoxPuesto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                postboxActionPerformed(evt);
+                jComboBoxPuestoActionPerformed(evt);
             }
         });
-        getContentPane().add(postbox);
-        postbox.setBounds(350, 130, 200, 30);
+        getContentPane().add(jComboBoxPuesto);
+        jComboBoxPuesto.setBounds(650, 30, 200, 30);
 
         try {
-            phonebox.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
+            jTxtTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(phonebox);
-        phonebox.setBounds(350, 180, 200, 30);
+        getContentPane().add(jTxtTelefono);
+        jTxtTelefono.setBounds(650, 70, 200, 30);
 
-        buttonGroup1.add(box1);
-        box1.setText("Male");
-        box1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(boxMasculino);
+        boxMasculino.setText("Masculino");
+        boxMasculino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                box1ActionPerformed(evt);
+                boxMasculinoActionPerformed(evt);
             }
         });
-        getContentPane().add(box1);
-        box1.setBounds(350, 230, 80, 28);
+        getContentPane().add(boxMasculino);
+        boxMasculino.setBounds(150, 120, 100, 28);
 
-        buttonGroup1.add(box2);
-        box2.setText("Female");
-        getContentPane().add(box2);
-        box2.setBounds(440, 230, 110, 28);
+        buttonGroup1.add(boxFemenino);
+        boxFemenino.setText("Femenino");
+        getContentPane().add(boxFemenino);
+        boxFemenino.setBounds(260, 120, 110, 28);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -142,57 +142,57 @@ public class EditarPagina extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(addressbox);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(350, 320, 200, 110);
+        jScrollPane1.setBounds(150, 170, 330, 100);
 
-        jLabel8.setText("Gender");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(220, 220, 70, 30);
+        jLabelGenero.setText("Género");
+        getContentPane().add(jLabelGenero);
+        jLabelGenero.setBounds(60, 120, 70, 30);
 
-        jLabel2.setText("D.O.B");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(220, 260, 70, 40);
+        jLabelFecNacimiento.setText("Fecha de Nacimiento");
+        getContentPane().add(jLabelFecNacimiento);
+        jLabelFecNacimiento.setBounds(520, 120, 130, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxFechNacDia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Día" }));
+        jComboBoxFechNacDia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboBoxFechNacDiaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(350, 270, 60, 30);
+        getContentPane().add(jComboBoxFechNacDia);
+        jComboBoxFechNacDia.setBounds(650, 120, 60, 30);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month" }));
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(410, 270, 70, 30);
+        jComboBoxFechNacMes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes" }));
+        getContentPane().add(jComboBoxFechNacMes);
+        jComboBoxFechNacMes.setBounds(710, 120, 70, 30);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxFechNacAnio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Año" }));
+        jComboBoxFechNacAnio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                jComboBoxFechNacAnioActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(480, 270, 70, 30);
+        getContentPane().add(jComboBoxFechNacAnio);
+        jComboBoxFechNacAnio.setBounds(780, 120, 70, 30);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("Search");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarNombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBuscarNombre.setText("Buscar");
+        btnBuscarNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnBuscarNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(590, 80, 110, 30);
+        getContentPane().add(btnBuscarNombre);
+        btnBuscarNombre.setBounds(370, 70, 110, 30);
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton3.setText("Update");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(580, 380, 110, 38);
+        getContentPane().add(btnActualizar);
+        btnActualizar.setBounds(580, 190, 100, 60);
 
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -200,7 +200,7 @@ public class EditarPagina extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Name", "Phone", "Gender", "Address", "D.O.B", "Post"
+                "ID", "Nombre", "Teléfono", "Género", "Dirección", "Fecha de Nacimiento", "Direccion"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -219,58 +219,58 @@ public class EditarPagina extends javax.swing.JInternalFrame {
         jScrollPane3.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(20, 440, 860, 180);
+        jScrollPane3.setBounds(30, 290, 860, 180);
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setText("Search");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarNumeroID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBuscarNumeroID.setText("Buscar");
+        btnBuscarNumeroID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnBuscarNumeroIDActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(590, 30, 110, 30);
+        getContentPane().add(btnBuscarNumeroID);
+        btnBuscarNumeroID.setBounds(370, 30, 110, 30);
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton5.setText("Delete");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnBorrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnBorrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(720, 380, 110, 38);
+        getContentPane().add(btnBorrar);
+        btnBorrar.setBounds(710, 190, 110, 60);
         getContentPane().add(idbox);
-        idbox.setBounds(350, 30, 200, 30);
+        idbox.setBounds(150, 30, 200, 30);
 
-        setBounds(0, 0, 918, 661);
+        setBounds(0, 0, 918, 521);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void box1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box1ActionPerformed
+    private void boxMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxMasculinoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_box1ActionPerformed
+    }//GEN-LAST:event_boxMasculinoActionPerformed
     
-    private void postboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postboxActionPerformed
+    private void jComboBoxPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPuestoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_postboxActionPerformed
+    }//GEN-LAST:event_jComboBoxPuestoActionPerformed
     
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
     }//GEN-LAST:event_formInternalFrameActivated
     
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboBoxFechNacDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxFechNacDiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jComboBoxFechNacDiaActionPerformed
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnBuscarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarNombreActionPerformed
         
         
         idbox.setText("");
-        phonebox.setText("");
+        jTxtTelefono.setText("");
         addressbox.setText("");
-        jComboBox1.setSelectedIndex(0);
-        jComboBox2.setSelectedIndex(0);
-        jComboBox3.setSelectedIndex(0);
-        postbox.setSelectedIndex(0);
+        jComboBoxFechNacDia.setSelectedIndex(0);
+        jComboBoxFechNacMes.setSelectedIndex(0);
+        jComboBoxFechNacAnio.setSelectedIndex(0);
+        jComboBoxPuesto.setSelectedIndex(0);
         buttonGroup1.clearSelection();
         
         String path = "jdbc:mysql://localhost/";
@@ -311,9 +311,9 @@ public class EditarPagina extends javax.swing.JInternalFrame {
         } catch (Exception ae) {
             JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnBuscarNombreActionPerformed
     
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
         int i = JOptionPane.showConfirmDialog(rootPane, "Are u sure want to update this employee");
@@ -325,16 +325,16 @@ public class EditarPagina extends javax.swing.JInternalFrame {
                     String q = "update member set NAME=?,PHONE=?,ADDRESS=?,GENDER=?,dob=?,usertype=? where ID=?";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
                     mystatement.setString(1, namebox.getText());
-                    mystatement.setString(2, phonebox.getText());
-                    if (box1.isSelected()) {
+                    mystatement.setString(2, jTxtTelefono.getText());
+                    if (boxMasculino.isSelected()) {
                         mystatement.setString(4, "Male");
-                    } else if (box2.isSelected()) {
+                    } else if (boxFemenino.isSelected()) {
                         mystatement.setString(4, "Female");
                     }
                     mystatement.setString(3, addressbox.getText());
-                    String dob = jComboBox3.getSelectedItem() + "-" + jComboBox2.getSelectedItem() + "-" + jComboBox1.getSelectedItem();
+                    String dob = jComboBoxFechNacAnio.getSelectedItem() + "-" + jComboBoxFechNacMes.getSelectedItem() + "-" + jComboBoxFechNacDia.getSelectedItem();
                     mystatement.setString(5, dob);
-                    mystatement.setString(6, postbox.getSelectedItem().toString());
+                    mystatement.setString(6, jComboBoxPuesto.getSelectedItem().toString());
                     mystatement.setString(7, idbox.getText());
                     mystatement.execute();
                     JOptionPane.showMessageDialog(rootPane, "Update Successfully");
@@ -345,7 +345,7 @@ public class EditarPagina extends javax.swing.JInternalFrame {
                     myconnection.close();
                     
                     namebox.setText("");
-                    jButton2ActionPerformed(null);
+                    btnBuscarNombreActionPerformed(null);
                     
                 } catch (Exception ae) {
                     JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
@@ -355,18 +355,18 @@ public class EditarPagina extends javax.swing.JInternalFrame {
             }
         }
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnActualizarActionPerformed
     
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void jComboBoxFechNacAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxFechNacAnioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_jComboBoxFechNacAnioActionPerformed
     
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int myrow = jTable1.getSelectedRow();
         
         String data = (String) jTable1.getValueAt(myrow, 0);
         idbox.setText(data);
-        jButton4ActionPerformed(null);
+        btnBuscarNumeroIDActionPerformed(null);
     }//GEN-LAST:event_jTable1MouseClicked
     
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
@@ -375,27 +375,27 @@ public class EditarPagina extends javax.swing.JInternalFrame {
         
         for (int a = 1; a <= 31; a++) {
             if (a < 10) {
-                jComboBox1.addItem("0" + a);
+                jComboBoxFechNacDia.addItem("0" + a);
             } else {
-                jComboBox1.addItem("" + a);
+                jComboBoxFechNacDia.addItem("" + a);
             }
             
         }
         for (int a = 1; a <= 12; a++) {
             if (a < 10) {
-                jComboBox2.addItem("0" + a);
+                jComboBoxFechNacMes.addItem("0" + a);
             } else {
-                jComboBox2.addItem("" + a);
+                jComboBoxFechNacMes.addItem("" + a);
             }
             
         }
         for (int a = 1975; a <= 2013; a++) {
-            jComboBox3.addItem("" + a);
+            jComboBoxFechNacAnio.addItem("" + a);
         }
         
     }//GEN-LAST:event_formInternalFrameOpened
     
-private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+private void btnBuscarNumeroIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarNumeroIDActionPerformed
     String path = "jdbc:mysql://localhost/";
     String place = "factorydb";
     try {
@@ -408,21 +408,21 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             ResultSet myresult = mystatement.executeQuery();
             if (myresult.next()) {
                 namebox.setText(myresult.getString("NAME"));
-                phonebox.setText(myresult.getString("PHONE"));
+                jTxtTelefono.setText(myresult.getString("PHONE"));
                 addressbox.setText(myresult.getString("ADDRESS"));
                 String db = myresult.getString("dob");
                 String a[] = db.split("-");
-                jComboBox1.setSelectedItem(a[2]);
-                jComboBox2.setSelectedItem(a[1]);
-                jComboBox3.setSelectedItem(a[0]);
+                jComboBoxFechNacDia.setSelectedItem(a[2]);
+                jComboBoxFechNacMes.setSelectedItem(a[1]);
+                jComboBoxFechNacAnio.setSelectedItem(a[0]);
                 if (myresult.getString("GENDER").equals("Male")) {
-                    box1.setSelected(true);
+                    boxMasculino.setSelected(true);
                 } else if (myresult.getString("GENDER").equals("Female")) {
-                    box2.setSelected(true);
+                    boxFemenino.setSelected(true);
                 }
                 
                 String p = myresult.getString("usertype");
-                postbox.setSelectedItem(p);
+                jComboBoxPuesto.setSelectedItem(p);
             } else {
                 JOptionPane.showMessageDialog(rootPane, "NO record Found", "Error", 0);
             }
@@ -435,9 +435,9 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     } catch (Exception ae) {
         JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
     }
-}//GEN-LAST:event_jButton4ActionPerformed
+}//GEN-LAST:event_btnBuscarNumeroIDActionPerformed
     
-private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
     String path = "jdbc:mysql://localhost/";
     String place = "factorydb";
     
@@ -466,32 +466,32 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
         }
     }
-}//GEN-LAST:event_jButton5ActionPerformed
+}//GEN-LAST:event_btnBorrarActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea addressbox;
-    private javax.swing.JRadioButton box1;
-    private javax.swing.JRadioButton box2;
+    private javax.swing.JRadioButton boxFemenino;
+    private javax.swing.JRadioButton boxMasculino;
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnBuscarNombre;
+    private javax.swing.JButton btnBuscarNumeroID;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField idbox;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JComboBox jComboBoxFechNacAnio;
+    private javax.swing.JComboBox jComboBoxFechNacDia;
+    private javax.swing.JComboBox jComboBoxFechNacMes;
+    private javax.swing.JComboBox jComboBoxPuesto;
+    private javax.swing.JLabel jLabelDireccion;
+    private javax.swing.JLabel jLabelFecNacimiento;
+    private javax.swing.JLabel jLabelGenero;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelNumeroID;
+    private javax.swing.JLabel jLabelPuesto;
+    private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
+    private javax.swing.JFormattedTextField jTxtTelefono;
     private javax.swing.JTextField namebox;
-    private javax.swing.JFormattedTextField phonebox;
-    private javax.swing.JComboBox postbox;
     // End of variables declaration//GEN-END:variables
 }

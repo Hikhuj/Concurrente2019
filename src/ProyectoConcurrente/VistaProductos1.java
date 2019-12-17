@@ -35,14 +35,14 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTituloDetallProductos = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Products");
+        setTitle("Vista de Productos");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -68,7 +68,7 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Items", "Company", "Sub Category", "Rate/Piece in Rupees", "Quantity"
+                "Items", "Compañia", "Subcategoría", "Precio/Pieza en Colones", "Cantidad"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -76,17 +76,17 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(20, 140, 970, 470);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Products Details");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(440, 30, 170, 30);
+        jLabelTituloDetallProductos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelTituloDetallProductos.setText("Detalle de Productos");
+        getContentPane().add(jLabelTituloDetallProductos);
+        jLabelTituloDetallProductos.setBounds(460, 20, 140, 30);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("By Company");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("Por Compañia");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(40, 80, 90, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Company" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Compañía" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -162,8 +162,8 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelTituloDetallProductos;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

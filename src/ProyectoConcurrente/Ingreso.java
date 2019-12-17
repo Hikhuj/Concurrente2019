@@ -34,63 +34,63 @@ public class Ingreso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        box = new javax.swing.JTextField();
-        pass = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        jLabelContrasenia = new javax.swing.JLabel();
+        jTxtUsuario = new javax.swing.JTextField();
+        jTxtContrasenia = new javax.swing.JPasswordField();
+        btnIngresar = new javax.swing.JButton();
         label = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabelUsuario = new javax.swing.JLabel();
+        jLabelTituloIngresar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sign In");
         getContentPane().setLayout(null);
 
-        jLabel3.setText("Password");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(210, 220, 70, 30);
+        jLabelContrasenia.setText("Contraseña");
+        getContentPane().add(jLabelContrasenia);
+        jLabelContrasenia.setBounds(210, 220, 70, 30);
 
-        box.addActionListener(new java.awt.event.ActionListener() {
+        jTxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boxActionPerformed(evt);
+                jTxtUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(box);
-        box.setBounds(310, 160, 150, 30);
-        getContentPane().add(pass);
-        pass.setBounds(310, 220, 150, 30);
+        getContentPane().add(jTxtUsuario);
+        jTxtUsuario.setBounds(310, 160, 150, 30);
+        getContentPane().add(jTxtContrasenia);
+        jTxtContrasenia.setBounds(310, 220, 150, 30);
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnIngresar.setBackground(new java.awt.Color(51, 51, 255));
+        btnIngresar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnIngresar.setText("Ingresar");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnIngresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(310, 290, 90, 40);
+        getContentPane().add(btnIngresar);
+        btnIngresar.setBounds(310, 290, 90, 40);
         getContentPane().add(label);
         label.setBounds(150, 390, 0, 0);
 
-        jLabel4.setText("Username");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(210, 160, 70, 30);
+        jLabelUsuario.setText("Usuario");
+        getContentPane().add(jLabelUsuario);
+        jLabelUsuario.setBounds(210, 160, 70, 30);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Sign In");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(300, 90, 100, 30);
+        jLabelTituloIngresar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelTituloIngresar.setText("Ventana de Ingreso");
+        getContentPane().add(jLabelTituloIngresar);
+        jLabelTituloIngresar.setBounds(290, 90, 190, 30);
 
         setSize(new java.awt.Dimension(715, 528));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxActionPerformed
+    private void jTxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_boxActionPerformed
+    }//GEN-LAST:event_jTxtUsuarioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
         try {
@@ -99,8 +99,8 @@ public class Ingreso extends javax.swing.JFrame {
             try {
                 String q = "select * from createuser where username=? and password=?";//usertable
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
-                mystatement.setString(1, box.getText());
-                mystatement.setString(2, pass.getText());
+                mystatement.setString(1, jTxtUsuario.getText());
+                mystatement.setString(2, jTxtContrasenia.getText());
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
                     if (myresult.getString("usertype").equals("Admin")) {
@@ -124,7 +124,7 @@ public class Ingreso extends javax.swing.JFrame {
         } catch (Exception ae) {
             JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,12 +162,12 @@ public class Ingreso extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField box;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JLabel jLabelContrasenia;
+    private javax.swing.JLabel jLabelTituloIngresar;
+    private javax.swing.JLabel jLabelUsuario;
+    private javax.swing.JPasswordField jTxtContrasenia;
+    private javax.swing.JTextField jTxtUsuario;
     private javax.swing.JLabel label;
-    private javax.swing.JPasswordField pass;
     // End of variables declaration//GEN-END:variables
 }

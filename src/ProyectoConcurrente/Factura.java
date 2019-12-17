@@ -28,31 +28,31 @@ public class Factura extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabelTitulo = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jComboBoxElegirProducto = new javax.swing.JComboBox();
+        jLabelSeleccionarProducto = new javax.swing.JLabel();
+        btnCalcularFactura = new javax.swing.JButton();
+        btnSalvarFactura = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jTextField4 = new javax.swing.JTextField();
+        jTxtFecha = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
+        jFormattedTextFieldTelefono = new javax.swing.JFormattedTextField();
+        jLabelNumFactura = new javax.swing.JLabel();
+        jLabelCompania = new javax.swing.JLabel();
+        jComboBoxElegirCompania = new javax.swing.JComboBox();
+        jComboBoxTipo = new javax.swing.JComboBox();
         jLabel39 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setResizable(true);
-        setTitle("Bill");
+        setTitle("Factura");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -73,21 +73,21 @@ public class Factura extends javax.swing.JInternalFrame {
         });
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Date");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Fecha");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(490, 80, 70, 20);
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 51));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setText("Bill");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(410, 20, 70, 40);
+        jLabelTitulo.setBackground(new java.awt.Color(255, 255, 51));
+        jLabelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelTitulo.setText("Factura");
+        getContentPane().add(jLabelTitulo);
+        jLabelTitulo.setBounds(30, 20, 110, 40);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Dealer Name");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(130, 120, 120, 27);
+        jLabelNombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelNombre.setText("Nombre");
+        getContentPane().add(jLabelNombre);
+        jLabelNombre.setBounds(130, 120, 120, 27);
 
         jTextField1.setEditable(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -106,8 +106,8 @@ public class Factura extends javax.swing.JInternalFrame {
         getContentPane().add(jTextField2);
         jTextField2.setBounds(280, 120, 150, 30);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Net Total");
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("Costo Total");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(610, 490, 100, 30);
 
@@ -115,46 +115,46 @@ public class Factura extends javax.swing.JInternalFrame {
         getContentPane().add(jTextField3);
         jTextField3.setBounds(710, 490, 130, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Product" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxElegirProducto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Producto" }));
+        jComboBoxElegirProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboBoxElegirProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(280, 260, 150, 30);
+        getContentPane().add(jComboBoxElegirProducto);
+        jComboBoxElegirProducto.setBounds(280, 220, 150, 30);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setText("Select Product");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(130, 260, 100, 30);
+        jLabelSeleccionarProducto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelSeleccionarProducto.setText("Seleccionar Producto");
+        getContentPane().add(jLabelSeleccionarProducto);
+        jLabelSeleccionarProducto.setBounds(130, 220, 140, 30);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Claculate Bill");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCalcularFactura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCalcularFactura.setText("Calcular Factura");
+        btnCalcularFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCalcularFacturaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(440, 490, 130, 30);
+        getContentPane().add(btnCalcularFactura);
+        btnCalcularFactura.setBounds(440, 490, 130, 30);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setText("Save Bill");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvarFactura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSalvarFactura.setText("Salvar Factura");
+        btnSalvarFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSalvarFacturaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(710, 540, 120, 30);
+        getContentPane().add(btnSalvarFactura);
+        btnSalvarFactura.setBounds(710, 540, 120, 30);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Product Name", "Company", "Rate", "Current Quantity", "Quantity", "Total", "Remaining Quantity"
+                "Nombre Producto", "Compañia", "Precio", "Cantidad Actual", "Cantidad", "Total", "Cantidad Restante"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -175,55 +175,55 @@ public class Factura extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(40, 300, 800, 180);
 
-        jTextField4.setEditable(false);
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(560, 80, 150, 30);
+        jTxtFecha.setEditable(false);
+        getContentPane().add(jTxtFecha);
+        jTxtFecha.setBounds(560, 80, 150, 30);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Phone");
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setText("Teléfono");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(130, 160, 100, 30);
+        jLabel5.setBounds(490, 120, 100, 30);
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
+            jFormattedTextFieldTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(jFormattedTextField1);
-        jFormattedTextField1.setBounds(280, 160, 150, 30);
+        getContentPane().add(jFormattedTextFieldTelefono);
+        jFormattedTextFieldTelefono.setBounds(560, 120, 150, 30);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("Bill No.");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(130, 80, 70, 27);
+        jLabelNumFactura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelNumFactura.setText("Número Factura");
+        getContentPane().add(jLabelNumFactura);
+        jLabelNumFactura.setBounds(130, 80, 130, 27);
 
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel36.setText("Company");
-        getContentPane().add(jLabel36);
-        jLabel36.setBounds(130, 210, 120, 30);
+        jLabelCompania.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelCompania.setText("Compañía");
+        getContentPane().add(jLabelCompania);
+        jLabelCompania.setBounds(130, 170, 120, 30);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Company" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxElegirCompania.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Compañia" }));
+        jComboBoxElegirCompania.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                jComboBoxElegirCompaniaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(280, 210, 150, 30);
+        getContentPane().add(jComboBoxElegirCompania);
+        jComboBoxElegirCompania.setBounds(280, 170, 150, 30);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose type" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Tipo" }));
+        jComboBoxTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                jComboBoxTipoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(530, 210, 150, 30);
+        getContentPane().add(jComboBoxTipo);
+        jComboBoxTipo.setBounds(560, 170, 150, 30);
 
-        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel39.setText("Type");
+        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel39.setText("Tipo");
         getContentPane().add(jLabel39);
-        jLabel39.setBounds(450, 210, 50, 30);
+        jLabel39.setBounds(490, 170, 50, 30);
 
         setBounds(0, 0, 877, 622);
     }// </editor-fold>//GEN-END:initComponents
@@ -236,14 +236,14 @@ public class Factura extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboBoxElegirProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxElegirProductoActionPerformed
 
 
 
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
 
-        if (jComboBox1.getSelectedIndex() > 0) {
+        if (jComboBoxElegirProducto.getSelectedIndex() > 0) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection myconnection = DriverManager.getConnection(path + place, "root", "");
@@ -251,7 +251,7 @@ public class Factura extends javax.swing.JInternalFrame {
                 try {
                     String q = "select * from products where items=?";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
-                    mystatement.setString(1, jComboBox1.getSelectedItem().toString());
+                    mystatement.setString(1, jComboBoxElegirProducto.getSelectedItem().toString());
                     DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
                     ResultSet myresult = mystatement.executeQuery();
 
@@ -275,13 +275,13 @@ public class Factura extends javax.swing.JInternalFrame {
             }
         }
 
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jComboBoxElegirProductoActionPerformed
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         java.util.Date obj = new java.util.Date();
         SimpleDateFormat myformat = new SimpleDateFormat("dd-MM-yyyy");
         String dateofbill = myformat.format(obj);
-        jTextField4.setText(dateofbill);
+        jTxtFecha.setText(dateofbill);
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
         try {
@@ -297,7 +297,7 @@ public class Factura extends javax.swing.JInternalFrame {
                 if (myresult.next()) {
 
                     do {
-                        jComboBox1.addItem(myresult.getString("items"));
+                        jComboBoxElegirProducto.addItem(myresult.getString("items"));
                     } while (myresult.next());
                 }
 
@@ -332,7 +332,7 @@ public class Factura extends javax.swing.JInternalFrame {
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
                     do {
-                        jComboBox2.addItem(myresult.getString("company"));
+                        jComboBoxElegirCompania.addItem(myresult.getString("company"));
                     } while (myresult.next());
                 }
                 mystatement.close();
@@ -349,7 +349,7 @@ public class Factura extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formInternalFrameActivated
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCalcularFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularFacturaActionPerformed
 
 
         int r = jTable1.getRowCount();
@@ -390,12 +390,12 @@ public class Factura extends javax.swing.JInternalFrame {
 
 
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCalcularFacturaActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnSalvarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFacturaActionPerformed
 
 //if(Integer.parseInt(jTextField3.getText())>0){
 
@@ -418,7 +418,7 @@ public class Factura extends javax.swing.JInternalFrame {
                 mystatement.setString(7, dateofbill);
 
 
-                mystatement.setString(6, jFormattedTextField1.getText());
+                mystatement.setString(6, jFormattedTextFieldTelefono.getText());
 
 
                 int r = jTable1.getRowCount();
@@ -479,16 +479,16 @@ public class Factura extends javax.swing.JInternalFrame {
 
 
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnSalvarFacturaActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         // TODO add your handling code here:
     }//GEN-LAST:event_formInternalFrameOpened
 
-private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+private void jComboBoxElegirCompaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxElegirCompaniaActionPerformed
     String path = "jdbc:mysql://localhost/";
     String place = "factorydb";
-    if (jComboBox2.getSelectedIndex() > 0) {
+    if (jComboBoxElegirCompania.getSelectedIndex() > 0) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
@@ -496,13 +496,13 @@ private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             try {
                 String q = "select subcategory from category where category1=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
-                mystatement.setString(1, jComboBox2.getSelectedItem().toString());
+                mystatement.setString(1, jComboBoxElegirCompania.getSelectedItem().toString());
                 ResultSet myresult = mystatement.executeQuery();
-                jComboBox3.removeAllItems();
+                jComboBoxTipo.removeAllItems();
                 if (myresult.next()) {
-                    jComboBox3.addItem("Choose Type");
+                    jComboBoxTipo.addItem("Choose Type");
                     do {
-                        jComboBox3.addItem(myresult.getString("subcategory"));
+                        jComboBoxTipo.addItem(myresult.getString("subcategory"));
                     } while (myresult.next());
                 }
                 mystatement.close();
@@ -515,12 +515,12 @@ private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
         }
     }// TODO add your handling code here:
-}//GEN-LAST:event_jComboBox2ActionPerformed
+}//GEN-LAST:event_jComboBoxElegirCompaniaActionPerformed
 
-private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+private void jComboBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoActionPerformed
 
 
-    if (jComboBox3.getSelectedIndex() > 0) {
+    if (jComboBoxTipo.getSelectedIndex() > 0) {
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
         try {
@@ -529,16 +529,16 @@ private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             try {
                 String q = "select * from products where category=? and subcategory=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
-                mystatement.setString(1, jComboBox2.getSelectedItem().toString());
-                mystatement.setString(2, jComboBox3.getSelectedItem().toString());
+                mystatement.setString(1, jComboBoxElegirCompania.getSelectedItem().toString());
+                mystatement.setString(2, jComboBoxTipo.getSelectedItem().toString());
                 ResultSet myresult = mystatement.executeQuery();
 
 
-                jComboBox1.removeAllItems();
+                jComboBoxElegirProducto.removeAllItems();
                 if (myresult.next()) {
-                    jComboBox1.addItem("Choose Product");
+                    jComboBoxElegirProducto.addItem("Choose Product");
                     do {
-                        jComboBox1.addItem(myresult.getString("items"));
+                        jComboBoxElegirProducto.addItem(myresult.getString("items"));
                     } while (myresult.next());
                 }
                 mystatement.close();
@@ -553,28 +553,28 @@ private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 
     }
 
-}//GEN-LAST:event_jComboBox3ActionPerformed
+}//GEN-LAST:event_jComboBoxTipoActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JButton btnCalcularFactura;
+    private javax.swing.JButton btnSalvarFactura;
+    private javax.swing.JComboBox jComboBoxElegirCompania;
+    private javax.swing.JComboBox jComboBoxElegirProducto;
+    private javax.swing.JComboBox jComboBoxTipo;
+    private javax.swing.JFormattedTextField jFormattedTextFieldTelefono;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabelCompania;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelNumFactura;
+    private javax.swing.JLabel jLabelSeleccionarProducto;
+    private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTxtFecha;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,49 +22,49 @@ public class Tienda extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        subcategory = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        jTxtTituloAgregarProveedor = new javax.swing.JLabel();
+        jTxtNombreProveedor = new javax.swing.JTextField();
+        btnAgregar = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Add Company");
+        setTitle("Agregar Companía");
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Add Supplier");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(90, 20, 150, 30);
+        jTxtTituloAgregarProveedor.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jTxtTituloAgregarProveedor.setText("Agregar Proveedor");
+        getContentPane().add(jTxtTituloAgregarProveedor);
+        jTxtTituloAgregarProveedor.setBounds(70, 20, 180, 30);
 
-        subcategory.addActionListener(new java.awt.event.ActionListener() {
+        jTxtNombreProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subcategoryActionPerformed(evt);
+                jTxtNombreProveedorActionPerformed(evt);
             }
         });
-        getContentPane().add(subcategory);
-        subcategory.setBounds(40, 70, 230, 30);
+        getContentPane().add(jTxtNombreProveedor);
+        jTxtNombreProveedor.setBounds(40, 70, 230, 30);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("Add");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(90, 130, 110, 30);
+        getContentPane().add(btnAgregar);
+        btnAgregar.setBounds(90, 130, 110, 30);
 
         setBounds(0, 0, 314, 227);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void subcategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subcategoryActionPerformed
+    private void jTxtNombreProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNombreProveedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_subcategoryActionPerformed
+    }//GEN-LAST:event_jTxtNombreProveedorActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         String path="jdbc:mysql://localhost/";
         String place="factorydb";
         try
@@ -75,10 +75,10 @@ public class Tienda extends javax.swing.JInternalFrame {
             {
                 String q="insert into Company values(?)";
                 PreparedStatement mystatement =myconnection.prepareStatement(q);
-                mystatement.setString(1, subcategory.getText());
+                mystatement.setString(1, jTxtNombreProveedor.getText());
                 mystatement.execute();
                 JOptionPane.showMessageDialog(rootPane, "Saved Successfully");
-                subcategory.setText(null);
+                jTxtNombreProveedor.setText(null);
 
                 mystatement.close();
                 myconnection.close();
@@ -93,12 +93,12 @@ public class Tienda extends javax.swing.JInternalFrame {
         {
             JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField subcategory;
+    private javax.swing.JTextField jTxtNombreProveedor;
+    private javax.swing.JLabel jTxtTituloAgregarProveedor;
     // End of variables declaration//GEN-END:variables
 }

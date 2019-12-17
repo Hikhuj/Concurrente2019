@@ -35,17 +35,17 @@ public class SubCategoria extends javax.swing.JInternalFrame {
 
         jTextField1 = new javax.swing.JTextField();
         category = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        subcategory = new javax.swing.JTextField();
+        jTxtTipo = new javax.swing.JTextField();
 
         jTextField1.setText("jTextField1");
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("SubCategory Update");
+        setTitle("Actualizar Subcategoría");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -65,46 +65,46 @@ public class SubCategoria extends javax.swing.JInternalFrame {
         });
         getContentPane().setLayout(null);
 
-        category.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Category" }));
+        category.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Categoría" }));
         getContentPane().add(category);
         category.setBounds(170, 30, 160, 30);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Update");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(200, 130, 110, 30);
+        getContentPane().add(btnActualizar);
+        btnActualizar.setBounds(200, 130, 110, 30);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Type");
+        jLabel1.setText("Tipo");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(50, 80, 90, 30);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setText("Company");
+        jLabel2.setText("Compañía");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(50, 30, 90, 30);
 
-        subcategory.addActionListener(new java.awt.event.ActionListener() {
+        jTxtTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subcategoryActionPerformed(evt);
+                jTxtTipoActionPerformed(evt);
             }
         });
-        getContentPane().add(subcategory);
-        subcategory.setBounds(170, 80, 160, 30);
+        getContentPane().add(jTxtTipo);
+        jTxtTipo.setBounds(170, 80, 160, 30);
 
         setBounds(0, 0, 365, 208);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void subcategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subcategoryActionPerformed
+    private void jTxtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtTipoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_subcategoryActionPerformed
+    }//GEN-LAST:event_jTxtTipoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         String path = "jdbc:mysql://localhost/";
         String place = "factorydb";
         try {
@@ -115,11 +115,11 @@ public class SubCategoria extends javax.swing.JInternalFrame {
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
 
                 mystatement.setString(1, category.getSelectedItem().toString());
-                mystatement.setString(2, subcategory.getText());
+                mystatement.setString(2, jTxtTipo.getText());
                 mystatement.execute();
                 //    label.setText("Saved Succesfully");
                 JOptionPane.showMessageDialog(rootPane, "Saved Successfully");
-                subcategory.setText(null);
+                jTxtTipo.setText(null);
 
                 mystatement.close();
                 myconnection.close();
@@ -131,7 +131,7 @@ public class SubCategoria extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         String path = "jdbc:mysql://localhost/";
@@ -160,11 +160,11 @@ public class SubCategoria extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_formInternalFrameActivated
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JComboBox category;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField subcategory;
+    private javax.swing.JTextField jTxtTipo;
     // End of variables declaration//GEN-END:variables
 }

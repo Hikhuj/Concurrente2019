@@ -28,79 +28,79 @@ public class Gerente1 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabelContrasenia = new javax.swing.JLabel();
+        jLabelUsuario = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        usernamebox = new javax.swing.JTextField();
-        namebox = new javax.swing.JTextField();
-        passwordbox = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jTxtUsuario = new javax.swing.JTextField();
+        jTxtNombre = new javax.swing.JTextField();
+        jTxtContrasenia = new javax.swing.JPasswordField();
+        btnCrearCuenta = new javax.swing.JButton();
+        jLabelTipoUsuario = new javax.swing.JLabel();
         postbox = new javax.swing.JComboBox();
 
         setClosable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Add Manager");
+        setTitle("Agregar Gerente");
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Password");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 220, 80, 30);
+        jLabelContrasenia.setText("Contraseña");
+        getContentPane().add(jLabelContrasenia);
+        jLabelContrasenia.setBounds(50, 220, 80, 30);
 
-        jLabel3.setText("Username");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 80, 80, 30);
+        jLabelUsuario.setText("Usuario");
+        getContentPane().add(jLabelUsuario);
+        jLabelUsuario.setBounds(50, 80, 80, 30);
 
-        jLabel4.setText("Name");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(50, 180, 80, 30);
+        jLabelNombre.setText("Nombre");
+        getContentPane().add(jLabelNombre);
+        jLabelNombre.setBounds(50, 180, 80, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Create Manager Account");
+        jLabel6.setText("Crear Cuenta de Gerente");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(50, 20, 240, 30);
 
-        usernamebox.addActionListener(new java.awt.event.ActionListener() {
+        jTxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameboxActionPerformed(evt);
+                jTxtUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(usernamebox);
-        usernamebox.setBounds(160, 80, 150, 30);
+        getContentPane().add(jTxtUsuario);
+        jTxtUsuario.setBounds(160, 80, 150, 30);
 
-        namebox.addActionListener(new java.awt.event.ActionListener() {
+        jTxtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameboxActionPerformed(evt);
+                jTxtNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(namebox);
-        namebox.setBounds(160, 180, 150, 30);
+        getContentPane().add(jTxtNombre);
+        jTxtNombre.setBounds(160, 180, 150, 30);
 
-        passwordbox.addActionListener(new java.awt.event.ActionListener() {
+        jTxtContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordboxActionPerformed(evt);
+                jTxtContraseniaActionPerformed(evt);
             }
         });
-        getContentPane().add(passwordbox);
-        passwordbox.setBounds(160, 220, 150, 30);
+        getContentPane().add(jTxtContrasenia);
+        jTxtContrasenia.setBounds(160, 220, 150, 30);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Create Account");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCrearCuenta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCrearCuenta.setText("Crear Cuenta");
+        btnCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCrearCuentaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(160, 270, 150, 30);
+        getContentPane().add(btnCrearCuenta);
+        btnCrearCuenta.setBounds(160, 270, 150, 30);
 
-        jLabel2.setText("User Type");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(50, 130, 60, 30);
+        jLabelTipoUsuario.setText("Tipo Usuario");
+        getContentPane().add(jLabelTipoUsuario);
+        jLabelTipoUsuario.setBounds(50, 130, 80, 30);
 
-        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Choose Post", "Admin", "Manager" }));
+        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Administrador", "Gerente" }));
         postbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postboxActionPerformed(evt);
@@ -112,19 +112,19 @@ public class Gerente1 extends javax.swing.JInternalFrame {
         setBounds(0, 0, 381, 371);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void usernameboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameboxActionPerformed
+    private void jTxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameboxActionPerformed
+    }//GEN-LAST:event_jTxtUsuarioActionPerformed
 
-    private void nameboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameboxActionPerformed
+    private void jTxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameboxActionPerformed
+    }//GEN-LAST:event_jTxtNombreActionPerformed
 
-    private void passwordboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordboxActionPerformed
+    private void jTxtContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtContraseniaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordboxActionPerformed
+    }//GEN-LAST:event_jTxtContraseniaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCuentaActionPerformed
         String path="jdbc:mysql://localhost/";
         String place="factorydb";
         try
@@ -136,16 +136,16 @@ public class Gerente1 extends javax.swing.JInternalFrame {
                 String q="insert into createuser values(?,?,?,?)";
                 PreparedStatement mystatement =myconnection.prepareStatement(q);
 
-                mystatement.setString(1, usernamebox.getText());
+                mystatement.setString(1, jTxtUsuario.getText());
                 mystatement.setString(2, postbox.getSelectedItem().toString());
-                mystatement.setString(3, namebox.getText());
-                mystatement.setString(4, passwordbox.getText());
+                mystatement.setString(3, jTxtNombre.getText());
+                mystatement.setString(4, jTxtContrasenia.getText());
 
                 mystatement.execute();
                 JOptionPane.showMessageDialog(rootPane, "Account Created Successfully");
-              usernamebox.setText(null);
-              namebox.setText(null);
-              passwordbox.setText(null);
+              jTxtUsuario.setText(null);
+              jTxtNombre.setText(null);
+              jTxtContrasenia.setText(null);
               postbox.setSelectedIndex(0);
                 mystatement.close();
                 myconnection.close();
@@ -160,22 +160,22 @@ public class Gerente1 extends javax.swing.JInternalFrame {
         {
              JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCrearCuentaActionPerformed
 
     private void postboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_postboxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton btnCrearCuenta;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField namebox;
-    private javax.swing.JPasswordField passwordbox;
+    private javax.swing.JLabel jLabelContrasenia;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelTipoUsuario;
+    private javax.swing.JLabel jLabelUsuario;
+    private javax.swing.JPasswordField jTxtContrasenia;
+    private javax.swing.JTextField jTxtNombre;
+    private javax.swing.JTextField jTxtUsuario;
     private javax.swing.JComboBox postbox;
-    private javax.swing.JTextField usernamebox;
     // End of variables declaration//GEN-END:variables
 }

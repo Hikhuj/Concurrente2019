@@ -35,12 +35,13 @@ public class VerProductos extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTituloDetalleProductos = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Products");
+        setTitle("Productos");
+        setToolTipText("");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameActivated(evt);
@@ -67,7 +68,7 @@ public class VerProductos extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Items", "Company", "Size", "Rate/Piece in Rupees", "Quantity"
+                "Items", "Compañía", "Tamaño", "Precio/Pieza en Colones", "Cantidad"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -75,10 +76,10 @@ public class VerProductos extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(40, 100, 970, 500);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Products Details");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(440, 30, 170, 30);
+        jLabelTituloDetalleProductos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelTituloDetalleProductos.setText("Detalle de Productos");
+        getContentPane().add(jLabelTituloDetalleProductos);
+        jLabelTituloDetalleProductos.setBounds(440, 30, 200, 30);
 
         setBounds(0, 0, 1065, 667);
     }// </editor-fold>//GEN-END:initComponents
@@ -123,7 +124,7 @@ private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
     }
 }//GEN-LAST:event_formInternalFrameOpened
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelTituloDetalleProductos;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
