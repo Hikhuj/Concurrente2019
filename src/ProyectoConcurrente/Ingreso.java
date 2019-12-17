@@ -80,7 +80,7 @@ public class Ingreso extends javax.swing.JFrame {
         jLabelTituloIngresar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabelTituloIngresar.setText("Ventana de Ingreso");
         getContentPane().add(jLabelTituloIngresar);
-        jLabelTituloIngresar.setBounds(290, 90, 190, 30);
+        jLabelTituloIngresar.setBounds(260, 90, 190, 30);
 
         setSize(new java.awt.Dimension(715, 528));
         setLocationRelativeTo(null);
