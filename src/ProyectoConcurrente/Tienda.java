@@ -25,6 +25,7 @@ public class Tienda extends javax.swing.JInternalFrame {
         jTxtTituloAgregarProveedor = new javax.swing.JLabel();
         jTxtNombreProveedor = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         jButton1.setText("jButton1");
 
@@ -45,9 +46,11 @@ public class Tienda extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jTxtNombreProveedor);
-        jTxtNombreProveedor.setBounds(40, 70, 230, 30);
+        jTxtNombreProveedor.setBounds(40, 100, 230, 30);
 
+        btnAgregar.setBackground(new java.awt.Color(2, 126, 96));
         btnAgregar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(236, 240, 241));
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,9 +58,14 @@ public class Tienda extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnAgregar);
-        btnAgregar.setBounds(90, 130, 110, 30);
+        btnAgregar.setBounds(100, 160, 110, 30);
 
-        setBounds(0, 0, 314, 227);
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 320, 70);
+
+        setBounds(0, 0, 314, 247);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTxtNombreProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNombreProveedorActionPerformed
@@ -98,6 +106,7 @@ public class Tienda extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTxtNombreProveedor;
     private javax.swing.JLabel jTxtTituloAgregarProveedor;
     // End of variables declaration//GEN-END:variables

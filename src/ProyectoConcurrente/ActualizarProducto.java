@@ -29,7 +29,6 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         itembox = new javax.swing.JTextField();
-        jLabel36 = new javax.swing.JLabel();
         jLabelPrecioPieza = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         jPrecioPieza = new javax.swing.JTextField();
@@ -43,6 +42,8 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         jTable1 = new javax.swing.JTable();
         jLabelCantidad = new javax.swing.JLabel();
         cantidadPiezasItem = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -76,17 +77,14 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(itembox);
         itembox.setBounds(30, 100, 140, 30);
 
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel36.setText("Actualizar Productos");
-        getContentPane().add(jLabel36);
-        jLabel36.setBounds(30, 20, 190, 30);
-
         jLabelPrecioPieza.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelPrecioPieza.setText("Precio/Pieza");
         getContentPane().add(jLabelPrecioPieza);
         jLabelPrecioPieza.setBounds(530, 60, 90, 30);
 
+        btnBuscar.setBackground(new java.awt.Color(2, 126, 96));
         btnBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(236, 240, 241));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +92,7 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnBuscar);
-        btnBuscar.setBounds(50, 150, 90, 30);
+        btnBuscar.setBounds(30, 150, 90, 30);
 
         jPrecioPieza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +130,9 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jLabelItem);
         jLabelItem.setBounds(80, 60, 80, 30);
 
+        btnActualizar.setBackground(new java.awt.Color(2, 126, 96));
         btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(236, 240, 241));
         btnActualizar.setText("Actualizar");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +140,7 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnActualizar);
-        btnActualizar.setBounds(160, 150, 90, 30);
+        btnActualizar.setBounds(140, 150, 90, 30);
 
         jLabelCompania.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelCompania.setText("Compañía");
@@ -178,6 +178,17 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         });
         getContentPane().add(cantidadPiezasItem);
         cantidadPiezasItem.setBounds(660, 100, 100, 30);
+
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel36.setBackground(new java.awt.Color(236, 240, 241));
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel36.setText("Actualizar Productos");
+        jPanel1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 190, 30));
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 800, 60);
 
         setBounds(0, 0, 804, 454);
     }// </editor-fold>//GEN-END:initComponents
@@ -423,6 +434,7 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelItem;
     private javax.swing.JLabel jLabelPrecioPieza;
     private javax.swing.JLabel jLabelTamanio;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jPrecioPieza;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

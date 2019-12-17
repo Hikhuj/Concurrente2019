@@ -174,7 +174,9 @@ public class EditarPagina extends javax.swing.JInternalFrame {
         getContentPane().add(jComboBoxFechNacAnio);
         jComboBoxFechNacAnio.setBounds(780, 120, 70, 30);
 
+        btnBuscarNombre.setBackground(new java.awt.Color(2, 126, 96));
         btnBuscarNombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBuscarNombre.setForeground(new java.awt.Color(236, 240, 241));
         btnBuscarNombre.setText("Buscar");
         btnBuscarNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,7 +186,9 @@ public class EditarPagina extends javax.swing.JInternalFrame {
         getContentPane().add(btnBuscarNombre);
         btnBuscarNombre.setBounds(370, 70, 110, 30);
 
+        btnActualizar.setBackground(new java.awt.Color(2, 126, 96));
         btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(236, 240, 241));
         btnActualizar.setText("Actualizar");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,7 +225,9 @@ public class EditarPagina extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(30, 290, 860, 180);
 
+        btnBuscarNumeroID.setBackground(new java.awt.Color(2, 126, 96));
         btnBuscarNumeroID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBuscarNumeroID.setForeground(new java.awt.Color(236, 240, 241));
         btnBuscarNumeroID.setText("Buscar");
         btnBuscarNumeroID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,7 +237,9 @@ public class EditarPagina extends javax.swing.JInternalFrame {
         getContentPane().add(btnBuscarNumeroID);
         btnBuscarNumeroID.setBounds(370, 30, 110, 30);
 
+        btnBorrar.setBackground(new java.awt.Color(2, 126, 96));
         btnBorrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBorrar.setForeground(new java.awt.Color(236, 240, 241));
         btnBorrar.setText("Borrar");
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

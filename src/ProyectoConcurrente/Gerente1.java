@@ -31,13 +31,14 @@ public class Gerente1 extends javax.swing.JInternalFrame {
         jLabelContrasenia = new javax.swing.JLabel();
         jLabelUsuario = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jTxtUsuario = new javax.swing.JTextField();
         jTxtNombre = new javax.swing.JTextField();
         jTxtContrasenia = new javax.swing.JPasswordField();
         btnCrearCuenta = new javax.swing.JButton();
         jLabelTipoUsuario = new javax.swing.JLabel();
         postbox = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setClosable(true);
         setMaximizable(true);
@@ -47,20 +48,15 @@ public class Gerente1 extends javax.swing.JInternalFrame {
 
         jLabelContrasenia.setText("Contraseña");
         getContentPane().add(jLabelContrasenia);
-        jLabelContrasenia.setBounds(50, 220, 80, 30);
+        jLabelContrasenia.setBounds(50, 230, 80, 30);
 
         jLabelUsuario.setText("Usuario");
         getContentPane().add(jLabelUsuario);
-        jLabelUsuario.setBounds(50, 80, 80, 30);
+        jLabelUsuario.setBounds(50, 90, 80, 30);
 
         jLabelNombre.setText("Nombre");
         getContentPane().add(jLabelNombre);
-        jLabelNombre.setBounds(50, 180, 80, 30);
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Crear Cuenta de Gerente");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(50, 20, 240, 30);
+        jLabelNombre.setBounds(50, 190, 80, 30);
 
         jTxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +64,7 @@ public class Gerente1 extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jTxtUsuario);
-        jTxtUsuario.setBounds(160, 80, 150, 30);
+        jTxtUsuario.setBounds(160, 90, 150, 30);
 
         jTxtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +72,7 @@ public class Gerente1 extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jTxtNombre);
-        jTxtNombre.setBounds(160, 180, 150, 30);
+        jTxtNombre.setBounds(160, 190, 150, 30);
 
         jTxtContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,9 +80,11 @@ public class Gerente1 extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jTxtContrasenia);
-        jTxtContrasenia.setBounds(160, 220, 150, 30);
+        jTxtContrasenia.setBounds(160, 230, 150, 30);
 
+        btnCrearCuenta.setBackground(new java.awt.Color(2, 126, 96));
         btnCrearCuenta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCrearCuenta.setForeground(new java.awt.Color(236, 240, 241));
         btnCrearCuenta.setText("Crear Cuenta");
         btnCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,11 +92,11 @@ public class Gerente1 extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnCrearCuenta);
-        btnCrearCuenta.setBounds(160, 270, 150, 30);
+        btnCrearCuenta.setBounds(160, 280, 150, 30);
 
         jLabelTipoUsuario.setText("Tipo Usuario");
         getContentPane().add(jLabelTipoUsuario);
-        jLabelTipoUsuario.setBounds(50, 130, 80, 30);
+        jLabelTipoUsuario.setBounds(50, 140, 80, 30);
 
         postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Administrador", "Gerente" }));
         postbox.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +105,18 @@ public class Gerente1 extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(postbox);
-        postbox.setBounds(160, 130, 150, 30);
+        postbox.setBounds(160, 140, 150, 30);
+
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(236, 240, 241));
+        jLabel6.setText("Crear Cuenta de Gerente");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 240, 30));
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 380, 70);
 
         setBounds(0, 0, 381, 371);
     }// </editor-fold>//GEN-END:initComponents
@@ -173,6 +182,7 @@ public class Gerente1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelTipoUsuario;
     private javax.swing.JLabel jLabelUsuario;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jTxtContrasenia;
     private javax.swing.JTextField jTxtNombre;
     private javax.swing.JTextField jTxtUsuario;

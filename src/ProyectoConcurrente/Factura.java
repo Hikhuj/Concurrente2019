@@ -28,7 +28,6 @@ public class Factura extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabelTitulo = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -48,6 +47,8 @@ public class Factura extends javax.swing.JInternalFrame {
         jComboBoxElegirCompania = new javax.swing.JComboBox();
         jComboBoxTipo = new javax.swing.JComboBox();
         jLabel39 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelTitulo = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -76,18 +77,12 @@ public class Factura extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Fecha");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(490, 80, 70, 20);
-
-        jLabelTitulo.setBackground(new java.awt.Color(255, 255, 51));
-        jLabelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabelTitulo.setText("Factura");
-        getContentPane().add(jLabelTitulo);
-        jLabelTitulo.setBounds(30, 20, 110, 40);
+        jLabel1.setBounds(510, 100, 70, 20);
 
         jLabelNombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelNombre.setText("Nombre");
         getContentPane().add(jLabelNombre);
-        jLabelNombre.setBounds(130, 120, 120, 27);
+        jLabelNombre.setBounds(150, 140, 120, 27);
 
         jTextField1.setEditable(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +91,7 @@ public class Factura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(280, 80, 150, 30);
+        jTextField1.setBounds(300, 100, 150, 30);
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +99,7 @@ public class Factura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(280, 120, 150, 30);
+        jTextField2.setBounds(300, 140, 150, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Costo Total");
@@ -122,14 +117,16 @@ public class Factura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jComboBoxElegirProducto);
-        jComboBoxElegirProducto.setBounds(280, 220, 150, 30);
+        jComboBoxElegirProducto.setBounds(300, 240, 150, 30);
 
         jLabelSeleccionarProducto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelSeleccionarProducto.setText("Seleccionar Producto");
         getContentPane().add(jLabelSeleccionarProducto);
-        jLabelSeleccionarProducto.setBounds(130, 220, 140, 30);
+        jLabelSeleccionarProducto.setBounds(150, 240, 140, 30);
 
+        btnCalcularFactura.setBackground(new java.awt.Color(2, 126, 96));
         btnCalcularFactura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCalcularFactura.setForeground(new java.awt.Color(236, 240, 241));
         btnCalcularFactura.setText("Calcular Factura");
         btnCalcularFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +136,9 @@ public class Factura extends javax.swing.JInternalFrame {
         getContentPane().add(btnCalcularFactura);
         btnCalcularFactura.setBounds(440, 490, 130, 30);
 
+        btnSalvarFactura.setBackground(new java.awt.Color(2, 126, 96));
         btnSalvarFactura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSalvarFactura.setForeground(new java.awt.Color(236, 240, 241));
         btnSalvarFactura.setText("Salvar Factura");
         btnSalvarFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,12 +176,12 @@ public class Factura extends javax.swing.JInternalFrame {
 
         jTxtFecha.setEditable(false);
         getContentPane().add(jTxtFecha);
-        jTxtFecha.setBounds(560, 80, 150, 30);
+        jTxtFecha.setBounds(580, 100, 150, 30);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Teléfono");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(490, 120, 100, 30);
+        jLabel5.setBounds(510, 140, 100, 30);
 
         try {
             jFormattedTextFieldTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
@@ -190,17 +189,17 @@ public class Factura extends javax.swing.JInternalFrame {
             ex.printStackTrace();
         }
         getContentPane().add(jFormattedTextFieldTelefono);
-        jFormattedTextFieldTelefono.setBounds(560, 120, 150, 30);
+        jFormattedTextFieldTelefono.setBounds(580, 140, 150, 30);
 
         jLabelNumFactura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelNumFactura.setText("Número Factura");
         getContentPane().add(jLabelNumFactura);
-        jLabelNumFactura.setBounds(130, 80, 130, 27);
+        jLabelNumFactura.setBounds(150, 100, 130, 27);
 
         jLabelCompania.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelCompania.setText("Compañía");
         getContentPane().add(jLabelCompania);
-        jLabelCompania.setBounds(130, 170, 120, 30);
+        jLabelCompania.setBounds(150, 190, 120, 30);
 
         jComboBoxElegirCompania.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Compañia" }));
         jComboBoxElegirCompania.addActionListener(new java.awt.event.ActionListener() {
@@ -209,7 +208,7 @@ public class Factura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jComboBoxElegirCompania);
-        jComboBoxElegirCompania.setBounds(280, 170, 150, 30);
+        jComboBoxElegirCompania.setBounds(300, 190, 150, 30);
 
         jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Tipo" }));
         jComboBoxTipo.addActionListener(new java.awt.event.ActionListener() {
@@ -218,12 +217,24 @@ public class Factura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jComboBoxTipo);
-        jComboBoxTipo.setBounds(560, 170, 150, 30);
+        jComboBoxTipo.setBounds(580, 190, 150, 30);
 
         jLabel39.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel39.setText("Tipo");
         getContentPane().add(jLabel39);
-        jLabel39.setBounds(490, 170, 50, 30);
+        jLabel39.setBounds(510, 190, 50, 30);
+
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelTitulo.setBackground(new java.awt.Color(255, 255, 51));
+        jLabelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(236, 240, 241));
+        jLabelTitulo.setText("Factura");
+        jPanel1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 110, 40));
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 880, 70);
 
         setBounds(0, 0, 877, 622);
     }// </editor-fold>//GEN-END:initComponents
@@ -570,6 +581,7 @@ private void jComboBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     private javax.swing.JLabel jLabelNumFactura;
     private javax.swing.JLabel jLabelSeleccionarProducto;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;

@@ -37,6 +37,7 @@ public class CrearUsuario extends javax.swing.JFrame {
         jTxtContrasenia = new javax.swing.JPasswordField();
         btnCrearCuenta = new javax.swing.JButton();
         label = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Create Admin");
@@ -44,15 +45,15 @@ public class CrearUsuario extends javax.swing.JFrame {
 
         jLabelContrasenia.setText("Contraseña");
         getContentPane().add(jLabelContrasenia);
-        jLabelContrasenia.setBounds(40, 180, 80, 30);
+        jLabelContrasenia.setBounds(40, 190, 80, 30);
 
         jLabelUsuario.setText("Usuario");
         getContentPane().add(jLabelUsuario);
-        jLabelUsuario.setBounds(40, 130, 80, 30);
+        jLabelUsuario.setBounds(40, 140, 80, 30);
 
         jLabelNombre.setText("Nombre");
         getContentPane().add(jLabelNombre);
-        jLabelNombre.setBounds(40, 80, 80, 30);
+        jLabelNombre.setBounds(40, 90, 80, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Crear Cuenta de Administrador");
@@ -65,7 +66,7 @@ public class CrearUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTxtUsuario);
-        jTxtUsuario.setBounds(150, 130, 150, 30);
+        jTxtUsuario.setBounds(150, 140, 150, 30);
 
         jTxtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +74,7 @@ public class CrearUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTxtNombre);
-        jTxtNombre.setBounds(150, 80, 150, 30);
+        jTxtNombre.setBounds(150, 90, 150, 30);
 
         jTxtContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,9 +82,11 @@ public class CrearUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTxtContrasenia);
-        jTxtContrasenia.setBounds(150, 180, 150, 30);
+        jTxtContrasenia.setBounds(150, 190, 150, 30);
 
+        btnCrearCuenta.setBackground(new java.awt.Color(2, 126, 96));
         btnCrearCuenta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCrearCuenta.setForeground(new java.awt.Color(236, 240, 241));
         btnCrearCuenta.setText("Crear Cuenta");
         btnCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,9 +94,15 @@ public class CrearUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCrearCuenta);
-        btnCrearCuenta.setBounds(70, 240, 180, 30);
+        btnCrearCuenta.setBounds(80, 250, 180, 30);
         getContentPane().add(label);
         label.setBounds(490, 450, 0, 0);
+
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setForeground(new java.awt.Color(236, 240, 241));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 330, 70);
 
         setSize(new java.awt.Dimension(345, 347));
         setLocationRelativeTo(null);
@@ -185,6 +194,7 @@ public class CrearUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelContrasenia;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelUsuario;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jTxtContrasenia;
     private javax.swing.JTextField jTxtNombre;
     private javax.swing.JTextField jTxtUsuario;

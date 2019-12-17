@@ -75,12 +75,14 @@ public class CalificacionProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jTxtItem);
         jTxtItem.setBounds(140, 20, 150, 30);
 
-        labelCompania.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelCompania.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         labelCompania.setText("Compañía");
         getContentPane().add(labelCompania);
         labelCompania.setBounds(20, 60, 80, 30);
 
+        btnSalvar.setBackground(new java.awt.Color(2, 126, 96));
         btnSalvar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSalvar.setForeground(new java.awt.Color(236, 240, 241));
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +92,7 @@ public class CalificacionProducto extends javax.swing.JInternalFrame {
         getContentPane().add(btnSalvar);
         btnSalvar.setBounds(190, 230, 100, 30);
 
-        labelItem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelItem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         labelItem.setText("Item");
         getContentPane().add(labelItem);
         labelItem.setBounds(20, 20, 40, 30);
@@ -113,7 +115,7 @@ public class CalificacionProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jComboBoxTipo);
         jComboBoxTipo.setBounds(140, 140, 150, 30);
 
-        labelPrecioPieza.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelPrecioPieza.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         labelPrecioPieza.setText("Precio/Pieza");
         getContentPane().add(labelPrecioPieza);
         labelPrecioPieza.setBounds(20, 100, 90, 30);
@@ -126,7 +128,7 @@ public class CalificacionProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jTxtPrecioPieza);
         jTxtPrecioPieza.setBounds(140, 100, 150, 30);
 
-        labelCantidad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelCantidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         labelCantidad.setText("Cantidad");
         getContentPane().add(labelCantidad);
         labelCantidad.setBounds(20, 180, 70, 30);
@@ -139,7 +141,7 @@ public class CalificacionProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jTxtCantidad);
         jTxtCantidad.setBounds(140, 180, 150, 30);
 
-        labelTipo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         labelTipo.setText("Tipo");
         getContentPane().add(labelTipo);
         labelTipo.setBounds(20, 140, 40, 30);

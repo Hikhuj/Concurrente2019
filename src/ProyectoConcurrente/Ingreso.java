@@ -40,49 +40,57 @@ public class Ingreso extends javax.swing.JFrame {
         btnIngresar = new javax.swing.JButton();
         label = new javax.swing.JLabel();
         jLabelUsuario = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabelTituloIngresar = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sign In");
-        getContentPane().setLayout(null);
+        setTitle("Ingresar");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabelContrasenia.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabelContrasenia.setText("Contraseña");
-        getContentPane().add(jLabelContrasenia);
-        jLabelContrasenia.setBounds(210, 220, 70, 30);
+        getContentPane().add(jLabelContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, 30));
 
         jTxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTxtUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxtUsuario);
-        jTxtUsuario.setBounds(310, 160, 150, 30);
-        getContentPane().add(jTxtContrasenia);
-        jTxtContrasenia.setBounds(310, 220, 150, 30);
+        getContentPane().add(jTxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 150, 30));
+        getContentPane().add(jTxtContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 150, 30));
 
-        btnIngresar.setBackground(new java.awt.Color(51, 51, 255));
-        btnIngresar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnIngresar.setBackground(new java.awt.Color(2, 126, 96));
+        btnIngresar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnIngresar.setForeground(new java.awt.Color(236, 240, 241));
         btnIngresar.setText("Ingresar");
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIngresar);
-        btnIngresar.setBounds(310, 290, 90, 40);
-        getContentPane().add(label);
-        label.setBounds(150, 390, 0, 0);
+        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 120, 40));
+        getContentPane().add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, -1, -1));
 
+        jLabelUsuario.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabelUsuario.setText("Usuario");
-        getContentPane().add(jLabelUsuario);
-        jLabelUsuario.setBounds(210, 160, 70, 30);
+        getContentPane().add(jLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 100, 30));
 
-        jLabelTituloIngresar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelTituloIngresar.setText("Ventana de Ingreso");
-        getContentPane().add(jLabelTituloIngresar);
-        jLabelTituloIngresar.setBounds(260, 90, 190, 30);
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        setSize(new java.awt.Dimension(715, 528));
+        jLabelTituloIngresar.setBackground(new java.awt.Color(236, 240, 241));
+        jLabelTituloIngresar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelTituloIngresar.setForeground(new java.awt.Color(236, 240, 241));
+        jLabelTituloIngresar.setText("Bienvenidos");
+        jPanel1.add(jLabelTituloIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 150, 30));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 120));
+
+        jPanel2.setBackground(new java.awt.Color(22, 160, 133));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 140, 240));
+
+        setSize(new java.awt.Dimension(504, 395));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -166,6 +174,8 @@ public class Ingreso extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelContrasenia;
     private javax.swing.JLabel jLabelTituloIngresar;
     private javax.swing.JLabel jLabelUsuario;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jTxtContrasenia;
     private javax.swing.JTextField jTxtUsuario;
     private javax.swing.JLabel label;
