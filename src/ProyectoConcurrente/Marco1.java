@@ -1,4 +1,3 @@
-
 package ProyectoConcurrente;
 
 public class Marco1 extends javax.swing.JFrame {
