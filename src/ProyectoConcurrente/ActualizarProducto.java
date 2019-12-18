@@ -77,10 +77,10 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(itembox);
         itembox.setBounds(30, 100, 140, 30);
 
-        jLabelPrecioPieza.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelPrecioPieza.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelPrecioPieza.setText("Precio/Pieza");
         getContentPane().add(jLabelPrecioPieza);
-        jLabelPrecioPieza.setBounds(530, 60, 90, 30);
+        jLabelPrecioPieza.setBounds(530, 70, 90, 30);
 
         btnBuscar.setBackground(new java.awt.Color(2, 126, 96));
         btnBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -111,10 +111,10 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jComboCompania);
         jComboCompania.setBounds(180, 100, 150, 30);
 
-        jLabelTamanio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelTamanio.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelTamanio.setText("Tamaño");
         getContentPane().add(jLabelTamanio);
-        jLabelTamanio.setBounds(390, 60, 70, 30);
+        jLabelTamanio.setBounds(390, 70, 70, 30);
 
         jComboTamanio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Subcategoria", " " }));
         jComboTamanio.addActionListener(new java.awt.event.ActionListener() {
@@ -125,10 +125,10 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jComboTamanio);
         jComboTamanio.setBounds(340, 100, 160, 30);
 
-        jLabelItem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelItem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelItem.setText("Item");
         getContentPane().add(jLabelItem);
-        jLabelItem.setBounds(80, 60, 80, 30);
+        jLabelItem.setBounds(80, 70, 80, 30);
 
         btnActualizar.setBackground(new java.awt.Color(2, 126, 96));
         btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -142,10 +142,10 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(btnActualizar);
         btnActualizar.setBounds(140, 150, 90, 30);
 
-        jLabelCompania.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCompania.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelCompania.setText("Compañía");
         getContentPane().add(jLabelCompania);
-        jLabelCompania.setBounds(200, 60, 120, 30);
+        jLabelCompania.setBounds(200, 70, 120, 30);
 
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -166,10 +166,10 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(20, 210, 750, 180);
 
-        jLabelCantidad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCantidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelCantidad.setText("Cantidad");
         getContentPane().add(jLabelCantidad);
-        jLabelCantidad.setBounds(680, 60, 70, 30);
+        jLabelCantidad.setBounds(680, 70, 70, 30);
 
         cantidadPiezasItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,9 +183,10 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel36.setBackground(new java.awt.Color(236, 240, 241));
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(236, 240, 241));
         jLabel36.setText("Actualizar Productos");
-        jPanel1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 190, 30));
+        jPanel1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 130, 30));
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 800, 60);

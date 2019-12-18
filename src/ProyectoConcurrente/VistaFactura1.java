@@ -36,11 +36,12 @@ public class VistaFactura1 extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabelSeleccionarFecha = new javax.swing.JLabel();
-        jLabelTituloDetalleFacturas = new javax.swing.JLabel();
         jComboBoxDia = new javax.swing.JComboBox();
         jComboBoxMes = new javax.swing.JComboBox();
         jComboBoxAnio = new javax.swing.JComboBox();
         btnBuscar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelTituloDetalleFacturas = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -78,17 +79,12 @@ public class VistaFactura1 extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(50, 100, 970, 500);
+        jScrollPane1.setBounds(50, 120, 970, 500);
 
         jLabelSeleccionarFecha.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelSeleccionarFecha.setText("Seleccionar Fecha");
         getContentPane().add(jLabelSeleccionarFecha);
-        jLabelSeleccionarFecha.setBounds(50, 60, 110, 30);
-
-        jLabelTituloDetalleFacturas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelTituloDetalleFacturas.setText("Detalles de Factura");
-        getContentPane().add(jLabelTituloDetalleFacturas);
-        jLabelTituloDetalleFacturas.setBounds(480, 20, 120, 30);
+        jLabelSeleccionarFecha.setBounds(50, 80, 110, 30);
 
         jComboBoxDia.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jComboBoxDia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Día" }));
@@ -98,18 +94,19 @@ public class VistaFactura1 extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jComboBoxDia);
-        jComboBoxDia.setBounds(170, 60, 60, 30);
+        jComboBoxDia.setBounds(170, 80, 60, 30);
 
         jComboBoxMes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jComboBoxMes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes" }));
         getContentPane().add(jComboBoxMes);
-        jComboBoxMes.setBounds(230, 60, 70, 30);
+        jComboBoxMes.setBounds(230, 80, 70, 30);
 
         jComboBoxAnio.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jComboBoxAnio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Año" }));
         getContentPane().add(jComboBoxAnio);
-        jComboBoxAnio.setBounds(300, 60, 70, 30);
+        jComboBoxAnio.setBounds(300, 80, 70, 30);
 
+        btnBuscar.setBackground(new java.awt.Color(2, 126, 96));
         btnBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +115,18 @@ public class VistaFactura1 extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnBuscar);
-        btnBuscar.setBounds(390, 60, 100, 31);
+        btnBuscar.setBounds(390, 80, 100, 31);
+
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelTituloDetalleFacturas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelTituloDetalleFacturas.setForeground(new java.awt.Color(236, 240, 241));
+        jLabelTituloDetalleFacturas.setText("Detalles de Factura");
+        jPanel1.add(jLabelTituloDetalleFacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 120, 20));
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1070, 60);
 
         setBounds(0, 0, 1065, 658);
     }// </editor-fold>//GEN-END:initComponents
@@ -224,6 +232,7 @@ String path="jdbc:mysql://localhost/";
     private javax.swing.JComboBox jComboBoxMes;
     private javax.swing.JLabel jLabelSeleccionarFecha;
     private javax.swing.JLabel jLabelTituloDetalleFacturas;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

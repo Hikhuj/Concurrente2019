@@ -35,9 +35,10 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabelTituloDetallesEmpleado = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelTituloDetallesEmpleado = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -76,15 +77,10 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(40, 140, 970, 480);
 
-        jLabelTituloDetallesEmpleado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelTituloDetallesEmpleado.setText("Detalles de Empleado");
-        getContentPane().add(jLabelTituloDetallesEmpleado);
-        jLabelTituloDetallesEmpleado.setBounds(440, 30, 200, 30);
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Por Puesto");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 80, 90, 30);
+        jLabel2.setBounds(40, 90, 90, 30);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Supervisor", "Encargado", "Empleados", "Asistente", "Guardia de Seguridad" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -93,9 +89,20 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(130, 80, 150, 30);
+        jComboBox1.setBounds(130, 90, 150, 30);
 
-        setBounds(0, 0, 1065, 667);
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelTituloDetallesEmpleado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelTituloDetallesEmpleado.setForeground(new java.awt.Color(236, 240, 241));
+        jLabelTituloDetallesEmpleado.setText("Detalles de Empleado");
+        jPanel1.add(jLabelTituloDetallesEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, -1, -1));
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1060, 70);
+
+        setBounds(0, 0, 1061, 667);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
@@ -176,6 +183,7 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelTituloDetallesEmpleado;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

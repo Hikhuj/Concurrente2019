@@ -67,9 +67,11 @@ public class SubCategoria extends javax.swing.JInternalFrame {
 
         category.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Categoría" }));
         getContentPane().add(category);
-        category.setBounds(170, 30, 160, 30);
+        category.setBounds(100, 30, 140, 30);
 
+        btnActualizar.setBackground(new java.awt.Color(2, 126, 96));
         btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(236, 240, 241));
         btnActualizar.setText("Actualizar");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,17 +79,17 @@ public class SubCategoria extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnActualizar);
-        btnActualizar.setBounds(200, 130, 110, 30);
+        btnActualizar.setBounds(280, 50, 110, 50);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Tipo");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 80, 90, 30);
+        jLabel1.setBounds(20, 80, 70, 30);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Compañía");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(50, 30, 90, 30);
+        jLabel2.setBounds(20, 30, 70, 30);
 
         jTxtTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,9 +97,9 @@ public class SubCategoria extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jTxtTipo);
-        jTxtTipo.setBounds(170, 80, 160, 30);
+        jTxtTipo.setBounds(100, 80, 140, 30);
 
-        setBounds(0, 0, 365, 208);
+        setBounds(0, 0, 426, 165);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTxtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtTipoActionPerformed

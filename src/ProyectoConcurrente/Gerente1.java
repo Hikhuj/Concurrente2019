@@ -110,10 +110,10 @@ public class Gerente1 extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(2, 126, 96));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(236, 240, 241));
         jLabel6.setText("Crear Cuenta de Gerente");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 240, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 160, 30));
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 380, 70);

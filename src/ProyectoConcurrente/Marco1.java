@@ -43,13 +43,15 @@ public class Marco1 extends javax.swing.JFrame {
         jMenuItem18 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Industry_SoftMania");
+        setTitle("frameSoftwareAdmin");
         getContentPane().setLayout(null);
 
         labelly.setFont(new java.awt.Font("Times New Roman", 1, 68)); // NOI18N
         jDesktopPane1.add(labelly);
         labelly.setBounds(290, 170, 910, 140);
 
+        btnSalir.setBackground(new java.awt.Color(2, 126, 96));
+        btnSalir.setForeground(new java.awt.Color(236, 240, 241));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +63,8 @@ public class Marco1 extends javax.swing.JFrame {
 
         getContentPane().add(jDesktopPane1);
         jDesktopPane1.setBounds(0, 0, 1570, 830);
+
+        jMenuBar1.setBackground(java.awt.Color.darkGray);
 
         jMenu1.setText("Empleado");
 

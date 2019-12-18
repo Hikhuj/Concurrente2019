@@ -35,9 +35,10 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabelTituloDetallProductos = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelTituloDetallProductos = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -76,11 +77,6 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(20, 140, 970, 470);
 
-        jLabelTituloDetallProductos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelTituloDetallProductos.setText("Detalle de Productos");
-        getContentPane().add(jLabelTituloDetallProductos);
-        jLabelTituloDetallProductos.setBounds(460, 20, 140, 30);
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Por Compañia");
         getContentPane().add(jLabel2);
@@ -94,6 +90,17 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jComboBox1);
         jComboBox1.setBounds(170, 80, 140, 30);
+
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelTituloDetallProductos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelTituloDetallProductos.setForeground(new java.awt.Color(236, 240, 241));
+        jLabelTituloDetallProductos.setText("Detalle de Productos");
+        jPanel1.add(jLabelTituloDetallProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 140, 30));
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1030, 60);
 
         setBounds(0, 0, 1025, 656);
     }// </editor-fold>//GEN-END:initComponents
@@ -164,6 +171,7 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelTituloDetallProductos;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

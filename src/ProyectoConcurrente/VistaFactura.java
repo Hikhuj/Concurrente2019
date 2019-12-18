@@ -35,6 +35,7 @@ public class VistaFactura extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
         jLabelTituloFacturaDetalles = new javax.swing.JLabel();
 
         setClosable(true);
@@ -75,10 +76,15 @@ public class VistaFactura extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(50, 70, 970, 500);
 
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabelTituloFacturaDetalles.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelTituloFacturaDetalles.setText("Factura de Detalles");
-        getContentPane().add(jLabelTituloFacturaDetalles);
-        jLabelTituloFacturaDetalles.setBounds(460, 20, 120, 30);
+        jPanel1.add(jLabelTituloFacturaDetalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, -1));
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1070, 50);
 
         setBounds(0, 0, 1065, 639);
     }// </editor-fold>//GEN-END:initComponents
@@ -143,6 +149,7 @@ String path="jdbc:mysql://localhost/";
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelTituloFacturaDetalles;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

@@ -43,7 +43,6 @@ public class Menu extends javax.swing.JInternalFrame {
         box2 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTxtAreaDireccion = new javax.swing.JTextArea();
-        jLabelTituloIngreseInfo = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
         jLabelGenero = new javax.swing.JLabel();
         jLabelFecNacimiento = new javax.swing.JLabel();
@@ -51,6 +50,8 @@ public class Menu extends javax.swing.JInternalFrame {
         jComboBoxMes = new javax.swing.JComboBox();
         jComboBoxAnio = new javax.swing.JComboBox();
         jTxtNumeroId = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelTituloIngreseInfo = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -77,25 +78,25 @@ public class Menu extends javax.swing.JInternalFrame {
 
         jLabelDireccion.setText("Dirección");
         getContentPane().add(jLabelDireccion);
-        jLabelDireccion.setBounds(90, 330, 80, 30);
+        jLabelDireccion.setBounds(30, 330, 80, 30);
 
         jLabelNumeroTelefono.setText("Número Teléfono");
         getContentPane().add(jLabelNumeroTelefono);
-        jLabelNumeroTelefono.setBounds(90, 200, 110, 30);
+        jLabelNumeroTelefono.setBounds(30, 200, 110, 30);
 
         jLabelPuesto.setText("Puesto");
         getContentPane().add(jLabelPuesto);
-        jLabelPuesto.setBounds(90, 150, 80, 30);
+        jLabelPuesto.setBounds(30, 150, 80, 30);
 
         jLabelNumId.setText("Número de Id");
         getContentPane().add(jLabelNumId);
-        jLabelNumId.setBounds(90, 70, 80, 30);
+        jLabelNumId.setBounds(30, 70, 80, 30);
 
         jLabelNombre.setText("Nombre");
         getContentPane().add(jLabelNombre);
-        jLabelNombre.setBounds(90, 110, 80, 30);
+        jLabelNombre.setBounds(30, 110, 80, 30);
         getContentPane().add(jTxtNombre);
-        jTxtNombre.setBounds(250, 110, 200, 30);
+        jTxtNombre.setBounds(190, 110, 200, 30);
 
         postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Gerente", "Supervisor", "Encargado", "Empleados", "Guardia Seguridad" }));
         postbox.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +105,7 @@ public class Menu extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(postbox);
-        postbox.setBounds(250, 150, 200, 30);
+        postbox.setBounds(190, 150, 200, 30);
 
         try {
             jTxtNumTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
@@ -112,7 +113,7 @@ public class Menu extends javax.swing.JInternalFrame {
             ex.printStackTrace();
         }
         getContentPane().add(jTxtNumTelefono);
-        jTxtNumTelefono.setBounds(250, 200, 200, 30);
+        jTxtNumTelefono.setBounds(190, 200, 200, 30);
 
         buttonGroup1.add(box1);
         box1.setText("Masculino");
@@ -122,12 +123,12 @@ public class Menu extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(box1);
-        box1.setBounds(250, 240, 110, 28);
+        box1.setBounds(190, 240, 110, 28);
 
         buttonGroup1.add(box2);
         box2.setText("Femenino");
         getContentPane().add(box2);
-        box2.setBounds(360, 240, 90, 28);
+        box2.setBounds(300, 240, 90, 28);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -136,14 +137,11 @@ public class Menu extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTxtAreaDireccion);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(250, 330, 200, 110);
+        jScrollPane1.setBounds(190, 330, 200, 110);
 
-        jLabelTituloIngreseInfo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelTituloIngreseInfo.setText("Ingrese su Información");
-        getContentPane().add(jLabelTituloIngreseInfo);
-        jLabelTituloIngreseInfo.setBounds(180, 10, 230, 22);
-
+        btnGuardar.setBackground(new java.awt.Color(2, 126, 96));
         btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(236, 240, 241));
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,15 +149,15 @@ public class Menu extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnGuardar);
-        btnGuardar.setBounds(290, 460, 110, 31);
+        btnGuardar.setBounds(160, 460, 110, 31);
 
         jLabelGenero.setText("Género");
         getContentPane().add(jLabelGenero);
-        jLabelGenero.setBounds(90, 240, 80, 30);
+        jLabelGenero.setBounds(30, 240, 80, 30);
 
         jLabelFecNacimiento.setText("Fecha de Nacimiento");
         getContentPane().add(jLabelFecNacimiento);
-        jLabelFecNacimiento.setBounds(90, 280, 130, 30);
+        jLabelFecNacimiento.setBounds(30, 280, 130, 30);
 
         jComboBoxDia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Día" }));
         jComboBoxDia.addActionListener(new java.awt.event.ActionListener() {
@@ -168,21 +166,32 @@ public class Menu extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jComboBoxDia);
-        jComboBoxDia.setBounds(250, 280, 60, 30);
+        jComboBoxDia.setBounds(190, 280, 60, 30);
 
         jComboBoxMes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes" }));
         getContentPane().add(jComboBoxMes);
-        jComboBoxMes.setBounds(310, 280, 70, 30);
+        jComboBoxMes.setBounds(250, 280, 70, 30);
 
         jComboBoxAnio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Año" }));
         getContentPane().add(jComboBoxAnio);
-        jComboBoxAnio.setBounds(380, 280, 70, 30);
+        jComboBoxAnio.setBounds(320, 280, 70, 30);
 
         jTxtNumeroId.setEditable(false);
         getContentPane().add(jTxtNumeroId);
-        jTxtNumeroId.setBounds(250, 70, 200, 30);
+        jTxtNumeroId.setBounds(190, 70, 200, 30);
 
-        setBounds(0, 0, 571, 598);
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelTituloIngreseInfo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelTituloIngreseInfo.setForeground(new java.awt.Color(236, 240, 241));
+        jLabelTituloIngreseInfo.setText("Ingrese su Información");
+        jPanel1.add(jLabelTituloIngreseInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 430, 60);
+
+        setBounds(0, 0, 428, 535);
     }// </editor-fold>//GEN-END:initComponents
 
     private void box1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box1ActionPerformed
@@ -335,6 +344,7 @@ for(int a=1975;a<=2013;a++)
     private javax.swing.JLabel jLabelNumeroTelefono;
     private javax.swing.JLabel jLabelPuesto;
     private javax.swing.JLabel jLabelTituloIngreseInfo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTxtAreaDireccion;
     private javax.swing.JTextField jTxtNombre;

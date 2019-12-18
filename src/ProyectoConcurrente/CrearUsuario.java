@@ -31,13 +31,13 @@ public class CrearUsuario extends javax.swing.JFrame {
         jLabelContrasenia = new javax.swing.JLabel();
         jLabelUsuario = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jTxtUsuario = new javax.swing.JTextField();
         jTxtNombre = new javax.swing.JTextField();
         jTxtContrasenia = new javax.swing.JPasswordField();
         btnCrearCuenta = new javax.swing.JButton();
         label = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Create Admin");
@@ -54,11 +54,6 @@ public class CrearUsuario extends javax.swing.JFrame {
         jLabelNombre.setText("Nombre");
         getContentPane().add(jLabelNombre);
         jLabelNombre.setBounds(40, 90, 80, 30);
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Crear Cuenta de Administrador");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(20, 20, 280, 30);
 
         jTxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +96,12 @@ public class CrearUsuario extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(2, 126, 96));
         jPanel1.setForeground(new java.awt.Color(236, 240, 241));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(236, 240, 241));
+        jLabel6.setText("Crear Cuenta de Administrador");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 200, 30));
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 330, 70);
 

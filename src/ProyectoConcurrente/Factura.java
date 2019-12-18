@@ -228,10 +228,10 @@ public class Factura extends javax.swing.JInternalFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelTitulo.setBackground(new java.awt.Color(255, 255, 51));
-        jLabelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelTitulo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(236, 240, 241));
         jLabelTitulo.setText("Factura");
-        jPanel1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 110, 40));
+        jPanel1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 50, 20));
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 880, 70);

@@ -22,10 +22,10 @@ public class Tienda extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jTxtTituloAgregarProveedor = new javax.swing.JLabel();
         jTxtNombreProveedor = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jTxtTituloAgregarProveedor = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -34,11 +34,6 @@ public class Tienda extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Agregar Companía");
         getContentPane().setLayout(null);
-
-        jTxtTituloAgregarProveedor.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jTxtTituloAgregarProveedor.setText("Agregar Proveedor");
-        getContentPane().add(jTxtTituloAgregarProveedor);
-        jTxtTituloAgregarProveedor.setBounds(70, 20, 180, 30);
 
         jTxtNombreProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +57,12 @@ public class Tienda extends javax.swing.JInternalFrame {
 
         jPanel1.setBackground(new java.awt.Color(2, 126, 96));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTxtTituloAgregarProveedor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jTxtTituloAgregarProveedor.setForeground(new java.awt.Color(236, 240, 241));
+        jTxtTituloAgregarProveedor.setText("Agregar Proveedor");
+        jPanel1.add(jTxtTituloAgregarProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 120, 30));
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 320, 70);
 

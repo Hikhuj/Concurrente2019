@@ -35,6 +35,7 @@ public class VerProductos extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
         jLabelTituloDetalleProductos = new javax.swing.JLabel();
 
         setClosable(true);
@@ -74,12 +75,18 @@ public class VerProductos extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(40, 100, 970, 500);
+        jScrollPane1.setBounds(50, 100, 970, 500);
 
-        jLabelTituloDetalleProductos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelTituloDetalleProductos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelTituloDetalleProductos.setForeground(new java.awt.Color(236, 240, 241));
         jLabelTituloDetalleProductos.setText("Detalle de Productos");
-        getContentPane().add(jLabelTituloDetalleProductos);
-        jLabelTituloDetalleProductos.setBounds(440, 30, 200, 30);
+        jPanel1.add(jLabelTituloDetalleProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 130, 30));
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1070, 70);
 
         setBounds(0, 0, 1065, 667);
     }// </editor-fold>//GEN-END:initComponents
@@ -125,6 +132,7 @@ private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
 }//GEN-LAST:event_formInternalFrameOpened
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelTituloDetalleProductos;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

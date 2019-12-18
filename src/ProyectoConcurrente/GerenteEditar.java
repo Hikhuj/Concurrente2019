@@ -30,7 +30,6 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         jLabelContrasenia = new javax.swing.JLabel();
         jLabelUsuario = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabelTituloEditarCuentaGerente = new javax.swing.JLabel();
         jTxtUsuario = new javax.swing.JTextField();
         jTxtNombre = new javax.swing.JTextField();
         jTxtContrasenia = new javax.swing.JPasswordField();
@@ -77,6 +76,8 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnBorrar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelTituloEditarCuentaGerente = new javax.swing.JLabel();
 
         setClosable(true);
         setMaximizable(true);
@@ -113,11 +114,6 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(20, 80, 80, 30);
 
-        jLabelTituloEditarCuentaGerente.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabelTituloEditarCuentaGerente.setText("Editar Cuenta Gerente");
-        getContentPane().add(jLabelTituloEditarCuentaGerente);
-        jLabelTituloEditarCuentaGerente.setBounds(40, 20, 240, 30);
-
         jTxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTxtUsuarioActionPerformed(evt);
@@ -142,7 +138,9 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         getContentPane().add(jTxtContrasenia);
         jTxtContrasenia.setBounds(110, 220, 150, 30);
 
+        btnActualizar.setBackground(new java.awt.Color(2, 126, 96));
         btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(236, 240, 241));
         btnActualizar.setText("Actualizar");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,7 +163,9 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         getContentPane().add(postbox);
         postbox.setBounds(110, 130, 150, 30);
 
+        btnBuscarNombre.setBackground(new java.awt.Color(2, 126, 96));
         btnBuscarNombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBuscarNombre.setForeground(new java.awt.Color(236, 240, 241));
         btnBuscarNombre.setText("Buscar");
         btnBuscarNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -451,7 +451,9 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(290, 130, 260, 230);
 
+        btnBorrar.setBackground(new java.awt.Color(2, 126, 96));
         btnBorrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBorrar.setForeground(new java.awt.Color(236, 240, 241));
         btnBorrar.setText("Borrar");
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -460,6 +462,17 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         });
         getContentPane().add(btnBorrar);
         btnBorrar.setBounds(130, 310, 100, 30);
+
+        jPanel1.setBackground(new java.awt.Color(2, 126, 96));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelTituloEditarCuentaGerente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelTituloEditarCuentaGerente.setForeground(new java.awt.Color(236, 240, 241));
+        jLabelTituloEditarCuentaGerente.setText("Editar Cuenta Gerente");
+        jPanel1.add(jLabelTituloEditarCuentaGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 140, 30));
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 600, 70);
 
         setBounds(0, 0, 598, 418);
     }// </editor-fold>//GEN-END:initComponents
@@ -744,6 +757,7 @@ private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JLabel jLabelContrasenia;
     private javax.swing.JLabel jLabelTituloEditarCuentaGerente;
     private javax.swing.JLabel jLabelUsuario;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JPasswordField jTxtContrasenia;

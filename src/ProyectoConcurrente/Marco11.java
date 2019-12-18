@@ -52,6 +52,8 @@ public class Marco11 extends javax.swing.JFrame {
         jDesktopPane1.add(labelly);
         labelly.setBounds(350, 340, 910, 140);
 
+        btnSalir.setBackground(new java.awt.Color(2, 126, 96));
+        btnSalir.setForeground(new java.awt.Color(236, 240, 241));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
