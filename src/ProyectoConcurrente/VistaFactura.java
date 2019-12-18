@@ -11,10 +11,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author sharma1
- */
+
 public class VistaFactura extends javax.swing.JInternalFrame {
 
     /**

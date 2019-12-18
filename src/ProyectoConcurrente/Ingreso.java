@@ -12,10 +12,7 @@ import java.sql.ResultSet;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author sharma1
- */
+
 public class Ingreso extends javax.swing.JFrame {
 
     /**

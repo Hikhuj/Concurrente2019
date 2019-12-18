@@ -7,10 +7,7 @@ import java.sql.*;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author sharma1
- */
+
 public class Menu extends javax.swing.JInternalFrame {
 
     /**

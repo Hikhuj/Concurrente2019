@@ -46,9 +46,12 @@ public class Marco1 extends javax.swing.JFrame {
         setTitle("frameSoftwareAdmin");
         getContentPane().setLayout(null);
 
+        jDesktopPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jDesktopPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         labelly.setFont(new java.awt.Font("Times New Roman", 1, 68)); // NOI18N
         jDesktopPane1.add(labelly);
-        labelly.setBounds(290, 170, 910, 140);
+        labelly.setBounds(230, 240, 910, 140);
 
         btnSalir.setBackground(new java.awt.Color(2, 126, 96));
         btnSalir.setForeground(new java.awt.Color(236, 240, 241));
@@ -59,7 +62,7 @@ public class Marco1 extends javax.swing.JFrame {
             }
         });
         jDesktopPane1.add(btnSalir);
-        btnSalir.setBounds(10, 10, 80, 32);
+        btnSalir.setBounds(10, 10, 80, 28);
 
         getContentPane().add(jDesktopPane1);
         jDesktopPane1.setBounds(0, 0, 1570, 830);

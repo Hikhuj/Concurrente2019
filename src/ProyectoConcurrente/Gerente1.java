@@ -6,10 +6,7 @@ package ProyectoConcurrente;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author sharma1
- */
+
 public class Gerente1 extends javax.swing.JInternalFrame {
 
     /**

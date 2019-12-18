@@ -9,10 +9,7 @@ import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author sharma1
- */
+
 public class EditarPagina extends javax.swing.JInternalFrame {
 
     /**

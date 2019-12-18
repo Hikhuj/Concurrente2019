@@ -4,10 +4,7 @@
  */
 package ProyectoConcurrente;
 
-/**
- *
- * @author sharma1
- */
+
 public class Marco11 extends javax.swing.JFrame {
 
     /**
