@@ -210,13 +210,13 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
 
 
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
-            String item, category, subcategory, rates, quantity;
+            String item, categoria, subcategoria, precios, categorias;
             try {
-                String q = "select * from products where items like '%" + itembox.getText() + "%'";
+                String q = "SELECT * FROM productos WHERE items like '%" + itembox.getText() + "%'";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
                 ResultSet myresult = mystatement.executeQuery();
@@ -225,25 +225,25 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
                 if (myresult.next()) {
                     do {
                         item = myresult.getString("items");
-                        category = myresult.getString("category");
-                        subcategory = myresult.getString("subcategory");
-                        rates = myresult.getString("rates");
-                        quantity = myresult.getString("quantity");
-                        mymodel.addRow(new Object[]{item, category, subcategory, rates, quantity});
+                        categoria = myresult.getString("categoria");
+                        subcategoria = myresult.getString("subcategoria");
+                        precios = myresult.getString("precios");
+                        categorias = myresult.getString("categorias");
+                        mymodel.addRow(new Object[]{item, categoria, subcategoria, precios, categorias});
                         jScrollPane1.setVisible(true);
                     } while (myresult.next());
                 } else {
                     jScrollPane1.setVisible(false);
-                    JOptionPane.showMessageDialog(rootPane, "No records exist");
+                    JOptionPane.showMessageDialog(rootPane, "No existe registro");
                 }
                 mystatement.close();
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "No records exist");
+                JOptionPane.showMessageDialog(rootPane, "No existe registro");
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en la conexión" + ae.getMessage());
         }
        }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -253,14 +253,14 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
 
     private void jComboCompaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboCompaniaActionPerformed
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         if (jComboCompania.getSelectedIndex() > 0) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection myconnection = DriverManager.getConnection(path + place, "root", "");
 
                 try {
-                    String q = "select subcategory from category where category1=?";
+                    String q = "SELECT subacategoria FROM categoria WHERE categoria1=?";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
                     mystatement.setString(1, jComboCompania.getSelectedItem().toString());
                     ResultSet myresult = mystatement.executeQuery();
@@ -289,17 +289,17 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "select * from Company";
+                String q = "SELECT * FROM compania";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
                     do {
-                        jComboCompania.addItem(myresult.getString("company"));
+                        jComboCompania.addItem(myresult.getString("compania"));
                     } while (myresult.next());
                 }
                 jScrollPane1.setVisible(false);
@@ -307,24 +307,24 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "No records exist");
+                JOptionPane.showMessageDialog(rootPane, "No existe registro");
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexion" + ae.getMessage());
         }
 
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
-        int i = JOptionPane.showConfirmDialog(rootPane, "Are u sure want to update this item");
+        String place = "ulacitProyecto";
+        int i = JOptionPane.showConfirmDialog(rootPane, "¿Esta seguro que desea actualizar este item?");
         if (i == 0) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection myconnection = DriverManager.getConnection(path + place, "root", "");
                 try {
-                    String q = "update products set rates=?,category=?,subcategory=?,quantity=? where items=?";
+                    String q = "UPDATE productos SET precios=?,categoria=?,subcategoria=?,cantidad=? WHERE items=?";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
                     mystatement.setString(1, jPrecioPieza.getText());
                     mystatement.setString(2, jComboCompania.getSelectedItem().toString());
@@ -333,7 +333,7 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
                     mystatement.setString(5, itembox.getText());
                     mystatement.execute();
 
-                    JOptionPane.showMessageDialog(rootPane, "Update Successfully");
+                    JOptionPane.showMessageDialog(rootPane, "Actualizacion existosa");
 
                     itembox.setText("");
                     btnBuscarActionPerformed(null);
@@ -341,18 +341,18 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
 
                     myconnection.close();
                 } catch (Exception ae) {
-                    JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
+                    JOptionPane.showMessageDialog(rootPane, "Error en consulta" + ae.getMessage());
                 }
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
             }
         }
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
-            String item, category, subcategory, rates, quantity;
+            String item, categoria, subcategoria, precios, cantidad;
             try {
-                String q = "select * from products where items like '%" + itembox.getText() + "%'";
+                String q = "SELECT * FROM productos WHERE items like '%" + itembox.getText() + "%'";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
                 mymodel.fireTableDataChanged();
@@ -361,21 +361,21 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
                 if (myresult.next()) {
                     do {
                         item = myresult.getString("items");
-                        category = myresult.getString("category");
-                        subcategory = myresult.getString("subcategory");
-                        rates = myresult.getString("rates");
-                        quantity = myresult.getString("quantity");
-                        mymodel.addRow(new Object[]{item, category, subcategory, rates, quantity});
+                        categoria = myresult.getString("category");
+                        subcategoria = myresult.getString("subcategory");
+                        precios = myresult.getString("rates");
+                        cantidad = myresult.getString("quantity");
+                        mymodel.addRow(new Object[]{item, categoria, subcategoria, precios, cantidad});
                     } while (myresult.next());
                 }
                 mystatement.close();
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "No records exist");
+                JOptionPane.showMessageDialog(rootPane, "No existen registros");
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
 
         // TODO add your handling code here:
@@ -386,30 +386,30 @@ public class ActualizarProducto extends javax.swing.JInternalFrame {
 
         String data = (String) jTable1.getValueAt(myrow, 0);
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "select * from products where items=?";
+                String q = "SELECT * FROM productos WHERE items=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 mystatement.setString(1, data);
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
                     itembox.setText(myresult.getString("items"));
-                    jPrecioPieza.setText(myresult.getString("rates"));
-                    jComboCompania.setSelectedItem(myresult.getString("category"));
-                    jComboTamanio.setSelectedItem(myresult.getString("subcategory"));
-                    cantidadPiezasItem.setText(myresult.getString("quantity"));
+                    jPrecioPieza.setText(myresult.getString("precios"));
+                    jComboCompania.setSelectedItem(myresult.getString("categoria"));
+                    jComboTamanio.setSelectedItem(myresult.getString("subcategorias"));
+                    cantidadPiezasItem.setText(myresult.getString("cantidades"));
                 }
                 mystatement.close();
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in query " + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en consulta " + ae.getMessage());
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
 
 

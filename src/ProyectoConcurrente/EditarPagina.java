@@ -279,13 +279,13 @@ public class EditarPagina extends javax.swing.JInternalFrame {
         buttonGroup1.clearSelection();
         
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
-            String memberid, name, phone, address, dob, gender, post;
+            String idMiembro, nombre, telefono, direccion, fechaDeNacimiento, genero, puesto;
             try {
-                String q = "select * from member where NAME like '%" + namebox.getText() + "%'";
+                String q = "SELECT * FROM miembro WHERE NOMBRE like '%" + namebox.getText() + "%'";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
                 ResultSet myresult = mystatement.executeQuery();
@@ -293,48 +293,48 @@ public class EditarPagina extends javax.swing.JInternalFrame {
                 jScrollPane3.setVisible(true);
                 if (myresult.next()) {
                     do {
-                        memberid = myresult.getString("ID");
-                        name = myresult.getString("NAME");
-                        phone = myresult.getString("PHONE");
-                        address = myresult.getString("ADDRESS");
-                        dob = myresult.getString("dob");
-                        gender = myresult.getString("GENDER");
-                        post = myresult.getString("usertype");
-                        mymodel.addRow(new Object[]{memberid, name, phone, gender, address, dob, post});
+                        idMiembro = myresult.getString("ID");
+                        nombre = myresult.getString("NOMBRE");
+                        telefono = myresult.getString("TELEFONO");
+                        direccion = myresult.getString("DIRECCION");
+                        fechaDeNacimiento = myresult.getString("fechaDeNacimiento");
+                        genero = myresult.getString("GENERO");
+                        puesto = myresult.getString("tipoUsuario");
+                        mymodel.addRow(new Object[]{idMiembro, nombre, telefono, genero, direccion, fechaDeNacimiento, puesto});
                         jScrollPane3.setVisible(true);
                     } while (myresult.next());
                 } else {
                     jScrollPane3.setVisible(false);
-                    JOptionPane.showMessageDialog(rootPane, "No records exist");
+                    JOptionPane.showMessageDialog(rootPane, "No existen registros");
                 }
                 mystatement.close();
                 myconnection.close();
                 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Member not Found");
+                JOptionPane.showMessageDialog(rootPane, "Miembro no Encontrado");
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en Conexión" + ae.getMessage());
         }
     }//GEN-LAST:event_btnBuscarNombreActionPerformed
     
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
-        int i = JOptionPane.showConfirmDialog(rootPane, "Are u sure want to update this employee");
+        String place = "ulacitProyecto";
+        int i = JOptionPane.showConfirmDialog(rootPane, "¿Esta seguro que desea actualizar este empleado?");
         if (i == 0) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection myconnection = DriverManager.getConnection(path + place, "root", "");
                 try {
-                    String q = "update member set NAME=?,PHONE=?,ADDRESS=?,GENDER=?,dob=?,usertype=? where ID=?";
+                    String q = "UPDATE miembro SET NOMBRE=?,TELEFONO=?,DIRECCION=?,GENERO=?,fechaDeNacimiento=?,tipoUsuario=? WHERE ID=?";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
                     mystatement.setString(1, namebox.getText());
                     mystatement.setString(2, jTxtTelefono.getText());
                     if (boxMasculino.isSelected()) {
-                        mystatement.setString(4, "Male");
+                        mystatement.setString(4, "Masculino");
                     } else if (boxFemenino.isSelected()) {
-                        mystatement.setString(4, "Female");
+                        mystatement.setString(4, "Femenino");
                     }
                     mystatement.setString(3, addressbox.getText());
                     String dob = jComboBoxFechNacAnio.getSelectedItem() + "-" + jComboBoxFechNacMes.getSelectedItem() + "-" + jComboBoxFechNacDia.getSelectedItem();
@@ -342,9 +342,7 @@ public class EditarPagina extends javax.swing.JInternalFrame {
                     mystatement.setString(6, jComboBoxPuesto.getSelectedItem().toString());
                     mystatement.setString(7, idbox.getText());
                     mystatement.execute();
-                    JOptionPane.showMessageDialog(rootPane, "Update Successfully");
-                    
-                    
+                    JOptionPane.showMessageDialog(rootPane, "Actualización Exitosa");
                     
                     mystatement.close();
                     myconnection.close();
@@ -353,10 +351,10 @@ public class EditarPagina extends javax.swing.JInternalFrame {
                     btnBuscarNombreActionPerformed(null);
                     
                 } catch (Exception ae) {
-                    JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
+                    JOptionPane.showMessageDialog(rootPane, "Error en Consulta" + ae.getMessage());
                 }
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en Conexión" + ae.getMessage());
             }
         }
         
@@ -402,51 +400,51 @@ public class EditarPagina extends javax.swing.JInternalFrame {
     
 private void btnBuscarNumeroIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarNumeroIDActionPerformed
     String path = "jdbc:mysql://localhost/";
-    String place = "factorydb";
+    String place = "ulacitProyecto";
     try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection myconnection = DriverManager.getConnection(path + place, "root", "");
         try {
-            String q = "select * from member where ID=?";
+            String q = "SELECT * FROM miembro WHERE ID=?";
             PreparedStatement mystatement = myconnection.prepareStatement(q);
             mystatement.setString(1, idbox.getText());
             ResultSet myresult = mystatement.executeQuery();
             if (myresult.next()) {
-                namebox.setText(myresult.getString("NAME"));
-                jTxtTelefono.setText(myresult.getString("PHONE"));
-                addressbox.setText(myresult.getString("ADDRESS"));
-                String db = myresult.getString("dob");
+                namebox.setText(myresult.getString("NOMBRE"));
+                jTxtTelefono.setText(myresult.getString("TELEFONO"));
+                addressbox.setText(myresult.getString("DIRECCION"));
+                String db = myresult.getString("fechaDeNacimiento");
                 String a[] = db.split("-");
                 jComboBoxFechNacDia.setSelectedItem(a[2]);
                 jComboBoxFechNacMes.setSelectedItem(a[1]);
                 jComboBoxFechNacAnio.setSelectedItem(a[0]);
-                if (myresult.getString("GENDER").equals("Male")) {
+                if (myresult.getString("GENERO").equals("Masculino")) {
                     boxMasculino.setSelected(true);
-                } else if (myresult.getString("GENDER").equals("Female")) {
+                } else if (myresult.getString("GENERO").equals("Femenino")) {
                     boxFemenino.setSelected(true);
                 }
                 
-                String p = myresult.getString("usertype");
+                String p = myresult.getString("tipoUsuario");
                 jComboBoxPuesto.setSelectedItem(p);
             } else {
-                JOptionPane.showMessageDialog(rootPane, "NO record Found", "Error", 0);
+                JOptionPane.showMessageDialog(rootPane, "Registros NO encontrados", "ERROR", 0);
             }
             mystatement.close();
             myconnection.close();
             
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en Consulta" + ae.getMessage());
         }
     } catch (Exception ae) {
-        JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+        JOptionPane.showMessageDialog(rootPane, "Error en Conexión" + ae.getMessage());
     }
 }//GEN-LAST:event_btnBuscarNumeroIDActionPerformed
     
 private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
     String path = "jdbc:mysql://localhost/";
-    String place = "factorydb";
+    String place = "ulacitProyecto";
     
-    int i = JOptionPane.showConfirmDialog(rootPane, "Are u sure want to delete this employee");
+    int i = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro que desea eliminar este empleado? ");
     if (i == 0) {
         try {
             Class.forName("com.mysql.jdbc.Driver");

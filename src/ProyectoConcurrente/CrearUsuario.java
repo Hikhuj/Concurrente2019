@@ -115,22 +115,22 @@ public class CrearUsuario extends javax.swing.JFrame {
 
     private void btnCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCuentaActionPerformed
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "insert into createuser values(?,?,?,?)";
+                String q = "INSERT INSTO crearUsuario VALUES(?,?,?,?)";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
 
                 mystatement.setString(1, jTxtUsuario.getText());
-                mystatement.setString(2, "Admin");
+                mystatement.setString(2, "Administrador");
                 mystatement.setString(3, jTxtNombre.getText());
                 mystatement.setString(4, jTxtContrasenia.getText());
 
                 mystatement.execute();
                 //    label.setText("Saved Succesfully");
-                JOptionPane.showMessageDialog(rootPane, "Account Created Successfully");
+                JOptionPane.showMessageDialog(rootPane, "Cuenta creada exitosamente");
                 mystatement.close();
                 myconnection.close();
                 Marco1 obj = new Marco1();
@@ -138,10 +138,10 @@ public class CrearUsuario extends javax.swing.JFrame {
                 this.dispose();
 
             } catch (Exception ae) {
-                label.setText("Error in Query" + ae.getMessage());
+                label.setText("Error en consulta" + ae.getMessage());
             }
         } catch (Exception ae) {
-            label.setText("Error in connection" + ae.getMessage());
+            label.setText("Error en conexión" + ae.getMessage());
         }
     }//GEN-LAST:event_btnCrearCuentaActionPerformed
 

@@ -152,14 +152,14 @@ public class CalificacionProducto extends javax.swing.JInternalFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
        String path="jdbc:mysql://localhost/";
-       String place="factorydb";
+       String place="ulacitProyecto";
        try
        {
            Class.forName("com.mysql.jdbc.Driver");
            Connection myconnection= DriverManager.getConnection(path+place,"root","");
            try
            {
-               String q="insert into products values(?,?,?,?,?)";
+               String q="INSERT INTO productos VALUES(?,?,?,?,?)";
                PreparedStatement mystatement =myconnection.prepareStatement(q);
                
                
@@ -172,7 +172,7 @@ public class CalificacionProducto extends javax.swing.JInternalFrame {
                
                mystatement.execute();
            //    label.setText("Saved Succesfully");
-              JOptionPane.showMessageDialog(rootPane, "Saved Successfully");
+              JOptionPane.showMessageDialog(rootPane, "Guardado exitoso");
               jTxtItem.setText(null);
               jTxtPrecioPieza.setText(null);
               jTxtCantidad.setText(null);
@@ -183,19 +183,19 @@ public class CalificacionProducto extends javax.swing.JInternalFrame {
            }
            catch(Exception ae)
            {
-             JOptionPane.showMessageDialog(rootPane,"Error in Query" + ae.getMessage());
+             JOptionPane.showMessageDialog(rootPane,"Error en consulta" + ae.getMessage());
            }
        }
        catch(Exception ae)
                {
-                 JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());  
+                 JOptionPane.showMessageDialog(rootPane,"Error en conexión" + ae.getMessage());  
                }
 
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void jComboBoxCompaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCompaniaActionPerformed
 String path="jdbc:mysql://localhost/";
-       String place="factorydb";
+       String place="ulacitProyecto";
        try
        {
            Class.forName("com.mysql.jdbc.Driver");
@@ -203,17 +203,17 @@ String path="jdbc:mysql://localhost/";
            
            try
            {
-               String q="select subcategory from category where category1=?";
+               String q="SELECT subcategoria FROM categoria WHERE categoria1=?";
                PreparedStatement mystatement =myconnection.prepareStatement(q);
                mystatement.setString(1, jComboBoxCompania.getSelectedItem().toString());
                ResultSet myresult=mystatement.executeQuery();
                jComboBoxTipo.removeAllItems();
                if(myresult.next())
                {
-                   jComboBoxTipo.addItem("Choose Size");
+                   jComboBoxTipo.addItem("Elegir tamaño");
                    do
                    {
-                       jComboBoxTipo.addItem(myresult.getString("subcategory"));
+                       jComboBoxTipo.addItem(myresult.getString("subcategoria"));
                    }
                    while(myresult.next());
                }
@@ -223,12 +223,12 @@ String path="jdbc:mysql://localhost/";
            }
            catch(Exception ae)
            {
-             JOptionPane.showMessageDialog(rootPane,"Result not Found");
+             JOptionPane.showMessageDialog(rootPane,"Resultado no encontrado");
            }
        }
        catch(Exception ae)
                {
-                 JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());  
+                 JOptionPane.showMessageDialog(rootPane,"Error en conexión" + ae.getMessage());  
                }          // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxCompaniaActionPerformed
 
@@ -238,21 +238,21 @@ String path="jdbc:mysql://localhost/";
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
  String path="jdbc:mysql://localhost/";
-       String place="factorydb";
+       String place="ulacitProyecto";
        try
        {
            Class.forName("com.mysql.jdbc.Driver");
            Connection myconnection= DriverManager.getConnection(path+place,"root","");
            try
            {
-               String q="select * from Company";
+               String q="SELECT * FROM compania";
                PreparedStatement mystatement =myconnection.prepareStatement(q);
                ResultSet myresult=mystatement.executeQuery();
                if(myresult.next())
                {
                 do
                 {
-                    jComboBoxCompania.addItem(myresult.getString("company"));
+                    jComboBoxCompania.addItem(myresult.getString("compania"));
                 }
                 while(myresult.next());
                }
@@ -262,12 +262,12 @@ String path="jdbc:mysql://localhost/";
            }
            catch(Exception ae)
            {
-             JOptionPane.showMessageDialog(rootPane,"No records exist");
+             JOptionPane.showMessageDialog(rootPane,"No existen registros");
            }
        }
        catch(Exception ae)
                {
-                 JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());  
+                 JOptionPane.showMessageDialog(rootPane,"Error en conexión" + ae.getMessage());  
                }        
           
     }//GEN-LAST:event_formInternalFrameActivated
