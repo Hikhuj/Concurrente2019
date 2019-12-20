@@ -23,10 +23,10 @@ public class Gerente1 extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabelContrasenia = new javax.swing.JLabel();
-        jLabelNombre = new javax.swing.JLabel();
         jLabelUsuario = new javax.swing.JLabel();
-        jTxtNombre = new javax.swing.JTextField();
+        jLabelNombre = new javax.swing.JLabel();
         jTxtUsuario = new javax.swing.JTextField();
+        jTxtNombre = new javax.swing.JTextField();
         jTxtContrasenia = new javax.swing.JPasswordField();
         btnCrearCuenta = new javax.swing.JButton();
         jLabelTipoUsuario = new javax.swing.JLabel();
@@ -44,21 +44,13 @@ public class Gerente1 extends javax.swing.JInternalFrame {
         getContentPane().add(jLabelContrasenia);
         jLabelContrasenia.setBounds(50, 230, 80, 30);
 
-        jLabelNombre.setText("Nombre");
-        getContentPane().add(jLabelNombre);
-        jLabelNombre.setBounds(50, 90, 80, 30);
-
         jLabelUsuario.setText("Usuario");
         getContentPane().add(jLabelUsuario);
-        jLabelUsuario.setBounds(50, 190, 80, 30);
+        jLabelUsuario.setBounds(50, 90, 80, 30);
 
-        jTxtNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtNombreActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTxtNombre);
-        jTxtNombre.setBounds(160, 90, 150, 30);
+        jLabelNombre.setText("Nombre");
+        getContentPane().add(jLabelNombre);
+        jLabelNombre.setBounds(50, 190, 80, 30);
 
         jTxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +58,15 @@ public class Gerente1 extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jTxtUsuario);
-        jTxtUsuario.setBounds(160, 190, 150, 30);
+        jTxtUsuario.setBounds(160, 90, 150, 30);
+
+        jTxtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtNombreActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTxtNombre);
+        jTxtNombre.setBounds(160, 190, 150, 30);
 
         jTxtContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,13 +115,13 @@ public class Gerente1 extends javax.swing.JInternalFrame {
         setBounds(0, 0, 381, 371);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtNombreActionPerformed
-
     private void jTxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtUsuarioActionPerformed
+
+    private void jTxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtNombreActionPerformed
 
     private void jTxtContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtContraseniaActionPerformed
         // TODO add your handling code here:
@@ -137,15 +137,15 @@ public class Gerente1 extends javax.swing.JInternalFrame {
                 String q = "INSERT INTO crearUsuario VALUES(?,?,?,?)";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
 
-                mystatement.setString(1, jTxtNombre.getText());
+                mystatement.setString(1, jTxtUsuario.getText());
                 mystatement.setString(2, postbox.getSelectedItem().toString());
-                mystatement.setString(3, jTxtUsuario.getText());
+                mystatement.setString(3, jTxtNombre.getText());
                 mystatement.setString(4, jTxtContrasenia.getText());
 
                 mystatement.execute();
                 JOptionPane.showMessageDialog(rootPane, "Cuenta creada exitosamente");
-                jTxtNombre.setText(null);
                 jTxtUsuario.setText(null);
+                jTxtNombre.setText(null);
                 jTxtContrasenia.setText(null);
                 postbox.setSelectedIndex(0);
                 mystatement.close();

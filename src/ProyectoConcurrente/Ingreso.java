@@ -100,17 +100,17 @@ public class Ingreso extends javax.swing.JFrame {
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
                 // Consulta a la tabla de crearUsuario --> Tabla de Usuario
-                String q = "SELECT * FROM crearUsuario WHERE nombreUsuario=? AND contrasenia=?";
+                String q = "SELECT * FROM crearusuario WHERE nombreUsuario=? AND contrasenia=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 mystatement.setString(1, jTxtUsuario.getText());
                 mystatement.setString(2, jTxtContrasenia.getText());
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
-                    if (myresult.getString("tipoUsuario").equals("Admin")) {
+                    if (myresult.getString("tipoUsuario").equals("Administrador")) {
                         Marco1 obj = new Marco1();
                         obj.setVisible(true);
                         this.setVisible(false);
-                    } else if (myresult.getString("tipoUsuario").equals("Manager")) {
+                    } else if (myresult.getString("tipoUsuario").equals("Gerente")) {
                         Marco11 obj = new Marco11();
                         obj.setVisible(true);
                         this.setVisible(false);

@@ -80,6 +80,15 @@ CREATE TABLE IF NOT EXISTS `compania` (
 -- Table structure for table `createuser`
 --
 
+/*
+CREATE TABLE IF NOT EXISTS `createuser` (
+  `username` varchar(100) NOT NULL,
+  `usertype` varchar(100) NOT NULL,
+  `name1` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+*/
+
 CREATE TABLE IF NOT EXISTS `crearUsuario` (
   `nombreUsuario` varchar(100) NOT NULL,
   `tipoUsuario` varchar(100) NOT NULL,
@@ -97,8 +106,8 @@ INSERT INTO `createuser` (`username`, `usertype`, `name1`, `password`) VALUES
 */
 
 INSERT INTO `crearUsuario` (`nombreUsuario`, `tipoUsuario`, `nombre1`, `contrasenia`) VALUES
-('Admin', 'Admin', 'Admin', '123'),
-('Manager', 'Manager', 'Manager', '123');
+('Admin', 'Administrador', 'Admin', '123'),
+('Manager', 'Gerente', 'Manager', '123');
 
 -- --------------------------------------------------------
 
