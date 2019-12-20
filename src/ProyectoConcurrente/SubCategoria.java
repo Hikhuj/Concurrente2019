@@ -14,9 +14,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class SubCategoria extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form subcategory
-     */
     public SubCategoria() {
         initComponents();
     }
@@ -105,56 +102,56 @@ public class SubCategoria extends javax.swing.JInternalFrame {
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "insert into category values(?,?)";
+                String q = "INSERT INTO categoria VALUES(?,?)";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
 
                 mystatement.setString(1, category.getSelectedItem().toString());
                 mystatement.setString(2, jTxtTipo.getText());
                 mystatement.execute();
                 //    label.setText("Saved Succesfully");
-                JOptionPane.showMessageDialog(rootPane, "Saved Successfully");
+                JOptionPane.showMessageDialog(rootPane, "Guardado exitoso");
                 jTxtTipo.setText(null);
 
                 mystatement.close();
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en consulta" + ae.getMessage());
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
 
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "select * from Company";
+                String q = "SELECT * FROM compania";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
                     do {
-                        category.addItem(myresult.getString("company"));
+                        category.addItem(myresult.getString("compania"));
                     } while (myresult.next());
                 }
                 mystatement.close();
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "No records exist");
+                JOptionPane.showMessageDialog(rootPane, "No existe registro");
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexion" + ae.getMessage());
         }
 
     }//GEN-LAST:event_formInternalFrameActivated

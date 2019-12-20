@@ -14,9 +14,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class VistaProductos1 extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form viewemployee
-     */
     public VistaProductos1() {
         initComponents();
     }
@@ -104,12 +101,12 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "select distinct(category) from products";
+                String q = "SELECT DISTINCT(categoria) FROM productos";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
@@ -121,23 +118,23 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in query " + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en consulta " + ae.getMessage());
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection " + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión " + ae.getMessage());
         }
 
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
-            String item, category, subcategory, rates, quantity;
+            String items, categoria, subcategoria, precios, cantidad;
             try {
-                String q = "select * from products where category=?";
+                String q = "SELECT * FROM productos WHERE categoria=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 mystatement.setString(1, jComboBox1.getSelectedItem().toString());
                 DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
@@ -145,22 +142,22 @@ public class VistaProductos1 extends javax.swing.JInternalFrame {
                 mymodel.setRowCount(0);
                 if (myresult.next()) {
                     do {
-                        item = myresult.getString("items");
-                        category = myresult.getString("category");
-                        subcategory = myresult.getString("subcategory");
-                        rates = myresult.getString("rates");
-                        quantity = myresult.getString("quantity");
-                        mymodel.addRow(new Object[]{item, category, subcategory, rates, quantity});
+                        items = myresult.getString("items");
+                        categoria = myresult.getString("categoria");
+                        subcategoria = myresult.getString("subcategoria");
+                        precios = myresult.getString("precios");
+                        cantidad = myresult.getString("cantidad");
+                        mymodel.addRow(new Object[]{items, categoria, subcategoria, precios, cantidad});
                     } while (myresult.next());
                 }
                 mystatement.close();
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "No records exist");
+                JOptionPane.showMessageDialog(rootPane, "No existen registros");
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed

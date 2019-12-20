@@ -7,9 +7,6 @@ package ProyectoConcurrente;
 
 public class Marco11 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frame1
-     */
     public Marco11() {
         initComponents();
     }
@@ -181,7 +178,7 @@ public class Marco11 extends javax.swing.JFrame {
         jDesktopPane1.add(obj);
         obj.setVisible(true);
         labelly.setVisible(false);
-// TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
@@ -237,7 +234,7 @@ private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     jDesktopPane1.add(obj);
     obj.setVisible(true);
     labelly.setVisible(false);
-// TODO add your handling code here:
+    // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem2ActionPerformed
 
 private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed

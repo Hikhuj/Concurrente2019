@@ -14,9 +14,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class VistaEmpleado1 extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form viewemployee
-     */
     public VistaEmpleado1() {
         initComponents();
     }
@@ -104,34 +101,34 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
 
             try {
-                String q = "select usertype from member";
+                String q = "SELECT tipoUsuario FROM miembro";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
-                    jComboBox1.removeItem("SuperVisor");
-                    jComboBox1.addItem(myresult.getString("usertype"));
+                    jComboBox1.removeItem("Supervisor");
+                    jComboBox1.addItem(myresult.getString("tipoUsuario"));
                 }
                 mystatement.close();
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Result not Found");
+                JOptionPane.showMessageDialog(rootPane, "Resultado no encontrado");
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }          // TODO add your handling code here:
 
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
    String path="jdbc:mysql://localhost/";
-       String place="factorydb";
+       String place="ulacitProyecto";
        try
        {
            Class.forName("com.mysql.jdbc.Driver");
@@ -139,7 +136,7 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
            String memberid,name,phone,address,dob,gender,post;
            try
            {
-               String q="select * from member where usertype=?";
+               String q="SELECT * FROM miembro WHERE tipoUsuario=?";
                PreparedStatement mystatement =myconnection.prepareStatement(q);
                mystatement.setString(1, jComboBox1.getSelectedItem().toString());
                DefaultTableModel mymodel=(DefaultTableModel) jTable1.getModel();
@@ -150,12 +147,12 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
                 do
                 {
                     memberid=myresult.getString("ID");
-                    name=myresult.getString("NAME");
-                    phone=myresult.getString("PHONE");
-                    address=myresult.getString("ADDRESS");
-                    dob=myresult.getString("dob");
-                    gender=myresult.getString("GENDER");
-                    post=myresult.getString("usertype");
+                    name=myresult.getString("NOMBRE");
+                    phone=myresult.getString("TELEFONO");
+                    address=myresult.getString("DIRECCION");
+                    dob=myresult.getString("fechaDeNacimiento");
+                    gender=myresult.getString("GENERO");
+                    post=myresult.getString("tipoUsuario");
                     mymodel.addRow(new Object[]{name,phone,gender,address,dob,memberid,post});
                 }
                 while(myresult.next());
@@ -166,12 +163,12 @@ public class VistaEmpleado1 extends javax.swing.JInternalFrame {
            }
            catch(Exception ae)
            {
-             JOptionPane.showMessageDialog(rootPane,"No records exist");
+             JOptionPane.showMessageDialog(rootPane,"No existen registros");
            }
        }
        catch(Exception ae)
                {
-                 JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());  
+                 JOptionPane.showMessageDialog(rootPane,"Error en conexión" + ae.getMessage());  
                }        
              // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed

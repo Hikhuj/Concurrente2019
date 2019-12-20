@@ -13,9 +13,6 @@ import javax.swing.JOptionPane;
 
 public class CalificacionProducto extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form productsrate
-     */
     public CalificacionProducto() {
         initComponents();
     }

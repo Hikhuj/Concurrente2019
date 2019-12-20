@@ -15,9 +15,6 @@ import javax.swing.JOptionPane;
 
 public class Ingreso extends javax.swing.JFrame {
 
-    /**
-     * Creates new form login
-     */
     public Ingreso() {
         initComponents();
     }
@@ -97,37 +94,38 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "select * from createuser where username=? and password=?";//usertable
+                // Consulta a la tabla de crearUsuario --> Tabla de Usuario
+                String q = "SELECT * FROM crearUsuario WHERE nombreUsuario=? AND contrasenia=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 mystatement.setString(1, jTxtUsuario.getText());
                 mystatement.setString(2, jTxtContrasenia.getText());
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
-                    if (myresult.getString("usertype").equals("Admin")) {
+                    if (myresult.getString("tipoUsuario").equals("Admin")) {
                         Marco1 obj = new Marco1();
                         obj.setVisible(true);
                         this.setVisible(false);
-                    } else if (myresult.getString("usertype").equals("Manager")) {
+                    } else if (myresult.getString("tipoUsuario").equals("Manager")) {
                         Marco11 obj = new Marco11();
                         obj.setVisible(true);
                         this.setVisible(false);
                     }
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "Wrong Password/Username");
+                    JOptionPane.showMessageDialog(rootPane, "Usuario/Contraseña errónea");
                 }
                 
                 mystatement.close();
                 myconnection.close();
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en consulta" + ae.getMessage());
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
 

@@ -14,9 +14,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class VistaFactura1 extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form viewemployee
-     */
     public VistaFactura1() {
         initComponents();
     }
@@ -132,34 +129,26 @@ public class VistaFactura1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_formInternalFrameActivated
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+
+        for (int a = 1; a <= 31; a++) {
+            if (a < 10) {
+                jComboBoxDia.addItem("0" + a);
+            } else {
+                jComboBoxDia.addItem(String.valueOf(a));
+            }
+        }
         
-        for(int a=1;a<=31;a++)
-{
-    if(a<10)
-    {
-    jComboBoxDia.addItem("0"+a);
-    }
-    else
-    {
-        jComboBoxDia.addItem(String.valueOf(a));
-    }
+        for (int a = 1; a <= 12; a++) {
+            if (a < 10) {
+                jComboBoxMes.addItem("0" + a);
+            } else {
+                jComboBoxMes.addItem(String.valueOf(a));
+            }
+        }
         
-}
-for(int a=1;a<=12;a++)
-{if(a<10)
-    {
-    jComboBoxMes.addItem("0"+a);
-    }
-    else
-    {
-        jComboBoxMes.addItem(String.valueOf(a));
-    }
-    
-}
-for(int a=2013;a<=2113;a++)
-{
-    jComboBoxAnio.addItem(String.valueOf(a));
-}
+        for (int a = 2013; a <= 2113; a++) {
+            jComboBoxAnio.addItem(String.valueOf(a));
+        }
     }//GEN-LAST:event_formInternalFrameOpened
 
     private void jComboBoxDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDiaActionPerformed
@@ -167,58 +156,49 @@ for(int a=2013;a<=2113;a++)
     }//GEN-LAST:event_jComboBoxDiaActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-String path="jdbc:mysql://localhost/";
-       String place="factorydb";
-       try
-       {
-           Class.forName("com.mysql.jdbc.Driver");
-           Connection myconnection= DriverManager.getConnection(path+place,"root","");
-           String billno,dealer,contact,product,qty,totamt,date;
-           try
-           {
-               String q="select * from bill where date=?";
-               PreparedStatement mystatement =myconnection.prepareStatement(q);
-               DefaultTableModel mymodel=(DefaultTableModel) jTable1.getModel();
-               mystatement.setString(1, jComboBoxAnio.getSelectedItem().toString()+"-"+jComboBoxMes.getSelectedItem().toString()+"-"+jComboBoxDia.getSelectedItem().toString());
-               ResultSet myresult=mystatement.executeQuery();
-               if(myresult.next())
-               {
-                do
-                {
-                    billno=myresult.getString("billid");
-                    dealer=myresult.getString("dealer");
-                    contact=myresult.getString("phone");
-                    product=myresult.getString("products");
-               //     String p[]=product.split(",");
-                 //   for(int i=0;i<10;i++)
-                    {
-                 //       product=myresult.getString("products");
-                //    String p[]=product.split(",");
-                //    product=(p[i]+"\n");
-                    }
-                    product=myresult.getString("products");
-                    qty=myresult.getString("qty");
-                    totamt=myresult.getString("total");
-                    date=myresult.getString("date");
-                    String a[]=date.split("-");
-                    date=(a[2]+"-"+a[1]+"-"+a[0]);
-                    mymodel.addRow(new Object[]{billno,dealer,contact,product,qty,totamt,date});
+        String path = "jdbc:mysql://localhost/";
+        String place = "ulacitProyecto";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection myconnection = DriverManager.getConnection(path + place, "root", "");
+            String idFactura, proveedor, telefono, productos, cantidad, total, fecha;
+            try {
+                String q = "SELECT * FROM factura WHERE fecha=?";
+                PreparedStatement mystatement = myconnection.prepareStatement(q);
+                DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
+                mystatement.setString(1, jComboBoxAnio.getSelectedItem().toString() + "-" + jComboBoxMes.getSelectedItem().toString() + "-" + jComboBoxDia.getSelectedItem().toString());
+                ResultSet myresult = mystatement.executeQuery();
+                if (myresult.next()) {
+                    do {
+                        idFactura = myresult.getString("idFactura");
+                        proveedor = myresult.getString("proveedor");
+                        telefono = myresult.getString("telefono");
+                        productos = myresult.getString("productos");
+                        //     String p[]=product.split(",");
+                        //   for(int i=0;i<10;i++)
+                        //{
+                            //       product=myresult.getString("products");
+                            //    String p[]=product.split(",");
+                            //    product=(p[i]+"\n");
+                        //}
+                        productos = myresult.getString("productos");
+                        cantidad = myresult.getString("cantidad");
+                        total = myresult.getString("total");
+                        fecha = myresult.getString("date");
+                        String a[] = fecha.split("-");
+                        fecha = (a[2] + "-" + a[1] + "-" + a[0]);
+                        mymodel.addRow(new Object[]{idFactura, proveedor, telefono, productos, cantidad, total, fecha});
+                    } while (myresult.next());
                 }
-                while(myresult.next());
-               }
                 mystatement.close();
-               myconnection.close();
-               
-           }
-           catch(Exception ae)
-           {
-             JOptionPane.showMessageDialog(rootPane,"No records exist");
-           }
-       }
-       catch(Exception ae)
-               {
-                 JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());  
-               }        
+                myconnection.close();
+
+            } catch (Exception ae) {
+                JOptionPane.showMessageDialog(rootPane, "No existen registros");
+            }
+        } catch (Exception ae) {
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
 

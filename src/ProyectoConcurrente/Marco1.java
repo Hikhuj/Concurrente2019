@@ -2,9 +2,6 @@ package ProyectoConcurrente;
 
 public class Marco1 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frame1
-     */
     public Marco1() {
         initComponents();
     }
@@ -256,7 +253,7 @@ public class Marco1 extends javax.swing.JFrame {
         obj.setVisible(true);
 
         labelly.setVisible(false);
-// TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed

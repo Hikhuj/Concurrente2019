@@ -5,9 +5,6 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 public class Tienda extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Company
-     */
     public Tienda() {
         initComponents();
     }
@@ -75,18 +72,18 @@ public class Tienda extends javax.swing.JInternalFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         String path="jdbc:mysql://localhost/";
-        String place="factorydb";
+        String place="ulacitProyecto";
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection= DriverManager.getConnection(path+place,"root","");
             try
             {
-                String q="insert into Company values(?)";
+                String q="INSERT INTO compania VALUES(?)";
                 PreparedStatement mystatement =myconnection.prepareStatement(q);
                 mystatement.setString(1, jTxtNombreProveedor.getText());
                 mystatement.execute();
-                JOptionPane.showMessageDialog(rootPane, "Saved Successfully");
+                JOptionPane.showMessageDialog(rootPane, "Guardado exitoso");
                 jTxtNombreProveedor.setText(null);
 
                 mystatement.close();
@@ -95,12 +92,12 @@ public class Tienda extends javax.swing.JInternalFrame {
             }
             catch(Exception ae)
             {
-                JOptionPane.showMessageDialog(rootPane,"Error in Query" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane,"Error en consulta" + ae.getMessage());
             }
         }
         catch(Exception ae)
         {
-            JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane,"Error en conexión" + ae.getMessage());
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 

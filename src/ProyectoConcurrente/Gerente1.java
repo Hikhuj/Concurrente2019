@@ -9,9 +9,6 @@ import javax.swing.JOptionPane;
 
 public class Gerente1 extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form manager
-     */
     public Gerente1() {
         initComponents();
     }
@@ -131,16 +128,14 @@ public class Gerente1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTxtContraseniaActionPerformed
 
     private void btnCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCuentaActionPerformed
-        String path="jdbc:mysql://localhost/";
-        String place="factorydb";
-        try
-        {
+        String path = "jdbc:mysql://localhost/";
+        String place = "ulacitProyecto";
+        try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection myconnection= DriverManager.getConnection(path+place,"root","");
-            try
-            {
-                String q="insert into createuser values(?,?,?,?)";
-                PreparedStatement mystatement =myconnection.prepareStatement(q);
+            Connection myconnection = DriverManager.getConnection(path + place, "root", "");
+            try {
+                String q = "INSERT INTO crearUsuario VALUES(?,?,?,?)";
+                PreparedStatement mystatement = myconnection.prepareStatement(q);
 
                 mystatement.setString(1, jTxtNombre.getText());
                 mystatement.setString(2, postbox.getSelectedItem().toString());
@@ -148,23 +143,19 @@ public class Gerente1 extends javax.swing.JInternalFrame {
                 mystatement.setString(4, jTxtContrasenia.getText());
 
                 mystatement.execute();
-                JOptionPane.showMessageDialog(rootPane, "Account Created Successfully");
-              jTxtNombre.setText(null);
-              jTxtUsuario.setText(null);
-              jTxtContrasenia.setText(null);
-              postbox.setSelectedIndex(0);
+                JOptionPane.showMessageDialog(rootPane, "Cuenta creada exitosamente");
+                jTxtNombre.setText(null);
+                jTxtUsuario.setText(null);
+                jTxtContrasenia.setText(null);
+                postbox.setSelectedIndex(0);
                 mystatement.close();
                 myconnection.close();
-                
+
+            } catch (Exception ae) {
+                JOptionPane.showMessageDialog(rootPane, "Error en consulta" + ae.getMessage());
             }
-            catch(Exception ae)
-            {
-               JOptionPane.showMessageDialog(rootPane,"Error in Query" + ae.getMessage());
-            }
-        }
-        catch(Exception ae)
-        {
-             JOptionPane.showMessageDialog(rootPane,"Error in connection" + ae.getMessage());
+        } catch (Exception ae) {
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
     }//GEN-LAST:event_btnCrearCuentaActionPerformed
 

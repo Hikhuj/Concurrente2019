@@ -12,9 +12,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class EditarPagina extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form menu
-     */
     public EditarPagina() {
         initComponents();
     }
@@ -450,23 +447,23 @@ private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "delete from member where ID=?";
+                String q = "DELETE FROM miembro WHERE ID=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 mystatement.setString(1, idbox.getText());
                 int b = mystatement.executeUpdate();
                 if (b > 0) {
-                    JOptionPane.showMessageDialog(rootPane, "Deleted Successfully");
+                    JOptionPane.showMessageDialog(rootPane, "Borrado Exitoso");
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "Already deleted");
+                    JOptionPane.showMessageDialog(rootPane, "Ya ha sido borrado");
                 }
                 mystatement.close();
                 myconnection.close();
                 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en consulta" + ae.getMessage());
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexion" + ae.getMessage());
         }
     }
 }//GEN-LAST:event_btnBorrarActionPerformed

@@ -11,9 +11,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class Factura extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form billing
-     */
     public Factura() {
         initComponents();
     }
@@ -252,15 +249,15 @@ public class Factura extends javax.swing.JInternalFrame {
 
 
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
 
         if (jComboBoxElegirProducto.getSelectedIndex() > 0) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection myconnection = DriverManager.getConnection(path + place, "root", "");
-                String memberid, name, phone, ok;
+                String idMiembro, nombre, telefono, cantidad;
                 try {
-                    String q = "select * from products where items=?";
+                    String q = "SELECT * FROM productos WHERE items=?";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
                     mystatement.setString(1, jComboBoxElegirProducto.getSelectedItem().toString());
                     DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
@@ -268,21 +265,21 @@ public class Factura extends javax.swing.JInternalFrame {
 
                     if (myresult.next()) {
                         do {
-                            memberid = myresult.getString("items");
-                            name = myresult.getString("category");
-                            phone = myresult.getString("rates");
-                            ok = myresult.getString("quantity");
-                            mymodel.addRow(new Object[]{memberid, name, phone, ok});
+                            idMiembro = myresult.getString("items");
+                            nombre = myresult.getString("categoria");
+                            telefono = myresult.getString("precios");
+                            cantidad = myresult.getString("cantidad");
+                            mymodel.addRow(new Object[]{idMiembro, nombre, telefono, cantidad});
                         } while (myresult.next());
                     }
                     mystatement.close();
                     myconnection.close();
 
                 } catch (Exception ae) {
-                    JOptionPane.showMessageDialog(rootPane, "Error in Query item " + ae.getMessage());
+                    JOptionPane.showMessageDialog(rootPane, "Error en consulta de Item " + ae.getMessage());
                 }
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en conexión " + ae.getMessage());
             }
         }
 
@@ -294,12 +291,12 @@ public class Factura extends javax.swing.JInternalFrame {
         String dateofbill = myformat.format(obj);
         jTxtFecha.setText(dateofbill);
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "select * from products";
+                String q = "SELECT * FROM productos";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
 
 
@@ -313,10 +310,10 @@ public class Factura extends javax.swing.JInternalFrame {
                 }
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "No records exist");
+                JOptionPane.showMessageDialog(rootPane, "No existen registros");
             }
             try {
-                String q = "select * from bill order by billid";
+                String q = "SELECT * FROM factura ORDER BY idFactura";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
 
 
@@ -334,26 +331,26 @@ public class Factura extends javax.swing.JInternalFrame {
 
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "error id fetch" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, " error en busqueda de id " + ae.getMessage());
             }
 
             try {
-                String q = "select * from Company";
+                String q = "SELECT * FROM compania";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 ResultSet myresult = mystatement.executeQuery();
                 if (myresult.next()) {
                     do {
-                        jComboBoxElegirCompania.addItem(myresult.getString("company"));
+                        jComboBoxElegirCompania.addItem(myresult.getString("compañia"));
                     } while (myresult.next());
                 }
                 mystatement.close();
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in query comp " + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en consulta de compañia " + ae.getMessage());
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
 
 
@@ -362,10 +359,11 @@ public class Factura extends javax.swing.JInternalFrame {
 
     private void btnCalcularFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularFacturaActionPerformed
 
-
         int r = jTable1.getRowCount();
         double rate = 0, qty = 0, total = 0, net = 0, rem_qty = 0, cur_qty = 0;
+        
         //    DefaultTableModel mymodel=(DefaultTableModel) jTable1.getModel();
+        
         for (int i = 0; i < r; i++) {
             rate = Double.parseDouble(jTable1.getValueAt(i, 2).toString());
             qty = Double.parseDouble(jTable1.getValueAt(i, 4).toString());
@@ -380,14 +378,13 @@ public class Factura extends javax.swing.JInternalFrame {
             //    JOptionPane.showMessageDialog(rootPane, "Error in Total");
             //  mymodel.setRowCount(0);
 
-
             //        }
             //      else if(rem_qty>0)
             //     {
             //       jButton2.setVisible(true);
             //  }
             jTable1.setValueAt("" + rem_qty, i, 6);
-//if(total<0 && rem_qty<0)
+            //if(total<0 && rem_qty<0)
             //      {
             //        jButton2.setVisible(false);
             //      JOptionPane.showMessageDialog(rootPane, "Error in Total");
@@ -396,11 +393,6 @@ public class Factura extends javax.swing.JInternalFrame {
 
         jTextField3.setText(String.valueOf(net));
 
-
-
-
-
-
     }//GEN-LAST:event_btnCalcularFacturaActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -408,16 +400,14 @@ public class Factura extends javax.swing.JInternalFrame {
 
     private void btnSalvarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarFacturaActionPerformed
 
-//if(Integer.parseInt(jTextField3.getText())>0){
-
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
-            String products = "", quantity = "";
+            String productos = "", cantidad = "";
             try {
-                String q = "insert into bill values(?,?,?,?,?,?,?)";
+                String q = "INSERT INTO factura VALUES(?,?,?,?,?,?,?)";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 mystatement.setString(1, jTextField1.getText());
                 mystatement.setString(2, jTextField2.getText());
@@ -428,67 +418,51 @@ public class Factura extends javax.swing.JInternalFrame {
 
                 mystatement.setString(7, dateofbill);
 
-
                 mystatement.setString(6, jFormattedTextFieldTelefono.getText());
-
 
                 int r = jTable1.getRowCount();
                 for (int i = 0; i < r; i++) {
-                    products += jTable1.getValueAt(i, 0) + ",";
-                    quantity += jTable1.getValueAt(i, 4) + ",";
+                    productos += jTable1.getValueAt(i, 0) + ",";
+                    cantidad += jTable1.getValueAt(i, 4) + ",";
                 }
 
-                mystatement.setString(3, products);
-                mystatement.setString(4, quantity);
-
+                mystatement.setString(3, productos);
+                mystatement.setString(4, cantidad);
 
                 mystatement.execute();
                 mystatement.close();
-                JOptionPane.showMessageDialog(rootPane, "Bill Saved");
+                JOptionPane.showMessageDialog(rootPane, "Factura salvada");
 
                 this.dispose();
                 Factura obj2 = new Factura();
                 obj2.setVisible(true);
                 Marco1.jDesktopPane1.add(obj2);
 
-
-
-
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "bill not saved" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "factura no salvada" + ae.getMessage());
             }
 
             int r = jTable1.getRowCount();
             for (int i = 0; i < r; i++) {
                 try {
-                    String q = "update products set quantity=? where items=?";
+                    String q = "UPDATE productos SET cantidades=? WHERE items=?";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
                     mystatement.setString(1, jTable1.getValueAt(i, 6).toString());
                     mystatement.setString(2, jTable1.getValueAt(i, 0).toString());
 
-
                     mystatement.executeUpdate();
-
 
                     mystatement.close();
 
-
                 } catch (Exception ae) {
-                    JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
+                    JOptionPane.showMessageDialog(rootPane, "Error en consulta" + ae.getMessage());
                 }
             }
 
             myconnection.close();
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
-//    }
-//else 
-//{
-        //  JOptionPane.showMessageDialog(rootPane, "Error in Total");
-//}
-
-
 
     }//GEN-LAST:event_btnSalvarFacturaActionPerformed
 
@@ -498,34 +472,34 @@ public class Factura extends javax.swing.JInternalFrame {
 
 private void jComboBoxElegirCompaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxElegirCompaniaActionPerformed
     String path = "jdbc:mysql://localhost/";
-    String place = "factorydb";
+    String place = "ulacitProyecto";
     if (jComboBoxElegirCompania.getSelectedIndex() > 0) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
 
             try {
-                String q = "select subcategory from category where category1=?";
+                String q = "SELECT subcategoria FROM categoria WHERE categoria1=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 mystatement.setString(1, jComboBoxElegirCompania.getSelectedItem().toString());
                 ResultSet myresult = mystatement.executeQuery();
                 jComboBoxTipo.removeAllItems();
                 if (myresult.next()) {
-                    jComboBoxTipo.addItem("Choose Type");
+                    jComboBoxTipo.addItem("Elegir tipo");
                     do {
-                        jComboBoxTipo.addItem(myresult.getString("subcategory"));
+                        jComboBoxTipo.addItem(myresult.getString("subcategoria"));
                     } while (myresult.next());
                 }
                 mystatement.close();
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Result not Found");
+                JOptionPane.showMessageDialog(rootPane, "Resultado no encontrado");
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
-    }// TODO add your handling code here:
+    }
 }//GEN-LAST:event_jComboBoxElegirCompaniaActionPerformed
 
 private void jComboBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoActionPerformed
@@ -533,12 +507,12 @@ private void jComboBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN
 
     if (jComboBoxTipo.getSelectedIndex() > 0) {
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "select * from products where category=? and subcategory=?";
+                String q = "SELECT * FROM productos WHERE categorias=? AND subcategorias=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 mystatement.setString(1, jComboBoxElegirCompania.getSelectedItem().toString());
                 mystatement.setString(2, jComboBoxTipo.getSelectedItem().toString());
@@ -547,7 +521,7 @@ private void jComboBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN
 
                 jComboBoxElegirProducto.removeAllItems();
                 if (myresult.next()) {
-                    jComboBoxElegirProducto.addItem("Choose Product");
+                    jComboBoxElegirProducto.addItem("Elegir producto");
                     do {
                         jComboBoxElegirProducto.addItem(myresult.getString("items"));
                     } while (myresult.next());
@@ -556,10 +530,10 @@ private void jComboBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN
                 myconnection.close();
 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in query " + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en consulta " + ae.getMessage());
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
 
     }

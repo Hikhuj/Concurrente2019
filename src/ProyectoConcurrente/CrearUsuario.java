@@ -12,9 +12,6 @@ import javax.swing.JOptionPane;
 
 public class CrearUsuario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form createuser
-     */
     public CrearUsuario() {
         initComponents();
     }
@@ -120,7 +117,7 @@ public class CrearUsuario extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "INSERT INSTO crearUsuario VALUES(?,?,?,?)";
+                String q = "INSERT INTO crearUsuario VALUES(?,?,?,?)";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
 
                 mystatement.setString(1, jTxtUsuario.getText());

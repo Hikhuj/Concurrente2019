@@ -14,9 +14,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class VerProductos extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form viewemployee
-     */
     public VerProductos() {
         initComponents();
     }
@@ -93,27 +90,27 @@ public class VerProductos extends javax.swing.JInternalFrame {
 
 private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
     String path = "jdbc:mysql://localhost/";
-    String place = "factorydb";
+    String place = "ulacitProyecto";
     try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection myconnection = DriverManager.getConnection(path + place, "root", "");
-        String item, category, subcategory, rates, quantity;
+        String item, categoria, subcategoria, precios, cantidad;
         try {
-            String q = "select * from products";
+            String q = "SELECT * FROM productos";
             PreparedStatement mystatement = myconnection.prepareStatement(q);
             DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
             ResultSet myresult = mystatement.executeQuery();
             if (myresult.next()) {
                 do {
                     item = myresult.getString("items");
-                    category = myresult.getString("category");
-                    subcategory = myresult.getString("subcategory");
-                    rates = myresult.getString("rates");
-                    quantity = myresult.getString("quantity");
-                    mymodel.addRow(new Object[]{item, category, subcategory, rates, quantity});
+                    categoria = myresult.getString("categoria");
+                    subcategoria = myresult.getString("subcategoria");
+                    precios = myresult.getString("precios");
+                    cantidad = myresult.getString("cantidad");
+                    mymodel.addRow(new Object[]{item, categoria, subcategoria, precios, cantidad});
                 } while (myresult.next());
             } else {
-                JOptionPane.showMessageDialog(rootPane, "No records exist");
+                JOptionPane.showMessageDialog(rootPane, "No existen registros");
 
             }
 
@@ -124,7 +121,7 @@ private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
             JOptionPane.showMessageDialog(rootPane, "Error " + ae.getMessage());
         }
     } catch (Exception ae) {
-        JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+        JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
     }
 }//GEN-LAST:event_formInternalFrameOpened
     // Variables declaration - do not modify//GEN-BEGIN:variables

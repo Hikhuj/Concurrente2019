@@ -24,12 +24,12 @@ public class Main {
             java.util.logging.Logger.getLogger(Marco1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "select * from createuser";
+                String q = "SELECT * FROM crearUsuario";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 ResultSet myresult = mystatement.executeQuery();
 
@@ -43,10 +43,10 @@ public class Main {
                 mystatement.close();
                 myconnection.close();
             } catch (Exception ae) {
-                System.out.print("Error in Query" + ae.getMessage());
+                System.out.print("Error en consulta" + ae.getMessage());
             }
         } catch (Exception ae) {
-            System.out.print("Error in Connection" + ae.getMessage());
+            System.out.print("Error en conexión" + ae.getMessage());
         }
 
     }

@@ -11,9 +11,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class GerenteEditar extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form manager
-     */
     public GerenteEditar() {
         initComponents();
     }
@@ -491,14 +488,14 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
     
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         int i = JOptionPane.showConfirmDialog(rootPane, "Are u sure want to update this employee");
         if (i == 0) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection myconnection = DriverManager.getConnection(path + place, "root", "");
                 try {
-                    String q = "update createuser set  password=?,username=?,usertype=?, name1=? where username=? ";
+                    String q = "UPDATE crearUsuario SET contrasenia=?,nombreUsuario=?,tipoUsuario=?, nombre1=? WHERE nombreUsuario=? ";
                     PreparedStatement mystatement = myconnection.prepareStatement(q);
                     mystatement.setString(1, jTxtContrasenia.getText());
                     mystatement.setString(2, jTxtUsuario.getText());
@@ -508,9 +505,9 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
                     
                     int x = mystatement.executeUpdate();
                     if (x > 0) {
-                        JOptionPane.showMessageDialog(rootPane, "Update Successfully");
+                        JOptionPane.showMessageDialog(rootPane, "Actualización exitosa");
                     } else {
-                        JOptionPane.showMessageDialog(rootPane, "Update unSuccessfully");
+                        JOptionPane.showMessageDialog(rootPane, "Actualización no exitosa");
                         
                     }
                     
@@ -521,10 +518,10 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
                     
                     
                 } catch (Exception ae) {
-                    JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
+                    JOptionPane.showMessageDialog(rootPane, "Error en consulta" + ae.getMessage());
                 }
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
             }
         }
         
@@ -535,19 +532,19 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_postboxActionPerformed
     
     private void btnBuscarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarNombreActionPerformed
-        
+
         jTxtUsuario.setText("");
         jTxtContrasenia.setText("");
         postbox.setSelectedIndex(0);
-        
+
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
-            String name, usertype, username;
+            String nombre, tipoUsuario, nombreUsuario;
             try {
-                String q = "select * from createuser where name1 like '%" + jTxtNombre.getText() + "%'";
+                String q = "SELECT * FROM crearUsuario WHERE nombre1 like '%" + jTxtNombre.getText() + "%'";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
                 ResultSet myresult = mystatement.executeQuery();
@@ -555,22 +552,22 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
                 jScrollPane3.setVisible(true);
                 if (myresult.next()) {
                     do {
-                        name = myresult.getString("name1");
-                        usertype = myresult.getString("usertype");
-                        username = myresult.getString("username");
-                        mymodel.addRow(new Object[]{name, usertype, username});
+                        nombre = myresult.getString("nombre1");
+                        tipoUsuario = myresult.getString("tipoUsuario");
+                        nombreUsuario = myresult.getString("nombreUsuario");
+                        mymodel.addRow(new Object[]{nombre, tipoUsuario, nombreUsuario});
                         jScrollPane3.setVisible(true);
                     } while (myresult.next());
                 } else {
                     jScrollPane3.setVisible(false);
                     JOptionPane.showMessageDialog(rootPane, "No records exist");
-                    
+
                 }
                 while (myresult.next());
-                
+
                 mystatement.close();
                 myconnection.close();
-                
+
             } catch (Exception ae) {
                 JOptionPane.showMessageDialog(rootPane, "Member not Found");
             }
@@ -656,13 +653,13 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         
         data = (String) jTable1.getValueAt(myrow, 2);
         String path = "jdbc:mysql://localhost/";
-        String place = "factorydb";
+        String place = "ulacitProyecto";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             
             try {
-                String q = "select * from createuser where username=?";
+                String q = "SELECT * FROM crearUsuario WHERE nombreUsuario=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 mystatement.setString(1, data);
                 DefaultTableModel mymodel = (DefaultTableModel) jTable1.getModel();
@@ -671,20 +668,20 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
                 jScrollPane3.setVisible(true);
                 if (myresult.next()) {
                     
-                    jTxtNombre.setText(myresult.getString("name1"));
-                    String p = myresult.getString("usertype");
+                    jTxtNombre.setText(myresult.getString("nombre1"));
+                    String p = myresult.getString("tipoUsuario");
                     postbox.setSelectedItem(p);
-                    jTxtUsuario.setText(myresult.getString("username"));
-                    jTxtContrasenia.setText(myresult.getString("password"));
+                    jTxtUsuario.setText(myresult.getString("nombreUsuario"));
+                    jTxtContrasenia.setText(myresult.getString("contrasenia"));
                 }
                 mystatement.close();
                 myconnection.close();
                 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Result not Found");
+                JOptionPane.showMessageDialog(rootPane, "Resultado no encontrado");
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
     }//GEN-LAST:event_jTable1MouseClicked
     
@@ -695,31 +692,31 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
 private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
     
     String path = "jdbc:mysql://localhost/";
-    String place = "factorydb";
+    String place = "ulacitProyecto";
     
-    int i = JOptionPane.showConfirmDialog(rootPane, "Are u sure want to delete this Account ? ");
+    int i = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro que desea eliminar esta Cuenta?");
     if (i == 0) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection myconnection = DriverManager.getConnection(path + place, "root", "");
             try {
-                String q = "delete from createuser where username=?";
+                String q = "DELETE FROM crearUsuario WHERE nombreUsuario=?";
                 PreparedStatement mystatement = myconnection.prepareStatement(q);
                 mystatement.setString(1, jTxtUsuario.getText());
                 int b = mystatement.executeUpdate();
                 if (b > 0) {
-                    JOptionPane.showMessageDialog(rootPane, "Deleted Successfully");
+                    JOptionPane.showMessageDialog(rootPane, "Borrado exitoso");
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "Already deleted");
+                    JOptionPane.showMessageDialog(rootPane, "Ya ha sido borrado");
                 }
                 mystatement.close();
                 myconnection.close();
                 
             } catch (Exception ae) {
-                JOptionPane.showMessageDialog(rootPane, "Error in Query" + ae.getMessage());
+                JOptionPane.showMessageDialog(rootPane, "Error en consulta" + ae.getMessage());
             }
         } catch (Exception ae) {
-            JOptionPane.showMessageDialog(rootPane, "Error in connection" + ae.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "Error en conexión" + ae.getMessage());
         }
     }
     
