@@ -4,11 +4,29 @@
  */
 package ProyectoConcurrente;
 
+import static ProyectoConcurrente.Marco1.fecha;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
-public class Marco11 extends javax.swing.JFrame {
+public class Marco11 extends javax.swing.JFrame implements Runnable {
+
+    String hora, minutos, segundos, ampm;
+    Thread hilo;
+
+    public static String fecha() {
+        Date fecha = new Date();
+        SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/YYYY");
+        return formatofecha.format(fecha);
+    }
 
     public Marco11() {
         initComponents();
+        lblFecha.setText(fecha());
+        hilo = new Thread(this);
+        hilo.start();
+        setVisible(true);
     }
 
     /**
@@ -23,6 +41,8 @@ public class Marco11 extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         labelly = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        lblFecha = new javax.swing.JLabel();
+        lblHora = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -55,7 +75,21 @@ public class Marco11 extends javax.swing.JFrame {
             }
         });
         jDesktopPane1.add(btnSalir);
-        btnSalir.setBounds(10, 10, 80, 28);
+        btnSalir.setBounds(10, 10, 80, 32);
+
+        lblFecha.setBackground(new java.awt.Color(255, 255, 255));
+        lblFecha.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblFecha.setForeground(new java.awt.Color(255, 255, 255));
+        lblFecha.setText("DD/MM/YYYY");
+        jDesktopPane1.add(lblFecha);
+        lblFecha.setBounds(10, 718, 380, 100);
+
+        lblHora.setBackground(new java.awt.Color(255, 255, 255));
+        lblHora.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblHora.setForeground(new java.awt.Color(255, 255, 255));
+        lblHora.setText("00:00:00");
+        jDesktopPane1.add(lblHora);
+        lblHora.setBounds(440, 718, 290, 100);
 
         getContentPane().add(jDesktopPane1);
         jDesktopPane1.setBounds(0, 0, 1570, 830);
@@ -300,5 +334,41 @@ private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JLabel labelly;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblHora;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+        Thread ct = Thread.currentThread();
+
+        while (ct == hilo) {
+            hora();
+            lblHora.setText(hora + ":" + minutos + ":" + segundos + " " + ampm);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+
+            }
+        }
+    }
+
+    private void hora() {
+        Calendar calendario = new GregorianCalendar();
+        Date fechaHoraActual = new Date();
+
+        calendario.setTime(fechaHoraActual);
+        ampm = calendario.get(Calendar.AM_PM) == Calendar.AM ? "AM" : "PM";
+
+        if (ampm.equals("PM")) {
+            int h = calendario.get(Calendar.HOUR_OF_DAY) - 12;
+            hora = h > 9 ? "" + h : "0" + h;
+
+        } else {
+            hora = calendario.get(Calendar.HOUR_OF_DAY) > 9 ? "" + calendario.get(Calendar.HOUR_OF_DAY) : "0" + calendario.get(Calendar.HOUR_OF_DAY);
+        }
+        minutos = calendario.get(Calendar.MINUTE) > 9 ? "" + calendario.get(Calendar.MINUTE) : "0" + calendario.get(Calendar.MINUTE);
+        segundos = calendario.get(Calendar.SECOND) > 9 ? "" + calendario.get(Calendar.SECOND) : "0" + calendario.get(Calendar.SECOND);
+
+    }
 }
