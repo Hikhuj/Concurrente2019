@@ -9,9 +9,9 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class GerenteEditar extends javax.swing.JInternalFrame {
+public class CuentaEditar extends javax.swing.JInternalFrame {
 
-    public GerenteEditar() {
+    public CuentaEditar() {
         initComponents();
     }
 
@@ -79,7 +79,7 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         setClosable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Editar Gerente");
+        setTitle("Editar Cuenta");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -151,7 +151,7 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(20, 130, 80, 30);
 
-        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Administrador", "Gerente" }));
+        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Administrador", "Vendedor" }));
         postbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postboxActionPerformed(evt);
@@ -170,7 +170,7 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnBuscarNombre);
-        btnBuscarNombre.setBounds(290, 80, 110, 31);
+        btnBuscarNombre.setBounds(290, 80, 110, 25);
 
         jInternalFrame1.setClosable(true);
         jInternalFrame1.setMaximizable(true);
@@ -250,10 +250,10 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
             }
         });
         jInternalFrame1.getContentPane().add(jButton4);
-        jButton4.setBounds(550, 80, 110, 33);
+        jButton4.setBounds(550, 80, 110, 27);
 
         getContentPane().add(jInternalFrame1);
-        jInternalFrame1.setBounds(0, 0, 87, 22);
+        jInternalFrame1.setBounds(0, 0, 98, 32);
 
         jInternalFrame2.setClosable(true);
         jInternalFrame2.setMaximizable(true);
@@ -333,7 +333,7 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
             }
         });
         jInternalFrame2.getContentPane().add(jButton6);
-        jButton6.setBounds(550, 80, 110, 33);
+        jButton6.setBounds(550, 80, 110, 27);
 
         jInternalFrame3.setClosable(true);
         jInternalFrame3.setMaximizable(true);
@@ -413,13 +413,13 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
             }
         });
         jInternalFrame3.getContentPane().add(jButton8);
-        jButton8.setBounds(550, 80, 110, 33);
+        jButton8.setBounds(550, 80, 110, 27);
 
         jInternalFrame2.getContentPane().add(jInternalFrame3);
-        jInternalFrame3.setBounds(0, 0, 87, 22);
+        jInternalFrame3.setBounds(0, 0, 98, 32);
 
         getContentPane().add(jInternalFrame2);
-        jInternalFrame2.setBounds(0, 0, 87, 22);
+        jInternalFrame2.setBounds(0, 0, 98, 32);
 
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -465,7 +465,7 @@ public class GerenteEditar extends javax.swing.JInternalFrame {
 
         jLabelTituloEditarCuentaGerente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelTituloEditarCuentaGerente.setForeground(new java.awt.Color(236, 240, 241));
-        jLabelTituloEditarCuentaGerente.setText("Editar Cuenta Gerente");
+        jLabelTituloEditarCuentaGerente.setText("Editar Cuentas");
         jPanel1.add(jLabelTituloEditarCuentaGerente, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 140, 30));
 
         getContentPane().add(jPanel1);

@@ -78,7 +78,7 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
             }
         });
         jDesktopPane1.add(btnSalir);
-        btnSalir.setBounds(10, 10, 80, 32);
+        btnSalir.setBounds(10, 10, 80, 25);
 
         lblFecha.setBackground(new java.awt.Color(255, 255, 255));
         lblFecha.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -183,10 +183,10 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
 
         jMenuBar1.add(jMenu5);
 
-        jMenu3.setText("Gerente");
+        jMenu3.setText("Cuentas");
 
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/new.png"))); // NOI18N
-        jMenuItem4.setText("Agregar Gerente");
+        jMenuItem4.setText("Agregar Cuentas");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -195,7 +195,7 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
         jMenu3.add(jMenuItem4);
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/edit.png"))); // NOI18N
-        jMenuItem5.setText("Editar/Borrar Gerente");
+        jMenuItem5.setText("Editar/Borrar Cuentas");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -259,7 +259,7 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        Gerente1 obj1 = new Gerente1();
+        Cuenta1 obj1 = new Cuenta1();
         jDesktopPane1.add(obj1);
         obj1.setVisible(true);
         labelly.setVisible(false);
@@ -267,7 +267,7 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        GerenteEditar obj1 = new GerenteEditar();
+        CuentaEditar obj1 = new CuentaEditar();
         jDesktopPane1.add(obj1);
         obj1.setVisible(true);
         labelly.setVisible(false); // TODO add your handling code here:

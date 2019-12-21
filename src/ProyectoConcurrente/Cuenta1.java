@@ -7,9 +7,9 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 
 
-public class Gerente1 extends javax.swing.JInternalFrame {
+public class Cuenta1 extends javax.swing.JInternalFrame {
 
-    public Gerente1() {
+    public Cuenta1() {
         initComponents();
     }
 
@@ -37,7 +37,7 @@ public class Gerente1 extends javax.swing.JInternalFrame {
         setClosable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Agregar Gerente");
+        setTitle("Agregar Cuenta");
         getContentPane().setLayout(null);
 
         jLabelContrasenia.setText("Contraseña");
@@ -92,7 +92,7 @@ public class Gerente1 extends javax.swing.JInternalFrame {
         getContentPane().add(jLabelTipoUsuario);
         jLabelTipoUsuario.setBounds(50, 140, 80, 30);
 
-        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Administrador", "Gerente" }));
+        postbox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Elegir Puesto", "Administrador", "Vendedor" }));
         postbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postboxActionPerformed(evt);
@@ -106,7 +106,7 @@ public class Gerente1 extends javax.swing.JInternalFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(236, 240, 241));
-        jLabel6.setText("Crear Cuenta de Gerente");
+        jLabel6.setText("Crear Cuentas del Sistema");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 160, 30));
 
         getContentPane().add(jPanel1);

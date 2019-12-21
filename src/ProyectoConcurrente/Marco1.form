@@ -120,7 +120,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Gerente"/>
+            <Property name="text" type="java.lang.String" value="Cuentas"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
@@ -128,7 +128,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/ProyectoConcurrente/new.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Agregar Gerente"/>
+                <Property name="text" type="java.lang.String" value="Agregar Cuentas"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
@@ -139,7 +139,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/ProyectoConcurrente/edit.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Editar/Borrar Gerente"/>
+                <Property name="text" type="java.lang.String" value="Editar/Borrar Cuentas"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem5ActionPerformed"/>
