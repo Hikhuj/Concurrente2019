@@ -39,7 +39,7 @@ public class Marco1 extends javax.swing.JFrame {
         jMenuItem18 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("frameSoftwareAdmin");
+        setTitle("Ventana Administrador");
         getContentPane().setLayout(null);
 
         jDesktopPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));

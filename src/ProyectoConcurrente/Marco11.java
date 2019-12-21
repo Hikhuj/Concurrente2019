@@ -39,7 +39,7 @@ public class Marco11 extends javax.swing.JFrame {
         jMenuItem18 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Industry_SoftMania");
+        setTitle("Ventana Gerente");
         getContentPane().setLayout(null);
 
         labelly.setFont(new java.awt.Font("Times New Roman", 1, 68)); // NOI18N
