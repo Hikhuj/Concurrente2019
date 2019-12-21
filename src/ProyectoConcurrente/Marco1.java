@@ -38,11 +38,8 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
         btnSalir = new javax.swing.JButton();
         lblFecha = new javax.swing.JLabel();
         lblHora = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -78,7 +75,7 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
             }
         });
         jDesktopPane1.add(btnSalir);
-        btnSalir.setBounds(10, 10, 80, 25);
+        btnSalir.setBounds(10, 10, 80, 32);
 
         lblFecha.setBackground(new java.awt.Color(255, 255, 255));
         lblFecha.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -94,43 +91,15 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
         jDesktopPane1.add(lblHora);
         lblHora.setBounds(440, 718, 290, 100);
 
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dvniel\\Desktop\\bg.jpg")); // NOI18N
+        jDesktopPane1.add(lblFondo);
+        lblFondo.setBounds(0, 0, 1570, 830);
+
         getContentPane().add(jDesktopPane1);
         jDesktopPane1.setBounds(0, 0, 1570, 830);
 
         jMenuBar1.setBackground(java.awt.Color.darkGray);
         jMenuBar1.setMargin(new java.awt.Insets(0, 650, 0, 0));
-
-        jMenu1.setText("Empleado");
-
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/new.png"))); // NOI18N
-        jMenuItem1.setText("Agregar Empleado");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
-
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/edit.png"))); // NOI18N
-        jMenuItem2.setText("Actualizar/Borrar Empleado");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
-
-        jMenuItem13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProyectoConcurrente/veiw.png"))); // NOI18N
-        jMenuItem13.setText("Ver por Categoría");
-        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem13ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem13);
-
-        jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Productos");
 
@@ -242,22 +211,6 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
         setBounds(0, 0, 1585, 888);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Menu obj1 = new Menu();
-        jDesktopPane1.add(obj1);
-        obj1.setVisible(true);
-        labelly.setVisible(false);// TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        EditarPagina obj1 = new EditarPagina();
-        jDesktopPane1.add(obj1);
-        obj1.setVisible(true);
-
-        labelly.setVisible(false);
-// TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         Cuenta1 obj1 = new Cuenta1();
         jDesktopPane1.add(obj1);
@@ -273,24 +226,6 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
         labelly.setVisible(false); // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        ActualizarProducto obj = new ActualizarProducto();
-        jDesktopPane1.add(obj);
-        obj.setVisible(true);
-
-        labelly.setVisible(false);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
-
-    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        CalificacionProducto obj = new CalificacionProducto();
-        jDesktopPane1.add(obj);
-        obj.setVisible(true);
-
-        labelly.setVisible(false);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem10ActionPerformed
-
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         SubCategoria obj = new SubCategoria();
         jDesktopPane1.add(obj);
@@ -298,21 +233,6 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
 
         labelly.setVisible(false);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
-
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        VistaProductos1 obj = new VistaProductos1();
-        jDesktopPane1.add(obj);
-        obj.setVisible(true);
-
-        labelly.setVisible(false);          // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
-
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        VistaEmpleado1 obj = new VistaEmpleado1();
-        jDesktopPane1.add(obj);
-        obj.setVisible(true);
-        labelly.setVisible(false);         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         Tienda obj = new Tienda();
@@ -347,6 +267,32 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
         obj.setVisible(true);
         labelly.setVisible(false); // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        ActualizarProducto obj = new ActualizarProducto();
+        jDesktopPane1.add(obj);
+        obj.setVisible(true);
+
+        labelly.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        VistaProductos1 obj = new VistaProductos1();
+        jDesktopPane1.add(obj);
+        obj.setVisible(true);
+
+        labelly.setVisible(false);          // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        CalificacionProducto obj = new CalificacionProducto();
+        jDesktopPane1.add(obj);
+        obj.setVisible(true);
+
+        labelly.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,27 +333,24 @@ public class Marco1 extends javax.swing.JFrame implements Runnable {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
     public static javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem18;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JLabel labelly;
     private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblHora;
     // End of variables declaration//GEN-END:variables
 

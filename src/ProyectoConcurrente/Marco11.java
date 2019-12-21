@@ -43,6 +43,7 @@ public class Marco11 extends javax.swing.JFrame implements Runnable {
         btnSalir = new javax.swing.JButton();
         lblFecha = new javax.swing.JLabel();
         lblHora = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -71,7 +72,7 @@ public class Marco11 extends javax.swing.JFrame implements Runnable {
             }
         });
         jDesktopPane1.add(btnSalir);
-        btnSalir.setBounds(10, 10, 80, 25);
+        btnSalir.setBounds(10, 10, 80, 32);
 
         lblFecha.setBackground(new java.awt.Color(255, 255, 255));
         lblFecha.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -86,6 +87,10 @@ public class Marco11 extends javax.swing.JFrame implements Runnable {
         lblHora.setText("00:00:00");
         jDesktopPane1.add(lblHora);
         lblHora.setBounds(440, 718, 290, 100);
+
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dvniel\\Desktop\\bg.jpg")); // NOI18N
+        jDesktopPane1.add(lblFondo);
+        lblFondo.setBounds(1, 0, 1560, 820);
 
         getContentPane().add(jDesktopPane1);
         jDesktopPane1.setBounds(0, 0, 1570, 830);
@@ -273,6 +278,7 @@ public class Marco11 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JLabel labelly;
     private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblHora;
     // End of variables declaration//GEN-END:variables
 
