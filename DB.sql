@@ -107,7 +107,7 @@ INSERT INTO `createuser` (`username`, `usertype`, `name1`, `password`) VALUES
 
 INSERT INTO `crearUsuario` (`nombreUsuario`, `tipoUsuario`, `nombre1`, `contrasenia`) VALUES
 ('Admin', 'Administrador', 'Admin', '123'),
-('Manager', 'Gerente', 'Manager', '123');
+('Manager', 'Vendedor', 'Manager', '123');
 
 -- --------------------------------------------------------
 

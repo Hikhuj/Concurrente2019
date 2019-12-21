@@ -110,7 +110,7 @@ public class Ingreso extends javax.swing.JFrame {
                         Marco1 obj = new Marco1();
                         obj.setVisible(true);
                         this.setVisible(false);
-                    } else if (myresult.getString("tipoUsuario").equals("Gerente")) {
+                    } else if (myresult.getString("tipoUsuario").equals("Vendedor")) {
                         Marco11 obj = new Marco11();
                         obj.setVisible(true);
                         this.setVisible(false);
