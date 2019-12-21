@@ -55,10 +55,12 @@ public class Marco11 extends javax.swing.JFrame {
             }
         });
         jDesktopPane1.add(btnSalir);
-        btnSalir.setBounds(10, 10, 80, 32);
+        btnSalir.setBounds(10, 10, 80, 28);
 
         getContentPane().add(jDesktopPane1);
         jDesktopPane1.setBounds(0, 0, 1570, 830);
+
+        jMenuBar1.setMargin(new java.awt.Insets(0, 650, 0, 0));
 
         jMenu1.setText("Empleado");
 

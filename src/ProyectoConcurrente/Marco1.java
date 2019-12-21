@@ -64,6 +64,7 @@ public class Marco1 extends javax.swing.JFrame {
         jDesktopPane1.setBounds(0, 0, 1570, 830);
 
         jMenuBar1.setBackground(java.awt.Color.darkGray);
+        jMenuBar1.setMargin(new java.awt.Insets(0, 650, 0, 0));
 
         jMenu1.setText("Empleado");
 
