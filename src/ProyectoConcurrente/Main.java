@@ -8,10 +8,12 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UnsupportedLookAndFeelException;
+import org.apache.log4j.PropertyConfigurator;
 
 
 public class Main {
 
+    
     public static void main(String[] args) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -36,6 +38,9 @@ public class Main {
                 if (myresult.next()) {
                     Ingreso obj1 = new Ingreso();
                     obj1.setVisible(true);
+                    PropertyConfigurator.configure("log4j.properties");
+                    ClienteChat c = new ClienteChat();
+                    c.recibirMensajesServidor();
                 } else {
                     CrearUsuario ob1j = new CrearUsuario();
                     ob1j.setVisible(true);
